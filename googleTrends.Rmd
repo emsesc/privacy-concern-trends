@@ -1,0 +1,33 @@
+
+Plotting
+```{r}
+# by state
+res <- gtrends("library near me", geo = c("US-FL"), time = "2021-12-01 2024-01-01")
+plot(res)
+
+# by DMA
+res <- gtrends("library near me", geo = c("US-AL-630"), time = "2021-12-01 2024-01-01")
+plot(res)
+```
+
+Basic Trend Data from 1 year ago
+```{r}
+# Load required libraries
+library(gtrendsR)
+
+# Define search term and location
+search_term <- "library near me"
+geo <- "US-FL" # Florida overall
+
+# Fetch trends data for the last year
+trends_data <- gtrends(keyword = search_term, 
+                       geo = geo, 
+                       time = "today 12-m", 
+                       category = "0")
+
+# Print trends data
+print(trends_data)
+
+# Logout from Google
+gdisconnect()
+```
