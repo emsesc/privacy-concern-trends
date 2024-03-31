@@ -18,8 +18,6 @@ translate_date <- function(date_str) {
     date_str == "Spring 2023" ~ c("1", "2023"),
     date_str == "AY 2022-2023" ~ c("8", "2022"),
     (substr(date_str, 1, 1) == "2") ~ {
-      print("MATCH")
-      print(date_str)
       parts <- strsplit(date_str, "-")[[1]]
       year <- paste0("20", parts[1])
       month <- parts[2]
@@ -27,7 +25,7 @@ translate_date <- function(date_str) {
       c(as.character(month_number), year)
     },
     TRUE ~ {
-      parts <- strsplit(date_str, " ")[[1]]
+      parts <- strsplit(date_str, "-")[[1]]
       month <- parts[1]
       month_number <- match(month, month.abb)
       year <- as.character(parts[2])
@@ -42,4 +40,3 @@ clean_pen_index <- pen_index_2022 %>%
   rowwise() %>%
   mutate(Month = translate_date(Date.of.Challenge.Removal)[1],  # Translate month abbreviations to numbers
          Year = translate_date(Date.of.Challenge.Removal)[2]) # Adding '20' as prefix to year
-
