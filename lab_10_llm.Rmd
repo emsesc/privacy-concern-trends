@@ -1,0 +1,72 @@
+[**Lab #10 Markdown File**](/assignments/lab_10_llm.Rmd)
+
+In this week’s lab, your task is to use a LLM to code a group of documents. You can collect these documents in any way you want, but there need to be at least 20 of them. Some students will find this lab allows them to take the next step with their final project by testing out the feasibility of collecting some documents of interest, others may wish to simply collect a set of documents using the ArXiv API, as we did in our lab on APIs.
+
+Next, you must code some attribute of each of the documents you collect using an LLM of your choice— however, this cannot be done manually (e.g. using the web interface for ChatGPT), instead, you must write code to do this using either the OpenAI API (warning: you will be charged once you use your free tokens so make sure that any for loops you create to encode your documents do not run-on too long). If you do not wish to use the OpenAI API, you may use one of the open-source models described on the Llammafile page linked on our syllabus. A downside of this approach is that you will require significant hard disk space to download a local large language model (e.g. 5gb).
+
+You may code whatever type of feature in the documents you collect that you like. You may find it useful to use this opportunity to do a very early test for a final paper. For example, a student interested in whether there is significant evidence of gender bias in statistics could a) download a set of articles from arxiv; and then b) pass the name of the author list to an LLM and ask it to determine what percentage of the authors are male.
+
+Note: a key challenge with this lab will be writing a prompt that creates the type of output you want. To that end, you may find this article useful.
+
+```{r eval=FALSE, include=TRUE}
+library(dplyr)
+library(tidyverse)
+
+state_survey <- read.csv("./data/slaa2022.csv") %>% 
+  select(PHYS_ST, PARTNER_YES) 
+
+state_filtered <- state_survey[!(state_survey$PARTNER_YES %in% c(".", "LOGICAL SKIP")), ]
+```
+
+**Methodology**
+
+_Data_: [State Library Administrative Agency Survey](https://www.imls.gov/research-evaluation/data-collection/state-library-administrative-agency-survey)
+
+_Prompt_: "Given this description of a library's partnerships with government agencies: ", state, " respond ONLY with a 1 if it specifically includes reading or education programs, 2 if it includes initiatives related to humanities (history, heritage), 3 if it includes both, and 0 if it includes none."
+
+_Purpose_: The OpenAI Model is given a description of the current looping state's library initiatives in partnership with government agencies in order to classify it within the coding schema as described below.
+
+```{r eval=FALSE, include=TRUE}
+library(openai)
+
+#authenticate yourself with OpenAI using your credentials from the developer platform
+Sys.setenv(
+  OPENAI_API_KEY = 'xxxxxxxx'
+)
+
+#now let's put in a loop and see if we can encode our whole dataset
+
+dataholder<-as.data.frame(NULL)
+
+for(i in 1:nrow(state_filtered)){
+    state <- state_filtered$PARTNER_YES[i]
+    open_ai_output<-create_chat_completion(
+      model = "gpt-3.5-turbo",
+      messages = list(
+        list(
+          "role" = "user",
+          "content" = paste0("Given this description of a library's partnerships with government agencies: ", state, " respond ONLY with a 1 if it specifically includes reading or education programs, 2 if it includes initiatives related to humanities (history, heritage), 3 if it includes both, and 0 if it includes none.")
+          )
+      )
+    )
+    
+    dataholder<-rbind(dataholder, open_ai_output$choices$message.content)
+    Sys.sleep(20)
+}
+
+write.csv(dataholder, "results.csv", row.names = FALSE)
+dataholder <- dataholder %>% mutate(State = state_filtered$PHYS_ST) %>% rename("X.3." = "Classification")
+```
+
+**Coding:**
+
+- 0 = Includes none
+- 1 = Library initiatives include reading or education programs
+- 2 = Library initiatives include humanities (history, heritage)
+- 3 = Includes both
+
+```{r}
+# Read from CSV to not use OpenAI credits
+dataholder <- read.csv("./results.csv") 
+dataholder
+```
