@@ -9,8 +9,9 @@ school_districts <- read.csv("./data/sdlist-23.csv") %>%
   mutate(school_district = tolower(School.District.Name)) %>%
   select(County.FIPS, school_district)
 county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
-  mutate(cleaned_DMA = gsub("\\(.*?\\)|\\s", "", DMA, perl = TRUE))
-
+  mutate(merger = substr(DMA, 1, 6))
+dma_codes <- read.csv("./data/dma-codes.csv") %>%
+  mutate(merger = substr(area, 1, 6))
 # Goals:
 # 1. Remove unnecessary rows
 # 2. Mark each book by DMA
@@ -50,4 +51,7 @@ clean_pen_index <- pen_index_2022 %>%
 clean_pen_index <- clean_pen_index %>%
   mutate(school_district = tolower(District)) %>%
   left_join(school_districts, by = "school_district", relationship = "many-to-many") %>%
-  left_join()
+  left_join(county_dma, by = c("County.FIPS" = "CNTYFP"), relationship = "many-to-many") %>%
+  left_join(dma_codes, by = "merger", relationship = "many-to-many")
+
+# for columbus's, specifically just specify which columbus it is and assign it using an if statement
