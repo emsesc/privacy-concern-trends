@@ -2,14 +2,20 @@ library(dplyr)
 library(tidyverse)
 
 pen_index_2023 <- read.csv("./data/pen-index-2023.csv") %>% 
-  select(Title, State, Date.of.Challenge.Removal) 
+  select(Title, State, District, Date.of.Challenge.Removal) 
 pen_index_2022 <- read.csv("./data/pen-index-2022.csv") %>% 
-  select(Title, State, Date.of.Challenge.Removal) 
+  select(Title, State, District, Date.of.Challenge.Removal) 
+school_districts <- read.csv("./data/sdlist-23.csv") %>%
+  mutate(school_district = tolower(School.District.Name)) %>%
+  select(County.FIPS, school_district)
+county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
+  mutate(cleaned_DMA = gsub("\\(.*?\\)|\\s", "", DMA, perl = TRUE))
 
 # Goals:
 # 1. Remove unnecessary rows
 # 2. Mark each book by DMA
 # 3. Standardize by time
+# 4. Merge in DMA demographic statistics?
 
 # Create a function to map month abbreviations to numbers
 translate_date <- function(date_str) {
@@ -28,7 +34,7 @@ translate_date <- function(date_str) {
       parts <- strsplit(date_str, "-")[[1]]
       month <- parts[1]
       month_number <- match(month, month.abb)
-      year <- as.character(parts[2])
+      year <- paste0("20", parts[2])
       c(as.character(month_number), year)
     }
   )
@@ -40,3 +46,8 @@ clean_pen_index <- pen_index_2022 %>%
   rowwise() %>%
   mutate(Month = translate_date(Date.of.Challenge.Removal)[1],  # Translate month abbreviations to numbers
          Year = translate_date(Date.of.Challenge.Removal)[2]) # Adding '20' as prefix to year
+
+clean_pen_index <- clean_pen_index %>%
+  mutate(school_district = tolower(District)) %>%
+  left_join(school_districts, by = "school_district", relationship = "many-to-many") %>%
+  left_join()
