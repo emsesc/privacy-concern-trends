@@ -1,12 +1,14 @@
 
 Plotting
 ```{r}
+library(gtrendsR)
+
 # by state
 res <- gtrends("library near me", geo = c("US-FL"), time = "2021-12-01 2024-01-01")
 plot(res)
 
 # by DMA
-res <- gtrends("library near me", geo = c("US-AL-630"), time = "2021-12-01 2024-01-01")
+res <- gtrends("library near me", geo = c("US-IL-609"), time = "2021-12-01 2024-01-01")
 plot(res)
 ```
 

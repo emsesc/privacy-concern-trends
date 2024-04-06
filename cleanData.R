@@ -2,13 +2,16 @@ library(dplyr)
 library(tidyverse)
 library(purrr)
 
+library_survey <- library_survey %>%
+  mutate(County_Merge = paste(tolower(CNTY), "county", sep = " "))
 pen_index_2023 <- read.csv("./data/pen-index-2023.csv") %>% 
   select(Title, State, District, Date.of.Challenge.Removal) 
 pen_index_2022 <- read.csv("./data/pen-index-2022.csv") %>% 
   select(Title, State, District, Date.of.Challenge.Removal) 
 school_districts <- read.csv("./data/sdlist-23.csv") %>%
   mutate(school_district = tolower(School.District.Name)) %>%
-  select(County.FIPS, school_district)
+  mutate(County_Merge = tolower(County.Names)) %>%
+  select(County_Merge, County.FIPS, school_district)
 county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
   mutate(merger = ifelse(DMAINDEX == 35, "GREENVILLE-SPARTA-ASHEVILLE", 
                          ifelse(DMAINDEX == 178, "HARRISONBURG", 
@@ -63,6 +66,10 @@ clean_pen_index <- clean_pen_index %>%
   mutate(school_district = tolower(District)) %>%
   left_join(school_districts, by = "school_district", relationship = "many-to-many") %>%
   left_join(county_dma, by = c("County.FIPS" = "CNTYFP"), relationship = "many-to-many") %>%
-  left_join(dma_codes, by = "merger", relationship = "many-to-many")
+  left_join(dma_codes, by = "merger", relationship = "many-to-many") %>%
+  select(-GOOGLE_DMA, -merger, area) %>%
+  mutate(Trends_DMA = paste0("US-", str_trim(STATE), "-", code))
 
-# for columbus's, specifically just specify which columbus it is and assign it using an if statement
+pen_index_libraries <- clean_pen_index %>%
+  left_join(library_survey, by = "County_Merge", relationship = "many-to-many")
+  
