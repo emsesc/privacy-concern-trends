@@ -1,5 +1,6 @@
 library(dplyr)
 library(tidyverse)
+library(purrr)
 
 pen_index_2023 <- read.csv("./data/pen-index-2023.csv") %>% 
   select(Title, State, District, Date.of.Challenge.Removal) 
@@ -9,9 +10,19 @@ school_districts <- read.csv("./data/sdlist-23.csv") %>%
   mutate(school_district = tolower(School.District.Name)) %>%
   select(County.FIPS, school_district)
 county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
-  mutate(merger = substr(DMA, 1, 6))
+  mutate(merger = ifelse(DMAINDEX == 35, "GREENVILLE-SPARTA-ASHEVILLE", 
+                         ifelse(DMAINDEX == 178, "HARRISONBURG", 
+                                ifelse(DMAINDEX == 189, "LAFAYETTE, IN", 
+                                       ifelse(DMAINDEX == 37, "SAN ANTONIO", 
+                                              ifelse(DMAINDEX == 77, "ROCHESTER, NY", 
+                                                     ifelse(DMAINDEX == 126, "COLUMBUS, GA-OPELIKA, AL",
+                                                            ifelse(DMAINDEX == 131, "COLUMBUS-TUPELO-WEST POINT",
+                                                                   ifelse(DMAINDEX == 139, "COLUMBIA-JEFFERSON CITY",
+                                                                          ifelse(DMAINDEX == 84, "COLUMBIA, SC",
+                                                                                 ifelse(DMAINDEX == 34, "COLUMBUS, OH", substr(DMA, 1, 6))))))))))))
 dma_codes <- read.csv("./data/dma-codes.csv") %>%
-  mutate(merger = substr(area, 1, 6))
+  mutate(merger = ifelse(area %in% c("GREENVILLE-SPARTA-ASHEVILLE", "HARRISONBURG", "LAFAYETTE, IN", "SAN ANTONIO", "ROCHESTER, NY", "COLUMBUS, GA-OPELIKA, AL", "COLUMBUS-TUPELO-WEST POINT", "COLUMBIA-JEFFERSON CITY", "COLUMBIA, SC", "COLUMBUS, OH"), area, substr(area, 1, 6)))
+
 # Goals:
 # 1. Remove unnecessary rows
 # 2. Mark each book by DMA
