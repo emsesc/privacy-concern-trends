@@ -10,7 +10,7 @@ pen_index_2022 <- read.csv("./data/pen-index-2022.csv") %>%
   select(Title, State, District, Date.of.Challenge.Removal) 
 school_districts <- read.csv("./data/sdlist-23.csv") %>%
   mutate(school_district = tolower(School.District.Name)) %>%
-  mutate(County_Merge = tolower(County.Names)) %>%
+  mutate(County_Merge = tolower(trimws(County.Names))) %>%
   select(County_Merge, County.FIPS, school_district)
 county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
   mutate(county_state = paste(tolower(trimws(COUNTY)), trimws(STATE), sep = ", ")) %>%
@@ -73,9 +73,9 @@ clean_pen_index <- pen_index_2022 %>%
 # create counties and DMA google trends
 clean_pen_index <- clean_pen_index %>%
   mutate(school_district = tolower(District)) %>%
-  left_join(school_districts, by = "school_district", relationship = "many-to-many") %>%
+  left_join(school_districts, by = "school_district") %>%
   mutate(county_state = paste(sub(" county$", "", County_Merge), state.abb[match(State, state.name)], sep = ", ")) %>%
-  left_join(county_dma, by = "county_state", relationship = "many-to-many") %>%
+  left_join(county_dma, by = "county_state") %>%
   left_join(dma_codes, by = "merger", relationship = "many-to-many") %>%
   select(-GOOGLE_DMA, -merger, -area) %>%
   mutate(Trends_DMA = paste0("US-", str_trim(STATE), "-", code))
