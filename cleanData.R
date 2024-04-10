@@ -13,6 +13,7 @@ school_districts <- read.csv("./data/sdlist-23.csv") %>%
   mutate(County_Merge = tolower(County.Names)) %>%
   select(County_Merge, County.FIPS, school_district)
 county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
+  mutate(county_state = paste(tolower(trimws(COUNTY)), trimws(STATE), sep = ", ")) %>%
   mutate(merger = ifelse(DMAINDEX == 35, "GREENVILLE-SPARTA-ASHEVILLE", 
                          ifelse(DMAINDEX == 178, "HARRISONBURG", 
                                 ifelse(DMAINDEX == 189, "LAFAYETTE, IN", 
@@ -22,9 +23,15 @@ county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
                                                             ifelse(DMAINDEX == 131, "COLUMBUS-TUPELO-WEST POINT",
                                                                    ifelse(DMAINDEX == 139, "COLUMBIA-JEFFERSON CITY",
                                                                           ifelse(DMAINDEX == 84, "COLUMBIA, SC",
-                                                                                 ifelse(DMAINDEX == 34, "COLUMBUS, OH", substr(DMA, 1, 6))))))))))))
+                                                                                 ifelse(DMAINDEX == 34, "COLUMBUS, OH", 
+                                                                                        ifelse(DMAINDEX == 519, "CHARLESTON, SC", 
+                                                                                               ifelse(DMAINDEX == 561, "JACKSONVILLE", 
+                                                                                                      ifelse(DMAINDEX == 639, "JACKSON, TN", 
+                                                                                                             ifelse(DMAINDEX == 582, "LAFAYETTE, IN", 
+                                                                                                                    ifelse(DMAINDEX == 627, "WICHITA FALLS & LAWTON", substr(DMA, 1, 6)))))))))))))))))
+         
 dma_codes <- read.csv("./data/dma-codes.csv") %>%
-  mutate(merger = ifelse(area %in% c("GREENVILLE-SPARTA-ASHEVILLE", "HARRISONBURG", "LAFAYETTE, IN", "SAN ANTONIO", "ROCHESTER, NY", "COLUMBUS, GA-OPELIKA, AL", "COLUMBUS-TUPELO-WEST POINT", "COLUMBIA-JEFFERSON CITY", "COLUMBIA, SC", "COLUMBUS, OH"), area, substr(area, 1, 6)))
+  mutate(merger = ifelse(area %in% c("GREENVILLE-SPARTA-ASHEVILLE", "HARRISONBURG", "LAFAYETTE, IN", "SAN ANTONIO", "ROCHESTER, NY", "COLUMBUS, GA-OPELIKA, AL", "COLUMBUS-TUPELO-WEST POINT", "COLUMBIA-JEFFERSON CITY", "COLUMBIA, SC", "COLUMBUS, OH", "CHARLESTON, SC", "JACKSONVILLE", "JACKSON, TN", "WICHITA FALLS & LAWTON"), area, substr(area, 1, 6)))
 
 # Goals:
 # 1. Remove unnecessary rows
@@ -56,20 +63,31 @@ translate_date <- function(date_str) {
   return(dates)
 }
 
+# Bind two pen indexes together and split their dates
 clean_pen_index <- pen_index_2022 %>%
   rbind(pen_index_2023) %>%
   rowwise() %>%
   mutate(Month = translate_date(Date.of.Challenge.Removal)[1],  # Translate month abbreviations to numbers
          Year = translate_date(Date.of.Challenge.Removal)[2]) # Adding '20' as prefix to year
 
+# create counties and DMA google trends
 clean_pen_index <- clean_pen_index %>%
   mutate(school_district = tolower(District)) %>%
   left_join(school_districts, by = "school_district", relationship = "many-to-many") %>%
-  left_join(county_dma, by = c("County.FIPS" = "CNTYFP"), relationship = "many-to-many") %>%
+  mutate(county_state = paste(sub(" county$", "", County_Merge), state.abb[match(State, state.name)], sep = ", ")) %>%
+  left_join(county_dma, by = "county_state", relationship = "many-to-many") %>%
   left_join(dma_codes, by = "merger", relationship = "many-to-many") %>%
-  select(-GOOGLE_DMA, -merger, area) %>%
+  select(-GOOGLE_DMA, -merger, -area) %>%
   mutate(Trends_DMA = paste0("US-", str_trim(STATE), "-", code))
 
+google_trends_analysis <- clean_pen_index %>%
+  select(Month, Year, Trends_DMA) %>%
+  group_by(Month, Year, Trends_DMA) %>%
+  summarize(count = n()) %>%
+  distinct()
+
+
+# Only run if you want to create pen index merged with local libraries
 pen_index_libraries <- clean_pen_index %>%
   left_join(library_survey, by = "County_Merge", relationship = "many-to-many")
   
