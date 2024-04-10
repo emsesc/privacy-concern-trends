@@ -53,7 +53,7 @@ AL,01,01260,Elba City School District,Coffee County,031
 AL,01,01290,Elmore County School District,Elmore County,051
 AL,01,01320,Enterprise City School District,Coffee County,031
 AL,01,01320,Enterprise City School District,Dale County,045
-AL,01,01350,Escambia County School District,Escambia County,053
+AL,01,01350,escambia county public schools,Escambia County,053
 AL,01,01380,Etowah County School District,Etowah County,055
 AL,01,01410,Eufaula City School District,Barbour County,005
 AL,01,01440,Fairfield City School District,Jefferson County,073
@@ -2335,27 +2335,27 @@ FL,12,00030,Alachua County School District,Alachua County,001
 FL,12,00060,Baker County School District,Baker County,003
 FL,12,00090,Bay County School District,Bay County,005
 FL,12,00120,Bradford County School District,Bradford County,007
-FL,12,00150,Brevard County School District,Brevard County,009
+FL,12,00150,Brevard Public Schools,Brevard County,009
 FL,12,00180,Broward County Public Schools,Broward County,011
 FL,12,00210,Calhoun County School District,Calhoun County,013
 FL,12,00210,Calhoun County School District,Calhoun County,013
 FL,12,00240,Charlotte County School District,Charlotte County,015
 FL,12,00270,Citrus County School District,Citrus County,017
 FL,12,00300,Clay County School District,Clay County,019
-FL,12,00330,Collier County School District,Collier County,021
+FL,12,00330,collier county public schools,Collier County,021
 FL,12,00360,Columbia County School District,Columbia County,023
-FL,12,00390,Dade County School District,Miami-Dade County,086
+FL,12,00390,Miami-Dade Public Schools,Miami-Dade County,086
 FL,12,00420,DeSoto County School District,DeSoto County,027
 FL,12,00450,Dixie County School District,Dixie County,029
-FL,12,00480,Duval County School District,Duval County,031
+FL,12,00480,Duval County Public Schools,Duval County,031
 FL,12,00510,Escambia County School District,Escambia County,033
-FL,12,00540,Flagler County School District,Flagler County,035
+FL,12,00540,flagler schools,Flagler County,035
 FL,12,00570,Franklin County School District,Franklin County,037
 FL,12,00600,Gadsden County School District,Gadsden County,039
 FL,12,00630,Gilchrist County School District,Gilchrist County,041
 FL,12,00660,Glades County School District,Glades County,043
 FL,12,00690,Gulf County School District,Gulf County,045
-FL,12,00720,Hamilton County School District,Hamilton County,047
+FL,12,00720,School District of Hamilton County,Hamilton County,047
 FL,12,00750,Hardee County School District,Hardee County,049
 FL,12,00780,Hendry County School District,Hendry County,051
 FL,12,00810,Hernando County School District,Hernando County,053
@@ -2372,30 +2372,30 @@ FL,12,01110,Leon County School District,Leon County,073
 FL,12,01140,Levy County School District,Levy County,075
 FL,12,01170,Liberty County School District,Liberty County,077
 FL,12,01200,Madison County School District,Madison County,079
-FL,12,01230,Manatee County School District,Manatee County,081
-FL,12,01260,Marion County School District,Marion County,083
+FL,12,01230,School District of Manatee County,Manatee County,081
+FL,12,01260,Marion County Public Schools,Marion County,083
 FL,12,01290,Martin County School District,Martin County,085
 FL,12,01320,Monroe County School District,Monroe County,087
 FL,12,01350,Nassau County School District,Nassau County,089
-FL,12,01380,Okaloosa County School District,Okaloosa County,091
+FL,12,01380,Okaloosa County Schools District,Okaloosa County,091
 FL,12,01410,Okeechobee County School District,Okeechobee County,093
 FL,12,01440,Orange County School District,Orange County,095
-FL,12,01470,Osceola County School District,Osceola County,097
+FL,12,01470,School District of Osceola County,Osceola County,097
 FL,12,01500,Palm Beach County School District,Palm Beach County,099
 FL,12,01530,Pasco County School District,Pasco County,101
 FL,12,01560,Pinellas County School District,Pinellas County,103
 FL,12,01590,Polk County School District,Polk County,105
 FL,12,01620,Putnam County School District,Putnam County,107
-FL,12,01650,Santa Rosa County School District,Santa Rosa County,113
-FL,12,01680,Sarasota County School District,Sarasota County,115
-FL,12,01710,Seminole County School District,Seminole County,117
+FL,12,01650,Santa Rosa County District Schools,Santa Rosa County,113
+FL,12,01680,Sarasota County Schools,Sarasota County,115
+FL,12,01710,Seminole County Public Schools,Seminole County,117
 FL,12,01740,St. Johns County School District,St. Johns County,109
 FL,12,01770,St. Lucie County School District,St. Lucie County,111
 FL,12,01800,Sumter County School District,Sumter County,119
 FL,12,01830,Suwannee County School District,Suwannee County,121
 FL,12,01860,Taylor County School District,Taylor County,123
 FL,12,01890,Union County School District,Union County,125
-FL,12,01920,Volusia County School District,Volusia County,127
+FL,12,01920,Volusia County Schools,Volusia County,127
 FL,12,01950,Wakulla County School District,Wakulla County,129
 FL,12,01980,Walton County School District,Walton County,131
 FL,12,02010,Washington County School District,Washington County,133
@@ -3125,8 +3125,8 @@ IL,17,12990,East Alton-Wood River Community High School District 14,Madison Coun
 IL,17,01411,East Coloma-Nelson Consolidated Elementary School District 20,Lee County,103
 IL,17,01411,East Coloma-Nelson Consolidated Elementary School District 20,Whiteside County,195
 IL,17,13050,East Dubuque Community Unit School District 119,Jo Daviess County,085
-IL,17,13140,East Maine School District 63,Cook County,031
-IL,17,13170,East Moline School District 37,Rock Island County,161
+IL,17,13140,maine school administrative district #52,Cook County,031
+IL,17,13170,maine school administrative district #37,Rock Island County,161
 IL,17,13230,East Peoria Community High School District 309,Tazewell County,179
 IL,17,13240,East Peoria School District 86,Tazewell County,179
 IL,17,13260,East Prairie School District 73,Cook County,031
@@ -8861,7 +8861,7 @@ MO,29,23640,Meadow Heights R-II School District,Cape Girardeau County,031
 MO,29,20640,Meadville R-IV School District,Grundy County,079
 MO,29,20640,Meadville R-IV School District,Linn County,115
 MO,29,20640,Meadville R-IV School District,Livingston County,117
-MO,29,20670,Mehlville R-IX School District,St. Louis County,189
+MO,29,20670,Mehlville School District,St. Louis County,189
 MO,29,23460,Meramec Valley R-III School District,Franklin County,071
 MO,29,23460,Meramec Valley R-III School District,Jefferson County,099
 MO,29,23460,Meramec Valley R-III School District,St. Louis County,189
@@ -8929,9 +8929,9 @@ MO,29,22470,Newtown-Harris R-III School District,Mercer County,129
 MO,29,22470,Newtown-Harris R-III School District,Putnam County,171
 MO,29,22470,Newtown-Harris R-III School District,Sullivan County,211
 MO,29,22500,Niangua R-V School District,Webster County,225
-MO,29,22530,Nixa School District,Christian County,043
-MO,29,22530,Nixa School District,Greene County,077
-MO,29,22530,Nixa School District,Stone County,209
+MO,29,22530,Nixa Public Schools,Christian County,043
+MO,29,22530,Nixa Public Schools,Greene County,077
+MO,29,22530,Nixa Public Schools,Stone County,209
 MO,29,22560,Nodaway-Holt R-VII School District,Andrew County,003
 MO,29,22560,Nodaway-Holt R-VII School District,Holt County,087
 MO,29,22560,Nodaway-Holt R-VII School District,Nodaway County,147
@@ -8945,8 +8945,8 @@ MO,29,22740,North Callaway County R-I School District,Callaway County,027
 MO,29,15630,North Daviess R-III School District,Daviess County,061
 MO,29,15630,North Daviess R-III School District,Harrison County,081
 MO,29,22770,North Harrison R-III School District,Harrison County,081
-MO,29,22800,North Kansas City 74 School District,Clay County,047
-MO,29,22800,North Kansas City 74 School District,Platte County,165
+MO,29,22800,North Kansas City Schools,Clay County,047
+MO,29,22800,North Kansas City Schools,Platte County,165
 MO,29,20750,North Mercer County R-III School District,Mercer County,129
 MO,29,21690,North Nodaway County R-VI School District,Nodaway County,147
 MO,29,23760,North Pemiscot County R-I School District,Pemiscot County,155
@@ -9078,8 +9078,8 @@ MO,29,26610,Risco R-II School District,New Madrid County,143
 MO,29,26640,Ritenour School District,St. Louis County,189
 MO,29,26670,Riverview Gardens School District,St. Louis County,189
 MO,29,26790,Rock Port R-II School District,Atchison County,005
-MO,29,26850,Rockwood R-VI School District,Jefferson County,099
-MO,29,26850,Rockwood R-VI School District,St. Louis County,189
+MO,29,26850,Rockwood School District,Jefferson County,099
+MO,29,26850,Rockwood School District,St. Louis County,189
 MO,29,26890,Rolla 31 School District,Dent County,065
 MO,29,26890,Rolla 31 School District,Maries County,125
 MO,29,26890,Rolla 31 School District,Phelps County,161
@@ -15872,7 +15872,7 @@ TN,47,00690,Cleveland City School District,Bradley County,011
 TN,47,00720,Clinton City School District,Anderson County,001
 TN,47,00750,Cocke County School District,Cocke County,029
 TN,47,00780,Coffee County School District,Coffee County,031
-TN,47,00149,Collierville School District,Shelby County,157
+TN,47,00149,collierville schools,Shelby County,157
 TN,47,00850,Crockett County School District,Crockett County,033
 TN,47,00900,Cumberland County School District,Cumberland County,035
 TN,47,00930,Dayton City Elementary School District,Rhea County,143
@@ -18970,10 +18970,10 @@ WY,56,01980,Laramie County School District 1,Laramie County,021
 WY,56,04120,Laramie County School District 2,Laramie County,021
 WY,56,04030,Lincoln County School District 1,Lincoln County,023
 WY,56,04060,Lincoln County School District 2,Lincoln County,023
-WY,56,04510,Natrona County School District 1,Natrona County,025
+WY,56,04510,Natrona County Schools,Natrona County,025
 WY,56,04230,Niobrara County School District 1,Goshen County,015
 WY,56,04230,Niobrara County School District 1,Niobrara County,027
-WY,56,05160,Park County School District 1,Park County,029
+WY,56,05160,Park County School District #1,Park County,029
 WY,56,04380,Park County School District 16,Park County,029
 WY,56,02070,Park County School District 6,Park County,029
 WY,56,05090,Platte County School District 1,Goshen County,015
