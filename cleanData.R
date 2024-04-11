@@ -2,6 +2,8 @@ library(dplyr)
 library(tidyverse)
 library(purrr)
 
+# Notes on cleaning: some of the book ban dates were only specified as "Fall" or "Spring"
+
 library_survey <- library_survey %>%
   mutate(County_Merge = paste(tolower(CNTY), "county", sep = " "))
 pen_index_2023 <- read.csv("./data/pen-index-2023.csv") %>% 
@@ -14,7 +16,7 @@ school_districts <- read.csv("./data/sdlist-23.csv") %>%
   select(County_Merge, County.FIPS, school_district)
 county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
   mutate(county_state = paste(tolower(trimws(COUNTY)), trimws(STATE), sep = ", ")) %>%
-  mutate(merger = ifelse(DMAINDEX == 35, "GREENVILLE-SPARTA-ASHEVILLE", 
+  mutate(merger = ifelse(DMAINDEX == 143, "ERIE", ifelse(DMAINDEX == 35, "GREENVILLE-SPARTA-ASHEVILLE", 
                          ifelse(DMAINDEX == 178, "HARRISONBURG", 
                                 ifelse(DMAINDEX == 189, "LAFAYETTE, IN", 
                                        ifelse(DMAINDEX == 37, "SAN ANTONIO", 
@@ -28,10 +30,10 @@ county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
                                                                                                ifelse(DMAINDEX == 561, "JACKSONVILLE", 
                                                                                                       ifelse(DMAINDEX == 639, "JACKSON, TN", 
                                                                                                              ifelse(DMAINDEX == 582, "LAFAYETTE, IN", 
-                                                                                                                    ifelse(DMAINDEX == 627, "WICHITA FALLS & LAWTON", substr(DMA, 1, 6)))))))))))))))))
+                                                                                                                    ifelse(DMAINDEX == 627, "WICHITA FALLS & LAWTON", substr(DMA, 1, 6))))))))))))))))))
          
 dma_codes <- read.csv("./data/dma-codes.csv") %>%
-  mutate(merger = ifelse(area %in% c("GREENVILLE-SPARTA-ASHEVILLE", "HARRISONBURG", "LAFAYETTE, IN", "SAN ANTONIO", "ROCHESTER, NY", "COLUMBUS, GA-OPELIKA, AL", "COLUMBUS-TUPELO-WEST POINT", "COLUMBIA-JEFFERSON CITY", "COLUMBIA, SC", "COLUMBUS, OH", "CHARLESTON, SC", "JACKSONVILLE", "JACKSON, TN", "WICHITA FALLS & LAWTON"), area, substr(area, 1, 6)))
+  mutate(merger = ifelse(area %in% c("ERIE", "GREENVILLE-SPARTA-ASHEVILLE", "HARRISONBURG", "LAFAYETTE, IN", "SAN ANTONIO", "ROCHESTER, NY", "COLUMBUS, GA-OPELIKA, AL", "COLUMBUS-TUPELO-WEST POINT", "COLUMBIA-JEFFERSON CITY", "COLUMBIA, SC", "COLUMBUS, OH", "CHARLESTON, SC", "JACKSONVILLE", "JACKSON, TN", "WICHITA FALLS & LAWTON"), area, substr(area, 1, 6)))
 
 # Goals:
 # 1. Remove unnecessary rows
@@ -85,6 +87,11 @@ google_trends_analysis <- clean_pen_index %>%
   group_by(Month, Year, Trends_DMA) %>%
   summarize(count = n()) %>%
   distinct()
+
+# Remove anything with NA and less than 30 bans
+google_trends_analysis <- google_trends_analysis[!(grepl("NA", google_trends_analysis$Trends_DMA, fixed = TRUE) | google_trends_analysis$count < 30), ]
+
+write.csv(clean_pen_index, "clean_pen_index.csv")
 
 
 # Only run if you want to create pen index merged with local libraries

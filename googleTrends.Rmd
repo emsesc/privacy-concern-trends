@@ -1,3 +1,10 @@
+Analyzing before and after trend data
+```{r}
+google_trends_analysis
+
+test1 <- gtrends("library near me", geo = c(google_trends_analysis[1, ]$Trends_DMA), time = paste(paste(sprintf("%s-%02s-01", google_trends_analysis[1, ]$Year, google_trends_analysis[1, ]$Month)), paste(
+  sprintf("%s-%02d-28", google_trends_analysis[1, ]$Year, as.numeric(google_trends_analysis[1, ]$Month) + 1))))
+```
 
 Gathering Data
 ```{r}
@@ -14,7 +21,7 @@ res <- gtrends("library near me", geo = c("US-FL"), time = "2021-12-01 2024-01-0
 plot(res)
 
 # by DMA
-res <- gtrends("library near me", geo = c("US-IL-609"), time = "today 12-m")
+res <- gtrends("library near me", geo = c("US-FL-718"), time = "today 12-m")
 plot(res)
 ```
 

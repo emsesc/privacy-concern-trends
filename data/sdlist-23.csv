@@ -2352,21 +2352,21 @@ FL,12,00510,Escambia County School District,Escambia County,033
 FL,12,00540,flagler schools,Flagler County,035
 FL,12,00570,Franklin County School District,Franklin County,037
 FL,12,00600,Gadsden County School District,Gadsden County,039
-FL,12,00630,Gilchrist County School District,Gilchrist County,041
+FL,12,00630,gilchrist county schools,Gilchrist County,041
 FL,12,00660,Glades County School District,Glades County,043
 FL,12,00690,Gulf County School District,Gulf County,045
 FL,12,00720,School District of Hamilton County,Hamilton County,047
 FL,12,00750,Hardee County School District,Hardee County,049
 FL,12,00780,Hendry County School District,Hendry County,051
-FL,12,00810,Hernando County School District,Hernando County,053
-FL,12,00840,Highlands County School District,Highlands County,055
+FL,12,00810,hernando county schools,Hernando County,053
+FL,12,00840,highlands schools,Highlands County,055
 FL,12,00870,Hillsborough County School District,Hillsborough County,057
 FL,12,00900,Holmes County School District,Holmes County,059
 FL,12,00930,Indian River County School District,Indian River County,061
 FL,12,00960,Jackson County School District,Jackson County,063
 FL,12,00990,Jefferson County School District,Jefferson County,065
 FL,12,01020,Lafayette County School District,Lafayette County,067
-FL,12,01050,Lake County School District,Lake County,069
+FL,12,01050,lake county schools,Lake County,069
 FL,12,01080,Lee County School District,Lee County,071
 FL,12,01110,Leon County School District,Leon County,073
 FL,12,01140,Levy County School District,Levy County,075
@@ -2381,7 +2381,7 @@ FL,12,01380,Okaloosa County Schools District,Okaloosa County,091
 FL,12,01410,Okeechobee County School District,Okeechobee County,093
 FL,12,01440,Orange County School District,Orange County,095
 FL,12,01470,School District of Osceola County,Osceola County,097
-FL,12,01500,Palm Beach County School District,Palm Beach County,099
+FL,12,01500,the school district of palm beach county,Palm Beach County,099
 FL,12,01530,Pasco County School District,Pasco County,101
 FL,12,01560,Pinellas County School District,Pinellas County,103
 FL,12,01590,Polk County School District,Polk County,105
@@ -2390,7 +2390,7 @@ FL,12,01650,Santa Rosa County District Schools,Santa Rosa County,113
 FL,12,01680,Sarasota County Schools,Sarasota County,115
 FL,12,01710,Seminole County Public Schools,Seminole County,117
 FL,12,01740,St. Johns County School District,St. Johns County,109
-FL,12,01770,St. Lucie County School District,St. Lucie County,111
+FL,12,01770,st. lucie public schools,St. Lucie County,111
 FL,12,01800,Sumter County School District,Sumter County,119
 FL,12,01830,Suwannee County School District,Suwannee County,121
 FL,12,01860,Taylor County School District,Taylor County,123
@@ -2700,8 +2700,7 @@ ID,16,01680,Kendrick Joint School District 283,Nez Perce County,069
 ID,16,01710,Kimberly School District 414,Twin Falls County,083
 ID,16,01740,Kootenai Joint School District 274,Benewah County,009
 ID,16,01740,Kootenai Joint School District 274,Kootenai County,055
-ID,16,01770,Kuna Joint School District 3,Ada County,001
-ID,16,01770,Kuna Joint School District 3,Canyon County,027
+ID,16,01770,kuna school district,Ada County,001
 ID,16,00002,Lake Pend Oreille School District 84,Bonner County,017
 ID,16,01800,Lakeland Joint School District 272,Bonner County,017
 ID,16,01800,Lakeland Joint School District 272,Kootenai County,055
@@ -2734,7 +2733,7 @@ ID,16,00139,Mountain View School District 244,Idaho County,049
 ID,16,02280,Mullan School District 392,Shoshone County,079
 ID,16,02310,Murtaugh Joint School District 418,Cassia County,031
 ID,16,02310,Murtaugh Joint School District 418,Twin Falls County,083
-ID,16,02340,Nampa School District 131,Canyon County,027
+ID,16,02340,Nampa School District,Canyon County,027
 ID,16,02370,New Plymouth School District 372,Payette County,075
 ID,16,02400,Nezperce Joint School District 302,Clearwater County,035
 ID,16,02400,Nezperce Joint School District 302,Idaho County,049
@@ -5395,8 +5394,7 @@ KS,20,06270,Fredonia Unified School District 484,Woodson County,207
 KS,20,06300,Frontenac Public Schools Unified School District 249,Crawford County,037
 KS,20,06360,Galena Unified School District 499,Cherokee County,021
 KS,20,06390,Garden City Unified School District 457,Finney County,055
-KS,20,06420,Gardner Edgerton Unified School District 231,Johnson County,091
-KS,20,06420,Gardner Edgerton Unified School District 231,Miami County,121
+KS,20,06420,gardner edgerton school district 231,Johnson County,091
 KS,20,06450,Garnett Unified School District 365,Anderson County,003
 KS,20,06450,Garnett Unified School District 365,Coffey County,031
 KS,20,06450,Garnett Unified School District 365,Franklin County,059
@@ -5406,7 +5404,7 @@ KS,20,07890,Geary County Schools Unified School District 475,Riley County,161
 KS,20,06480,Girard Unified School District 248,Bourbon County,011
 KS,20,06480,Girard Unified School District 248,Crawford County,037
 KS,20,06480,Girard Unified School District 248,Neosho County,133
-KS,20,06540,Goddard Unified School District 265,Sedgwick County,173
+KS,20,06540,Goddard Public Schools,Sedgwick County,173
 KS,20,06570,Goessel Unified School District 411,Harvey County,079
 KS,20,06570,Goessel Unified School District 411,McPherson County,113
 KS,20,06570,Goessel Unified School District 411,Marion County,115
@@ -8761,7 +8759,7 @@ MO,29,16660,Kingsville R-I School District,Cass County,037
 MO,29,16660,Kingsville R-I School District,Johnson County,101
 MO,29,16710,Kirbyville R-VI School District,Taney County,213
 MO,29,16740,Kirksville R-III School District,Adair County,001
-MO,29,16770,Kirkwood R-VII School District,St. Louis County,189
+MO,29,16770,kirkwood school district,St. Louis County,189
 MO,29,16830,Knob Noster R-VIII School District,Johnson County,101
 MO,29,16830,Knob Noster R-VIII School District,Pettis County,159
 MO,29,11280,Knox County R-I School District,Knox County,103
@@ -8809,7 +8807,7 @@ MO,29,18540,Liberty 53 School District,Clay County,047
 MO,29,18600,Licking R-VIII School District,Phelps County,161
 MO,29,18600,Licking R-VIII School District,Texas County,215
 MO,29,18670,Lincoln R-II School District,Benton County,015
-MO,29,18690,Lindbergh School District,St. Louis County,189
+MO,29,18690,lindbergh schools,St. Louis County,189
 MO,29,06000,Linn County R-I School District,Linn County,115
 MO,29,06000,Linn County R-I School District,Sullivan County,211
 MO,29,08790,Livingston County R-III School District,Livingston County,117
@@ -12719,8 +12717,8 @@ ND,38,19290,Washburn Public School District 4,Oliver County,065
 ND,38,19410,West Fargo Public School District 6,Cass County,017
 ND,38,19470,West Hope Public School District 17,Bottineau County,009
 ND,38,19680,White Shield Public School District 85,McLean County,055
-ND,38,00405,Williston Basin School District 7,McKenzie County,053
-ND,38,00405,Williston Basin School District 7,Williams County,105
+ND,38,00405,williston basin school district #7,McKenzie County,053
+ND,38,00405,williston basin school district #7,Williams County,105
 ND,38,13200,Wilton Public School District 1,Burleigh County,015
 ND,38,13200,Wilton Public School District 1,McLean County,055
 ND,38,20130,Wing Public School District 28,Burleigh County,015
@@ -14557,7 +14555,7 @@ OR,41,01740,Burnt River School District 30J,Baker County,001
 OR,41,01740,Burnt River School District 30J,Malheur County,045
 OR,41,02580,Butte Falls School District 91,Jackson County,029
 OR,41,02610,Camas Valley School District 21J,Douglas County,019
-OR,41,02640,Canby School District 86,Clackamas County,005
+OR,41,02640,Canby Public School District,Clackamas County,005
 OR,41,02780,Cascade School District 5,Marion County,047
 OR,41,02800,Centennial School District 28J,Clackamas County,005
 OR,41,02800,Centennial School District 28J,Multnomah County,051
@@ -15465,7 +15463,7 @@ SC,45,02370,Greenwood School District 51,Greenwood County,047
 SC,45,02370,Greenwood School District 51,Laurens County,059
 SC,45,02400,Greenwood School District 52,Greenwood County,047
 SC,45,03912,Hampton County School District,Hampton County,049
-SC,45,02490,Horry County School District,Horry County,051
+SC,45,02490,Horry County Schools,Horry County,051
 SC,45,02520,Jasper County School District,Jasper County,053
 SC,45,02550,Kershaw County School District,Kershaw County,055
 SC,45,02580,Lancaster County School District,Lancaster County,057
@@ -15485,7 +15483,7 @@ SC,45,03000,McCormick County School District,McCormick County,065
 SC,45,03030,Newberry County School District,Newberry County,071
 SC,45,03060,Oconee County School District,Oconee County,073
 SC,45,03910,Orangeburg County School District,Orangeburg County,075
-SC,45,03330,Pickens County School District,Pickens County,077
+SC,45,03330,school district of pickens county,Pickens County,077
 SC,45,03360,Richland School District 1,Richland County,079
 SC,45,03390,Richland School District 2,Richland County,079
 SC,45,03460,Saluda County School District,Saluda County,081
@@ -15897,7 +15895,7 @@ TN,47,01470,Greene County School District,Greene County,059
 TN,47,01500,Greeneville City School District,Greene County,059
 TN,47,01530,Grundy County School District,Grundy County,061
 TN,47,00001,Hamblen County School District,Hamblen County,063
-TN,47,01590,Hamilton County School District,Hamilton County,065
+TN,47,01590,Hamilton County Schools,Hamilton County,065
 TN,47,01620,Hancock County School District,Hancock County,067
 TN,47,01650,Hardeman County School District,Hardeman County,069
 TN,47,01680,Hardin County School District,Hardin County,071
@@ -18496,7 +18494,6 @@ WI,55,06690,Hudson School District,St. Croix County,109
 WI,55,06750,Hurley School District,Iron County,051
 WI,55,06780,Hustisford School District,Dodge County,027
 WI,55,06810,Independence School District,Buffalo County,011
-WI,55,06810,Independence School District,Trempealeau County,121
 WI,55,06840,Iola-Scandinavia School District,Portage County,097
 WI,55,06840,Iola-Scandinavia School District,Waupaca County,135
 WI,55,06870,Iowa-Grant School District,Grant County,043
