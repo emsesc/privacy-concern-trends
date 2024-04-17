@@ -97,4 +97,6 @@ write.csv(clean_pen_index, "clean_pen_index.csv")
 # Only run if you want to create pen index merged with local libraries
 pen_index_libraries <- clean_pen_index %>%
   left_join(library_survey, by = "County_Merge", relationship = "many-to-many")
+
+pen_index_libraries <- pen_index_libraries[pen_index_libraries$Trends_DMA %in% google_trends_analysis$Trends_DMA, ]
   

@@ -1,0 +1,11 @@
+Attempt 1
+```{r}
+library(sf)
+library(ggplot2)
+
+dma_boundary <- st_read("./data/dma_boundary.shp")
+
+ggplot() +
+  geom_sf(data = dma_boundary, fill = "white") +
+  theme_minimal()
+```
