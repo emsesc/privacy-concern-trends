@@ -1,9 +1,105 @@
 Analyzing before and after trend data
+
+- summarize the before and after months for analysis
+- add census DMAs data
+
+res <- gtrends("library near me", geo = c("US-FL-718"), time = "2021-12-01 2024-01-01")
+this worked... but not a span of 2 months
+
 ```{r}
 google_trends_analysis
 
 test1 <- gtrends("library near me", geo = c(google_trends_analysis[1, ]$Trends_DMA), time = paste(paste(sprintf("%s-%02s-01", google_trends_analysis[1, ]$Year, google_trends_analysis[1, ]$Month)), paste(
   sprintf("%s-%02d-28", google_trends_analysis[1, ]$Year, as.numeric(google_trends_analysis[1, ]$Month) + 1))))
+```
+
+Second attempt
+```{r}
+library(gtrendsR)
+
+google_trends_analysis
+
+test1 <- gtrends("library near me", geo = "US-FL-548", time = "2021-10-01 2024-01-01")
+test2 <- gtrends("library near me", geo = "US-TX-618", time = "2021-10-01 2024-01-01")
+```
+
+Loops
+```{r}
+library(gtrendsR)
+
+# results_list <- list()
+
+# Iterate over each row in google_trends_analysis
+for (i in 1:3) {
+  # Extract the DMA value from the ith row
+  dma <- google_trends_analysis[i, ]$Trends_DMA
+  
+  # Fetch the data using gtrends
+  trend_data <- gtrends("library near me", geo = c(dma), time = "2021-12-01 2024-01-01")
+  
+  # Store the interest over time data in the results list
+  results_list[[i]] <- trend_data$interest_over_time
+}
+
+# combined_df <- do.call(rbind, results_list)
+```
+
+Attempt 2
+```{r}
+combined_df <- combined_df %>% 
+  select(date, hits, keyword, geo)
+  
+library(dplyr)
+
+# Convert date column to proper date format in combined_df
+combined_df$date <- as.Date(combined_df$date)
+
+# Extract month and year from the date column
+combined_df <- combined_df %>%
+  mutate(trends_month = as.numeric(format(date, "%m")),
+         trends_year = as.numeric(format(date, "%Y")))
+
+# Left join combined_df with google_trends_analysis based on the "geo" column
+joined_df <- left_join(combined_df, google_trends_analysis, by = c("geo" = "Trends_DMA"))
+
+# Calculate average hits for the month before and after
+hit_change <- joined_df %>%
+  mutate(
+    prev_month = ifelse(Month == 1, 12, as.numeric(Month) - 1),
+    prev_year = ifelse(Month == 1, as.numeric(Year) - 1, as.numeric(Year)),
+    next_month = ifelse(Month == 12, 1, as.numeric(Month) + 1),
+    next_year = ifelse(Month == 12, as.numeric(Year) + 1, as.numeric(Year)),
+    avg_hits_prev_month = ifelse(trends_month == prev_month & trends_year == prev_year, 1, 0),
+    avg_hits_next_month = ifelse(trends_month == next_month & trends_year == next_year, 1, 0)
+  ) %>%
+ select(geo, hits, Year, Month, avg_hits_prev_month, avg_hits_next_month)
+
+# fix grouping to unique month, year, and DMA commbination
+# partisan search terms (ex: lgbtq book vs. sexually explicit book depending on political views), banned books week)
+
+# Print hit_change dataframe
+print(hit_change)
+# full_join(google_trends_analysis, by = c("geo" = "Trends_DMA"))
+
+avg_hits_prev_month_1_avg <- hit_change %>%
+  filter(avg_hits_prev_month == 1) %>%
+  group_by(geo, Month, Year) %>%
+  summarise(avg_hits = mean(hits))
+
+avg_hits_next_month_1_avg <- hit_change %>%
+  filter(avg_hits_next_month == 1) %>%
+  group_by(geo, Month, Year) %>%
+  summarise(avg_hits = mean(hits))
+
+hits_combined_df <- full_join(avg_hits_prev_month_1_avg, avg_hits_next_month_1_avg, by = c("geo", "Month", "Year"), suffix = c("_prev_month", "_next_month"))
+```
+
+* Plot histogram of outcome
+* Negative binomial model (for skewed data)
+
+```{r}
+hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month)
+# neg bin
 ```
 
 Gathering Data

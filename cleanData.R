@@ -83,8 +83,8 @@ clean_pen_index <- clean_pen_index %>%
   mutate(Trends_DMA = paste0("US-", str_trim(STATE), "-", code))
 
 google_trends_analysis <- clean_pen_index %>%
-  select(Month, Year, Trends_DMA) %>%
-  group_by(Month, Year, Trends_DMA) %>%
+  select(Month, Year, Trends_DMA, DMA, STATE) %>%
+  group_by(Month, Year, Trends_DMA, DMA, STATE) %>%
   summarize(count = n()) %>%
   distinct()
 
