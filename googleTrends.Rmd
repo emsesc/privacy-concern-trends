@@ -72,7 +72,7 @@ hit_change <- joined_df %>%
     avg_hits_prev_month = ifelse(trends_month == prev_month & trends_year == prev_year, 1, 0),
     avg_hits_next_month = ifelse(trends_month == next_month & trends_year == next_year, 1, 0)
   ) %>%
- select(geo, hits, Year, Month, avg_hits_prev_month, avg_hits_next_month)
+ select(geo, hits, Year, Month, DMA, STATE, count, avg_hits_prev_month, avg_hits_next_month)
 
 # fix grouping to unique month, year, and DMA commbination
 # partisan search terms (ex: lgbtq book vs. sexually explicit book depending on political views), banned books week)
@@ -83,15 +83,15 @@ print(hit_change)
 
 avg_hits_prev_month_1_avg <- hit_change %>%
   filter(avg_hits_prev_month == 1) %>%
-  group_by(geo, Month, Year) %>%
+  group_by(geo, Month, Year, DMA, STATE, count) %>%
   summarise(avg_hits = mean(hits))
 
 avg_hits_next_month_1_avg <- hit_change %>%
   filter(avg_hits_next_month == 1) %>%
-  group_by(geo, Month, Year) %>%
+  group_by(geo, Month, Year, DMA, STATE, count) %>%
   summarise(avg_hits = mean(hits))
 
-hits_combined_df <- full_join(avg_hits_prev_month_1_avg, avg_hits_next_month_1_avg, by = c("geo", "Month", "Year"), suffix = c("_prev_month", "_next_month"))
+hits_combined_df <- full_join(avg_hits_prev_month_1_avg, avg_hits_next_month_1_avg, by = c("geo", "Month", "Year", "DMA", "STATE", "count"), suffix = c("_prev_month", "_next_month"))
 ```
 
 * Plot histogram of outcome
