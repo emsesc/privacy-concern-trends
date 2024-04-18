@@ -9,3 +9,40 @@ ggplot() +
   geom_sf(data = dma_boundary, fill = "white") +
   theme_minimal()
 ```
+
+fill it in
+```{r}
+library(sf)
+library(ggplot2)
+
+# Read the shapefile
+dma_boundary <- st_read("./data/dma_boundary.geojson")
+state_boundary <- st_read("./data/us_states.geojson")
+
+# Read the Google Trends analysis data
+clean_pen_index <- read.csv("./outputs/clean_pen_index.csv")  # Adjust the file path and format accordingly
+
+map_dma <- clean_pen_index %>%
+  select(Month, Year, Trends_DMA, DMA, STATE) %>%
+  group_by(Trends_DMA, DMA, STATE) %>%
+  summarize(count = n()) %>%
+  distinct()
+
+# Extract the last three characters from Trends_DMA
+map_dma$dma_code <- as.numeric(substr(map_dma$Trends_DMA, nchar(map_dma$Trends_DMA) - 2, nchar(map_dma$Trends_DMA)))
+map_dma$STATE <- gsub(" ", "", map_dma$STATE)
+
+dma_boundary$STATE <- substr(dma_boundary$dma_1, nchar(dma_boundary$dma_1) - 1, nchar(dma_boundary$dma_1))
+
+# Merge the attribute data with the shapefile based on the extracted common column
+merged_data <- left_join(dma_boundary, map_dma, by = c("dma0" = "dma_code", "STATE"))
+
+# Plot the merged data
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = count), color = "white") +  
+  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
+  theme_void() +  # Removes background axes and grid lines
+  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
+  ggtitle("Book Bans by DMA from 2021-2023") +
+  scale_fill_gradientn(colors = c("red", "yellow", "blue"), na.value = "grey")
+```

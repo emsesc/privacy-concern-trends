@@ -30,13 +30,13 @@ library(gtrendsR)
 # results_list1 <- list()
 
 # Iterate over each row in google_trends_analysis
-for (i in c(20)) {
+for (i in 1:nrow(google_trends_analysis)) {
   # Extract the DMA value from the ith row
   dma <- google_trends_analysis[i, ]$Trends_DMA
   paste(dma)
   
   # Fetch the data using gtrends
-  trend_data <- gtrends("banned books", geo = c(dma), time = "2021-01-01 2024-01-01")
+  trend_data <- gtrends("banned books", geo = c(dma), time = "2021-12-01 2024-01-01")
   
   # Store the interest over time data in the results list
   results_list1[[i]] <- trend_data$interest_over_time

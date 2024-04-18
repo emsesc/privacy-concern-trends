@@ -4,7 +4,7 @@ library(purrr)
 
 # Notes on cleaning: some of the book ban dates were only specified as "Fall" or "Spring"
 
-library_survey <- library_survey %>%
+library_survey <- read.csv("./data/library-survey-2021.csv") %>%
   mutate(County_Merge = paste(tolower(CNTY), "county", sep = " "))
 pen_index_2023 <- read.csv("./data/pen-index-2023.csv") %>% 
   select(Title, State, District, Date.of.Challenge.Removal) 
