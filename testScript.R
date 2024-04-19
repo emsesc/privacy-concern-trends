@@ -22,7 +22,7 @@ merged <- full_join(pen_index_counties, library_survey, by = "County_Merge", rel
 
 
 # Drop the intermediate lowercase columns
-merged <- select(merged, -CNTY, -school_district, -Secondary.Author.s., -Illustrator.s., -Translator.s., -Series.Name)
+merged <- select(merged, -Title, -Author, -Date.of.Challenge.Removal, -CNTY, -school_district, -Secondary.Author.s., -Illustrator.s., -Translator.s., -Series.Name)
 
 ################################## mapping
 
@@ -31,17 +31,21 @@ library(leaflet)
 library(tidygeocoder)
 
 merged <- merged %>%
-  mutate(full_address = paste(ADDRESS, CITY, ZIP, sep = ", "))
+  distinct() %>%
+  mutate(full_address = paste(ADDRESS, CITY, ZIP, sep = ", ")) %>%
+  mutate(ban = ifelse(is.na(State), 0, 1))
 
-# Define a color palette for the districts
-district_colors <- rainbow(n_distinct(merged$District))
+num_records <- nrow(merged)
+base_radius <- 5  # Adjust as needed
+radius <- sqrt(base_radius / (num_records))
 
 # Plotting
 leaflet(merged) %>%
   addTiles() %>%
   addCircleMarkers(
     ~LONGITUD, ~LATITUDE,
-    color = district_colors[as.factor(merged$District)],
-    radius = sqrt(merged$TOTSTAFF[!is.na(merged$TOTSTAFF)]) * 0.1,  # Size scaled by TOTSTAFF, ignoring NaN values
+    color = ifelse(merged$ban == 1, "red", "green"),  # Color based on the value of 'ban'
+    radius = 0.01,
+    # radius = sqrt(merged$TOTSTAFF[!is.na(merged$TOTSTAFF)]) * 0.1,  # Size scaled by TOTSTAFF, ignoring NaN values
     popup = ~paste(ADDRESS, "<br>", CITY, ", ", ZIP, sep = "")
   )
