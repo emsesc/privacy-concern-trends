@@ -44,5 +44,28 @@ ggplot() +
   theme_void() +  # Removes background axes and grid lines
   theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
   ggtitle("Book Bans by DMA from 2021-2023") +
-  scale_fill_gradientn(colors = c("red", "yellow", "blue"), na.value = "grey")
+  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey")
+```
+
+```{r}
+library(sf)
+library(ggplot2)
+
+# Read the shapefile
+dma_boundary <- st_read("./data/dma_boundary.geojson")
+
+# Read the Google Trends analysis data
+library_index <- read.csv("outputs/library_index.csv")
+
+# Merge the attribute data with the shapefile based on the extracted common column
+merged_data <- left_join(dma_boundary, library_index, by = c("dma0" = "code"))
+
+# Plot the merged data
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = std_avg_index), color = "white") +  
+  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
+  theme_void() +  # Removes background axes and grid lines
+  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
+  ggtitle("Library Usage Index by DMA in 2021") +
+  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey")
 ```

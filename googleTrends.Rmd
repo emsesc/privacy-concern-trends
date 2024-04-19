@@ -30,7 +30,7 @@ library(gtrendsR)
 # results_list1 <- list()
 
 # Iterate over each row in google_trends_analysis
-for (i in 1:nrow(google_trends_analysis)) {
+for (i in 9:nrow(google_trends_analysis)) {
   # Extract the DMA value from the ith row
   dma <- google_trends_analysis[i, ]$Trends_DMA
   paste(dma)
@@ -120,8 +120,24 @@ hits_combined_df <- full_join(avg_hits_prev_month_1_avg, avg_hits_next_month_1_a
 * Negative binomial model (for skewed data)
 
 ```{r}
+libraries_near_me <- read.csv("./outputs/libraries_near_me.csv")
+library <- read.csv("./outputs/library.csv")
+
+hits_combined_df <- full_join(libraries_near_me, library, by = c("X", "geo", "Month", "Year", "DMA", "STATE", "count")) %>%
+  mutate(avg_hits_next_month = rowMeans(select(., starts_with("avg_hits_next_month")), na.rm = TRUE),
+         avg_hits_prev_month = rowMeans(select(., starts_with("avg_hits_prev_month")), na.rm = TRUE))
+
 hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month)
 # neg bin
+
+# Fit OLS model
+ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ as.factor(STATE) + count, data = library)
+
+# Summarize the model
+summary(ols_model)
+
+plot(ols_model, which = 1)
+
 ```
 
 Gathering Data

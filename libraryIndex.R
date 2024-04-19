@@ -2,24 +2,16 @@
 
 # Step 1: Define Weights
 weights <- c(
-  POPU_LSA17 = 0.1,             # Population served
-  TOTCIR = 0.15,                # Total circulation
-  LIBRARIA = 0.1,               # Total librarians
-  VISITS = 0.1,                 # Number of library visits
-  REFERENC = 0.05,              # Number of reference transactions
-  LOANTO = 0.05,                # Inter-library loans out
-  PITUSR = 0.1,                 # Public internet computer uses per year
-  SQ_FEET = 0.1,                # Square footage
-  ELMATCIR = 0.1,               # Circulation of electronic materials
-  ELINFO = 0.05,                # Retrieval of electronic information
-  ELCONT = 0.1                  # Electronic content use
+  Circulation = 0.4,            # Weight for circulation-related variables
+  Technology_Use = 0.3,         # Weight for technology-related variables
+  Service = 0.3                 # Weight for service-related variables
 )
 
 # Step 2: Normalize Data
 library(dplyr)
+library(tidyverse)
 
-normalized_data <- library_data %>%
-  mutate_at(vars(-Grouping_Variables), scale)
+library_data <- read.csv("./data/library-survey-2021.csv")
 
 # Step 3: Aggregate Variables
 composite_scores <- library_data %>%
@@ -29,17 +21,20 @@ composite_scores <- library_data %>%
     Service = (VISITS + REFERENC + LOANTO) / 3
   )
 
-# Step 4: Calculate Sub-Indices
-sub_indices <- composite_scores %>%
-  select(Circulation, Technology_Use, Service) %>%
-  rowSums()
+# Step 4: Calculate Weighted Composite Scores for Each Library
+library_data$Library_Usage_Index <- rowSums(composite_scores[, c("Circulation", "Technology_Use", "Service")] * weights)
 
-# Step 5: Weighted Aggregation
-library_quality_index <- sum(weights * sub_indices)
+# Step 5: Output the Resulting Library Quality Index for Each Library
+library_data <- library_data %>% select(CNTY, Library_Usage_Index, STABR) %>%
+  mutate(county_state = paste(tolower(trimws(CNTY)), trimws(STABR), sep = ", "))
 
-# Step 6: Sensitivity Analysis - Not demonstrated in this example
+clean_pen_index_2 <- read.csv("./outputs/clean_pen_index.csv") %>%
+  select(code, county_state) %>%
+  distinct() %>%
+  left_join(library_data, by = "county_state") %>%
+  group_by(code) %>%
+  summarise(avg_index = mean(Library_Usage_Index)) %>%
+  ungroup() %>%
+  mutate(std_avg_index = scale(avg_index))
 
-# Step 7: Validation - Not demonstrated in this example
 
-# Step 8: Index Interpretation
-print(paste("Library Quality Index:", library_quality_index))
