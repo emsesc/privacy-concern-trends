@@ -68,4 +68,12 @@ ggplot() +
   theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
   ggtitle("Library Usage Index by DMA in 2021") +
   scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey")
+
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = num_lib), color = "white") +  
+  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
+  theme_void() +  # Removes background axes and grid lines
+  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
+  ggtitle("Number of Libraries by DMA in 2021") +
+  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey")
 ```

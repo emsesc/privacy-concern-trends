@@ -122,8 +122,11 @@ hits_combined_df <- full_join(avg_hits_prev_month_1_avg, avg_hits_next_month_1_a
 ```{r}
 libraries_near_me <- read.csv("./outputs/libraries_near_me.csv")
 library <- read.csv("./outputs/library.csv")
+library_index <- read.csv("./outputs/library_index.csv")
 
 hits_combined_df <- full_join(libraries_near_me, library, by = c("X", "geo", "Month", "Year", "DMA", "STATE", "count")) %>%
+  mutate(code = as.numeric(substr(geo, nchar(geo) - 2, nchar(geo)))) %>%
+  left_join(library_index, by = "code") %>%
   mutate(avg_hits_next_month = rowMeans(select(., starts_with("avg_hits_next_month")), na.rm = TRUE),
          avg_hits_prev_month = rowMeans(select(., starts_with("avg_hits_prev_month")), na.rm = TRUE))
 
@@ -131,7 +134,7 @@ hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month
 # neg bin
 
 # Fit OLS model
-ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ as.factor(STATE) + count, data = library)
+ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ as.factor(STATE) + count + std_avg_index + num_lib, data = hits_combined_df)
 
 # Summarize the model
 summary(ols_model)

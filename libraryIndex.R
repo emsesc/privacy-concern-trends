@@ -16,13 +16,13 @@ library_data <- read.csv("./data/library-survey-2021.csv")
 # Step 3: Aggregate Variables
 composite_scores <- library_data %>%
   mutate(
-    Circulation = (TOTCIR + ELMATCIR) / 2,
-    Technology_Use = (PITUSR + ELINFO + ELCONT) / 3,
-    Service = (VISITS + REFERENC + LOANTO) / 3
+    Circulation = rowMeans(select(., c("TOTCIR", "ELMATCIR")), na.rm = TRUE),
+    Technology_Use = rowMeans(select(., c("PITUSR", "ELINFO", "ELCONT")), na.rm = TRUE),
+    Service = rowMeans(select(., c("VISITS", "REFERENC", "LOANTO")), na.rm = TRUE)
   )
 
 # Step 4: Calculate Weighted Composite Scores for Each Library
-library_data$Library_Usage_Index <- rowSums(composite_scores[, c("Circulation", "Technology_Use", "Service")] * weights)
+library_data$Library_Usage_Index <- rowSums(composite_scores[, c("Circulation", "Technology_Use", "Service")] * weights, na.rm = TRUE)
 
 # Step 5: Output the Resulting Library Quality Index for Each Library
 library_data <- library_data %>% select(CNTY, Library_Usage_Index, STABR) %>%
@@ -33,7 +33,7 @@ clean_pen_index_2 <- read.csv("./outputs/clean_pen_index.csv") %>%
   distinct() %>%
   left_join(library_data, by = "county_state") %>%
   group_by(code) %>%
-  summarise(avg_index = mean(Library_Usage_Index)) %>%
+  summarise(avg_index = mean(Library_Usage_Index, na.rm = TRUE), num_lib = n()) %>%
   ungroup() %>%
   mutate(std_avg_index = scale(avg_index))
 
