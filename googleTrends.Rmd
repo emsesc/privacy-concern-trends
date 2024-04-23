@@ -28,9 +28,10 @@ Loops
 library(gtrendsR)
 
 # results_list1 <- list()
+# nrow(google_trends_analysis)
 
 # Iterate over each row in google_trends_analysis
-for (i in 9:nrow(google_trends_analysis)) {
+for (i in 1:4) {
   # Extract the DMA value from the ith row
   dma <- google_trends_analysis[i, ]$Trends_DMA
   paste(dma)
@@ -141,6 +142,12 @@ summary(ols_model)
 
 plot(ols_model, which = 1)
 
+ols_model <- lm(count ~ num_lib, data = hits_combined_df)
+
+# Summarize the model
+summary(ols_model)
+
+plot(ols_model, which = 1)
 ```
 
 Gathering Data
