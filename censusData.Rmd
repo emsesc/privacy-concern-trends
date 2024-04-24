@@ -15,6 +15,15 @@ county_population <- get_acs(geography = "county", variables = "B01003_001", geo
 county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
   mutate(GEOID = paste0(sprintf("%02d", as.numeric(STATEFP)), sprintf("%03d", as.numeric(CNTYFP))))
 
+joiner <- read.csv("./outputs/clean_pen_index.csv") %>%
+  select(DMAINDEX, code, Trends_DMA) %>%
+  distinct()
+
+dma_pop <- left_join(county_dma, county_population, by = "GEOID") %>%
+  group_by(DMAINDEX, DMA) %>%
+  summarise(tot_pop = sum(estimate)) %>%
+  left_join(joiner, by = "DMAINDEX")
+
 # Variable B01003_001 represents total population
 # You can add more variables if needed, for example:
 # variables = c("B01001_001", "B01001_002", "B01001_026")

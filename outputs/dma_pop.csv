@@ -1,0 +1,232 @@
+"","DMAINDEX","DMA","tot_pop","code","Trends_DMA"
+"1",1,"FAIRBANKS (AK)                                                       ",5355,501,"US-NY-501"
+"2",1,"FAIRBANKS (AK)                                                       ",5355,501,"US-PA-501"
+"3",1,"FAIRBANKS (AK)                                                       ",5355,501,"US-NJ-501"
+"4",1,"NEW YORK (NY)                                                        ",NA,501,"US-NY-501"
+"5",1,"NEW YORK (NY)                                                        ",NA,501,"US-PA-501"
+"6",1,"NEW YORK (NY)                                                        ",NA,501,"US-NJ-501"
+"7",2,"LOS ANGELES (CA)                                                     ",18582805,803,"US-CA-803"
+"8",3,"CHICAGO (IL)                                                         ",9727393,NA,NA
+"9",4,"PHILADELPHIA (PA)                                                    ",8335425,504,"US-PA-504"
+"10",5,"SAN FRANCISCO (CA) - OAKLAND (CA) - SAN JOSE (CA)                    ",7394062,NA,NA
+"11",6,"BOSTON (MA) - MANCHESTER (NH)                                        ",6798423,NA,NA
+"12",7,"DALLAS (TX) - FT. WORTH (TX)                                         ",8368978,623,"US-TX-623"
+"13",8,"WASHINGTON (DC) - HAGERSTOWN (MD)                                    ",6976688,511,"US-VA-511"
+"14",8,"WASHINGTON, DC(HAGRSTWN)                                             ",312516,511,"US-VA-511"
+"15",9,"ATLANTA (GA)                                                         ",7191314,524,"US-GA-524"
+"16",10,"DETROIT (MI)                                                         ",4941417,505,"US-MI-505"
+"17",11,"HOUSTON (TX)                                                         ",7496820,618,"US-TX-618"
+"18",12,"SEATTLE (WA) - TACOMA (WA)                                           ",5512286,819,"US-WA-819"
+"19",13,"TAMPA (FL) - ST. PETERSBURG (FL) - SARASOTA (FL)                     ",5058040,NA,"US-FL-NA"
+"20",14,"MINNEAPOLIS (MN) - ST. PAUL (MN)                                     ",4852299,NA,NA
+"21",15,"CLEVELAND (OH) - AKRON (OH) - CANTON (OH)                            ",3844103,NA,NA
+"22",16,"PHOENIX (AZ)                                                         ",5686119,NA,NA
+"23",17,"MIAMI (FL) - FT. LAUDERDALE (FL)                                     ",NA,NA,"US-FL-NA"
+"24",18,"DENVER (CO)                                                          ",4516413,NA,NA
+"25",19,"SACRAMENTO (CA) - STOCKTON (CA) - MODESTO (CA)                       ",4645925,NA,NA
+"26",20,"ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ",4476113,534,"US-FL-534"
+"27",21,"PITTSBURGH (PA)                                                      ",2834556,508,"US-PA-508"
+"28",22,"ST. LOUIS (MO)                                                       ",3131060,609,"US-MO-609"
+"29",23,"PORTLAND (OR)                                                        ",3492236,500,"US-OR-500"
+"30",23,"PORTLAND (OR)                                                        ",3492236,820,"US-OR-820"
+"31",24,"BALTIMORE (MD)                                                       ",3034153,NA,NA
+"32",25,"INDIANAPOLIS (IN)                                                    ",3034780,527,"US-IN-527"
+"33",26,"SAN DIEGO (CA)                                                       ",3289701,NA,NA
+"34",27,"HARTFORD (CT) - NEW HAVEN (CT)                                       ",NA,NA,NA
+"35",28,"CHARLOTTE (NC)                                                       ",3382632,517,"US-NC-517"
+"36",28,"CHARLOTTE (NC)                                                       ",3382632,584,"US-NC-584"
+"37",29,"RALEIGH (NC) - DURHAM (NC) - FAYETTEVILLE (NC)                       ",3295727,560,"US-NC-560"
+"38",30,"NASHVILLE (TN)                                                       ",3041970,659,"US-TN-659"
+"39",31,"MILWAUKEE (WI)                                                       ",2332533,617,"US-WI-617"
+"40",32,"CINCINNATI (OH)                                                      ",2435789,NA,NA
+"41",33,"KANSAS CITY (MO)                                                     ",2573316,616,"US-MO-616"
+"42",33,"KANSAS CITY (MO)                                                     ",2573316,616,"US-KS-616"
+"43",34,"COLUMBUS (OH)                                                        ",2559627,NA,NA
+"44",35,"GREENVILLE (SC) - SPARTANBURG (SC) - ASHEVILLE (NC) - ANDERSON (SC)  ",2379868,567,"US-NC-567"
+"45",35,"GREENVILLE (SC) - SPARTANBURG (SC) - ASHEVILLE (NC) - ANDERSON (SC)  ",2379868,567,"US-SC-567"
+"46",36,"SALT LAKE CITY (UT)                                                  ",3466961,770,"US-UT-770"
+"47",37,"SAN ANTONIO (TX)                                                     ",2887367,641,"US-TX-641"
+"48",38,"GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ",2099377,563,"US-MI-563"
+"49",38,"GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ",2099377,773,"US-MI-773"
+"50",39,"WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ",2189742,548,"US-FL-548"
+"51",40,"BIRMINGHAM (AL) - ANNISTON (AL) - TUSCALOOSA (AL)                    ",1949609,NA,NA
+"52",41,"NORFOLK (VA) - PORTSMOUTH (VA) - NEWPORT NEWS (VA)                   ",1957574,544,"US-VA-544"
+"53",41,"NORFOLK-PORTSMTH-NEWPT NWS                                           ",43727,544,"US-VA-544"
+"54",42,"NEW ORLEANS (LA)                                                     ",1752267,NA,NA
+"55",43,"MEMPHIS (TN)                                                         ",1840614,640,"US-TN-640"
+"56",44,"BUFFALO (NY)                                                         ",1610663,NA,NA
+"57",45,"OKLAHOMA CITY (OK)                                                   ",1979496,650,"US-OK-650"
+"58",46,"GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ",1839980,518,"US-NC-518"
+"59",47,"HARRISBURG (PA) - LANCASTER (PA) - LEBANON (PA) - YORK (PA)          ",1921114,566,"US-PA-566"
+"60",48,"PROVIDENCE (RI) - NEW BEDFORD (MA)                                   ",1670949,NA,NA
+"61",49,"ALBUQUERQUE (NM) - SANTA FE (NM)                                     ",1960516,NA,NA
+"62",50,"LOUISVILLE (KY)                                                      ",1782050,NA,NA
+"63",51,"JACKSONVILLE (FL)                                                    ",2026425,561,"US-FL-561"
+"64",52,"LAS VEGAS (NV)                                                       ",2322131,NA,NA
+"65",53,"WILKES BARRE (PA) - SCRANTON (PA)                                    ",1508456,577,"US-PA-577"
+"66",54,"AUSTIN (TX)                                                          ",2452325,635,"US-TX-635"
+"67",55,"ALBANY (NY) - SCHENECTADY (NY) - TROY (NY)                           ",1412342,NA,NA
+"68",56,"LITTLE ROCK (AR) - PINE BLUFF (AR)                                   ",1446568,693,"US-AR-693"
+"69",57,"FRESNO (CA) - VISALIA (CA)                                           ",2090904,NA,NA
+"70",58,"DAYTON (OH)                                                          ",1282864,NA,NA
+"71",59,"RICHMOND (VA) - PETERSBURG (VA)                                      ",1504193,556,"US-VA-556"
+"72",59,"RICHMOND-PETERSBURG                                                  ",59363,556,"US-VA-556"
+"73",60,"TULSA (OK)                                                           ",1426708,NA,"US-OK-NA"
+"74",61,"CHARLESTON (WV) - HUNTINGTON (WV)                                    ",1168957,NA,NA
+"75",62,"MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ",1489920,686,"US-FL-686"
+"76",63,"KNOXVILLE (TN)                                                       ",1417343,NA,NA
+"77",64,"FLINT (MI) - SAGINAW (MI) - BAY CITY (MI)                            ",1128262,NA,"US-MI-NA"
+"78",65,"LEXINGTON (KY)                                                       ",1304768,NA,NA
+"79",66,"WICHITA (KS) - HUTCHINSON (KS)                                       ",1207166,678,"US-KS-678"
+"80",67,"ROANOKE (VA) - LYNCHBURG (VA)                                        ",833442,573,"US-VA-573"
+"81",67,"ROANOKE-LYNCHBURG                                                    ",NA,573,"US-VA-573"
+"82",68,"TOLEDO (OH)                                                          ",1091921,NA,NA
+"83",69,"GREEN BAY (WI) - APPLETON (WI)                                       ",1163461,658,"US-WI-658"
+"84",70,"FT. MYERS (FL) - NAPLES (FL)                                         ",1429362,571,"US-FL-571"
+"85",71,"HONOLULU (HI)                                                        ",1450539,NA,NA
+"86",72,"DES MOINES (IA) - AMES (IA)                                          ",1205458,679,"US-IA-679"
+"87",73,"SPRINGFIELD (MO)                                                     ",1153004,543,"US-MO-543"
+"88",73,"SPRINGFIELD (MO)                                                     ",1153004,619,"US-MO-619"
+"89",74,"TUCSON (AZ) - SIERRA VISTA (AZ)                                      ",1215735,NA,NA
+"90",75,"PADUCAH (KY) - CAPE GIRARDEAU (MO) - HARRISBURG (IL) - MT VERNON (KS)",960570,NA,NA
+"91",76,"PORTLAND (ME) - AUBURN (ME)                                          ",1034870,NA,NA
+"92",77,"ROCHESTER (NY)                                                       ",1046711,NA,NA
+"93",78,"OMAHA (NE)                                                           ",1187615,NA,"US-NE-NA"
+"94",79,"SPOKANE (WA)                                                         ",1250922,NA,NA
+"95",80,"SYRACUSE (NY)                                                        ",917826,NA,NA
+"96",81,"SHREVEPORT (LA)                                                      ",976760,612,"US-TX-612"
+"97",82,"CHAMPAIGN (IL) - SPRINGFIELD (IL) - DECATUR (IL)                     ",932858,NA,NA
+"98",83,"HUNTSVILLE (AL) - DECATUR (AL) - FLORENCE (AL)                       ",1091394,NA,NA
+"99",84,"COLUMBIA (SC)                                                        ",1106909,NA,NA
+"100",85,"CHATTANOOGA (TN)                                                     ",1041015,575,"US-TN-575"
+"101",86,"MADISON (WI)                                                         ",1036604,NA,NA
+"102",87,"SOUTH BEND (IN) - ELKHART (IN)                                       ",908011,588,"US-IN-588"
+"103",87,"SOUTH BEND (IN) - ELKHART (IN)                                       ",908011,588,"US-MI-588"
+"104",88,"CEDAR RAPIDS (IA) - WATERLOO (IA) - IOWA CITY (IA) - DUBUQUE (IA)    ",916125,NA,NA
+"105",89,"JACKSON (MS)                                                         ",895459,718,"US-MS-718"
+"106",90,"KINGSPORT (TN) - JOHNSON CITY (TN) - BRISTOL (TN)                    ",767420,NA,NA
+"107",90,"TRI-CITIES, TN-VA                                                    ",50297,NA,NA
+"108",91,"BURLINGTON (VT) - PLATTSBURGH (NY)                                   ",859437,NA,NA
+"109",92,"DAVENPORT (IA) - ROCK ISLAND (IL) - MOLINE (IL)                      ",761185,NA,NA
+"110",93,"WACO (TX) - TEMPLE (TX) - BRYAN (TX)                                 ",1112164,NA,"US-TX-NA"
+"111",94,"COLORADO SPRINGS (CO) - PUEBLO (CO)                                  ",1028407,752,"US-CO-752"
+"112",95,"BATON ROUGE (LA)                                                     ",940083,NA,NA
+"113",96,"JOHNSTOWN (PA) - ALTOONA (PA)                                        ",739561,NA,NA
+"114",97,"HARLINGEN (TX) - WESLACO (TX) - BROWNSVILLE (TX) - MCALLEN (TX)      ",1381045,NA,NA
+"115",98,"SAVANNAH (GA)                                                        ",987666,507,"US-SC-507"
+"116",99,"EVANSVILLE (IN)                                                      ",736696,NA,NA
+"117",100,"YOUNGSTOWN (OH)                                                      ",642051,NA,NA
+"118",101,"EL PASO (TX)                                                         ",1089212,765,"US-TX-765"
+"119",102,"LINCOLN (NE) - HASTINGS (NE) - KEARNEY (NE)                          ",742874,NA,NA
+"120",103,"GREENVILLE (NC) - NEW BERN (NC) - WASHINGTON (NC)                    ",794300,545,"US-NC-545"
+"121",104,"FT. WAYNE (IN)                                                       ",744801,NA,NA
+"122",105,"CHARLESTON (SC)                                                      ",936432,NA,NA
+"123",106,"SPRINGFIELD (MA) - HOLYOKE (MA)                                      ",689486,NA,NA
+"124",107,"TALLAHASSEE (FL) - THOMASVILLE (GA)                                  ",752593,530,"US-FL-530"
+"125",108,"FT. SMITH (AR) - FAY (AR) - SPRINGDALE (AR) - ROGERS (AR)            ",901639,NA,NA
+"126",109,"TYLER (TX) - LONGVIEW (TX) - LUFKIN (TX) - NACOGDOCHES (TX)          ",777199,NA,"US-TX-NA"
+"127",110,"FLORENCE (SC) - MYRTLE BEACH (SC)                                    ",792465,NA,"US-SC-NA"
+"128",111,"LANSING (MI)                                                         ",677196,NA,NA
+"129",112,"SIOUX FALLS (SD) - MITCHELL (SD)                                     ",726234,NA,NA
+"130",113,"TRAVERSE CITY (MI) - CADILLAC (MI)                                   ",618411,540,"US-MI-540"
+"131",114,"RENO (NV)                                                            ",765074,NA,NA
+"132",115,"AUGUSTA (GA)                                                         ",731094,NA,NA
+"133",116,"MONTGOMERY (AL) - SELMA (AL)                                         ",644997,NA,NA
+"134",117,"PEORIA (IL) - BLOOMINGTON (IL)                                       ",627459,NA,NA
+"135",118,"FARGO (ND) - VALLEY CITY (ND)                                        ",657279,NA,NA
+"136",119,"SANTA BARBARA (CA) - SAN MARCOS (CA) - SAN LUIS OBISPO (CA)          ",726925,NA,NA
+"137",120,"MONTEREY (CA) - SALINAS (CA)                                         ",770933,NA,NA
+"138",121,"EUGENE (OR)                                                          ",654063,NA,NA
+"139",122,"MACON (GA)                                                           ",666361,NA,NA
+"140",123,"LA CROSSE (WI) - EAU CLAIRE (WI)                                     ",620359,NA,NA
+"141",124,"BOISE (ID)                                                           ",892739,NA,"US-ID-NA"
+"142",125,"LAFAYETTE (LA)                                                       ",627051,NA,NA
+"143",126,"COLUMBUS (GA)                                                        ",616270,NA,NA
+"144",127,"YAKIMA (WA) - PASCO (WA) - RICHLAND (WA) - KENNEWICK (WA)            ",746873,810,"US-WA-810"
+"145",128,"CORPUS CHRISTI (TX)                                                  ",587189,NA,NA
+"146",129,"AMARILLO (TX)                                                        ",544887,NA,NA
+"147",130,"BAKERSFIELD (CA)                                                     ",906883,NA,NA
+"148",131,"COLUMBUS (MS) - TUPELO (MS) - WEST POINT (MS)                        ",485352,NA,NA
+"149",132,"CHICO (CA) - REDDING (CA)                                            ",514138,NA,NA
+"150",133,"MONROE (LA) - EL DORADO (AR)                                         ",464086,NA,NA
+"151",134,"WAUSAU (WI) - RHINELANDER (WI)                                       ",455112,NA,NA
+"152",135,"ROCKFORD (IL)                                                        ",468425,NA,NA
+"153",136,"DULUTH (MN) - SUPERIOR (WI)                                          ",425273,NA,NA
+"154",137,"BEAUMONT (TX) - PORT ARTHUR (TX)                                     ",461606,NA,NA
+"155",138,"TOPEKA (KS)                                                          ",465074,NA,NA
+"156",139,"COLUMBIA (MO) - JEFFERSON CITY (MO)                                  ",484101,NA,NA
+"157",140,"SIOUX CITY (IA)                                                      ",416669,624,"US-IA-624"
+"158",140,"SIOUX CITY (IA)                                                      ",416669,725,"US-IA-725"
+"159",141,"MEDFORD (OR) - KLAMATH FALLS (OR)                                    ",455758,NA,NA
+"160",142,"WICHITA FALLS (TX) - LAWTON (OK)                                     ",416827,NA,NA
+"161",143,"ERIE (PA)                                                            ",392863,516,"US-PA-516"
+"162",144,"WILMINGTON (NC)                                                      ",510081,550,"US-NC-550"
+"163",145,"JOPLIN (MO) - PITTSBURG (KS)                                         ",400194,NA,NA
+"164",146,"TERRE HAUTE (IN)                                                     ",383362,NA,NA
+"165",147,"LUBBOCK (TX)                                                         ",467306,NA,NA
+"166",148,"ALBANY (GA)                                                          ",407437,NA,NA
+"167",149,"BLUEFIELD (WV) - BECKLEY (WV) - OAK HILL (WV)                        ",320276,NA,NA
+"168",150,"WHEELING (WV) - STEUBENVILLE (OH)                                    ",320735,NA,NA
+"169",151,"SALISBURY (MD)                                                       ",454539,576,"US-MD-576"
+"170",152,"ROCHESTER (MN) - MASON CITY (IA) - AUSTIN (MN)                       ",382897,NA,NA
+"171",153,"BANGOR (ME)                                                          ",346951,NA,NA
+"172",154,"BINGHAMTON (NY)                                                      ",338442,NA,NA
+"173",155,"MINOT (ND) - BISMARCK (ND) - DICKINSON (ND)                          ",424045,NA,"US-ND-NA"
+"174",156,"ANCHORAGE (AK)                                                       ",458570,743,"US-AK-743"
+"175",157,"BILOXI (MS) - GULFPORT (MS)                                          ",395376,NA,NA
+"176",158,"ODESSA (TX) - MIDLAND (TX)                                           ",468704,NA,NA
+"177",159,"PANAMA CITY (FL)                                                     ",398655,656,"US-FL-656"
+"178",160,"SHERMAN (TX) - ADA (OK)                                              ",350450,NA,NA
+"179",162,"GAINESVILLE (FL)                                                     ",357804,592,"US-FL-592"
+"180",163,"ABILENE (TX) - SWEETWATER (TX)                                       ",316926,NA,NA
+"181",164,"QUINCY (IL) - HANNIBAL (MO) - KEOKUK (IA)                            ",263870,717,"US-IA-717"
+"182",165,"IDAHO FALLS (ID) - POCATELLO (ID)                                    ",423449,NA,NA
+"183",166,"CLARKSBURG (WV) - WESTON (WV)                                        ",261892,NA,NA
+"184",167,"UTICA (NY)                                                           ",351026,NA,NA
+"185",168,"HATTIESBURG (MS) - LAUREL (MS)                                       ",299770,NA,NA
+"186",169,"MISSOULA (MT)                                                        ",321511,NA,NA
+"187",170,"BILLINGS (MT)                                                        ",294707,756,"US-WY-756"
+"188",171,"DOTHAN (AL)                                                          ",273853,NA,NA
+"189",172,"YUMA (AZ) - EL CENTRO (CA)                                           ",383952,NA,NA
+"190",173,"ELMIRA (NY)                                                          ",236209,NA,NA
+"191",174,"LAKE CHARLES (LA)                                                    ",275568,NA,NA
+"192",175,"RAPID CITY (SD)                                                      ",NA,NA,NA
+"193",176,"WATERTOWN (NY)                                                       ",252805,NA,NA
+"194",177,"MARQUETTE (MI)                                                       ",215848,553,"US-MI-553"
+"195",178,"HARRISONBURG                                                         ",99706,569,"US-VA-569"
+"196",178,"HARRISONBURG (VA)                                                    ",167494,569,"US-VA-569"
+"197",179,"ALEXANDRIA (LA)                                                      ",239702,NA,NA
+"198",180,"BOWLING GREEN (KY)                                                   ",258881,NA,NA
+"199",181,"JONESBORO (AR)                                                       ",237576,NA,NA
+"200",182,"GREENWOOD (MS) - GREENVILLE (MS)                                     ",183338,NA,NA
+"201",183,"JACKSON (TN)                                                         ",210569,NA,NA
+"202",184,"GRAND JUNCTION (CO) - MONTROSE (CO)                                  ",230127,NA,NA
+"203",185,"MERIDIAN (MS)                                                        ",172384,NA,NA
+"204",186,"CHARLOTTESVILLE                                                      ",46289,517,"US-VA-517"
+"205",186,"CHARLOTTESVILLE                                                      ",46289,584,"US-VA-584"
+"206",186,"CHARLOTTESVILLE (VA)                                                 ",174414,517,"US-VA-517"
+"207",186,"CHARLOTTESVILLE (VA)                                                 ",174414,584,"US-VA-584"
+"208",187,"GREAT FALLS (MT)                                                     ",171925,NA,NA
+"209",188,"PARKERSBURG (WV)                                                     ",151533,NA,NA
+"210",189,"LAFAYETTE (IN)                                                       ",195664,NA,NA
+"211",190,"EUREKA (CA)                                                          ",163594,NA,NA
+"212",191,"TWIN FALLS (ID)                                                      ",206522,NA,NA
+"213",192,"LAREDO (TX)                                                          ",281178,NA,NA
+"214",193,"ST. JOSEPH (MO)                                                      ",149348,NA,NA
+"215",194,"LIMA (OH)                                                            ",148350,NA,NA
+"216",195,"BUTTE (MT) - BOZEMAN (MT)                                            ",201908,NA,NA
+"217",196,"SAN ANGELO (TX)                                                      ",151455,NA,NA
+"218",197,"CHEYENNE (WY) - SCOTTSBLUF (NE)                                      ",148956,NA,NA
+"219",198,"OTTUMWA (IA) - KIRKSVILLE (MO)                                       ",127316,631,"US-IA-631"
+"220",199,"MANKATO (MN)                                                         ",126067,NA,NA
+"221",200,"CASPER (WY) - RIVERTON (WY)                                          ",144978,767,"US-WY-767"
+"222",201,"BEND (OR)                                                            ",199352,NA,NA
+"223",202,"ZANESVILLE (OH)                                                      ",86393,NA,NA
+"224",203,"FAIRBANKS (AK)                                                       ",96299,NA,NA
+"225",204,"VICTORIA (TX)                                                        ",91209,NA,NA
+"226",205,"PRESQUE ISLE (ME)                                                    ",67237,NA,NA
+"227",206,"JUNEAU (AK)                                                          ",32108,NA,NA
+"228",207,"HELENA (MT)                                                          ",78464,NA,NA
+"229",208,"ALPENA (MI)                                                          ",39149,NA,NA
+"230",209,"NORTH PLATTE (NE)                                                    ",37947,NA,NA
+"231",210,"GLENDIVE (MT)                                                        ",13139,NA,NA

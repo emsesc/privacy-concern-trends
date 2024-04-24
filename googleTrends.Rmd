@@ -193,11 +193,17 @@ plot(ols_model, which = 1)
 
 Significance in Num_lib vs. library quality
 ```{r}
+dma_pop <- read.csv("outputs/dma_pop.csv")
+
+test_hits <- hits_combined_df %>% mutate(code = as.numeric(substr(geo, nchar(geo) - 2, nchar(geo))))
+
 test3 <- google_trends_analysis %>% mutate(code = as.numeric(substr(Trends_DMA, nchar(Trends_DMA) - 2, nchar(Trends_DMA)))) %>%
-    left_join(library_index, by = "code")
+    left_join(library_index, by = "code") %>%
+    left_join(dma_pop, by = "code") %>%
+    left_join(test_hits, by = c("Month", "Year", "STATE", "count", "code"))
 
 # Fit OLS model
-ols_model <- lm(std_avg_index ~ num_lib + count, data = test3)
+ols_model <- lm(std_avg_index ~ num_lib + count + offset(log(tot_pop)) + avg_hits_next_month, data = test3)
 
 # Summarize the model
 summary(ols_model)
