@@ -1,0 +1,22 @@
+Census Data
+
+```{r}
+api_key <- ''
+
+library(tidycensus)
+library(dplyr)
+
+# API key registration
+census_api_key(api_key)  # Replace "your_api_key_here" with your actual Census API key
+
+# Get population data for all counties in the US
+county_population <- get_acs(geography = "county", variables = "B01003_001", geometry = TRUE)
+
+county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
+  mutate(GEOID = paste0(sprintf("%02d", as.numeric(STATEFP)), sprintf("%03d", as.numeric(CNTYFP))))
+
+# Variable B01003_001 represents total population
+# You can add more variables if needed, for example:
+# variables = c("B01001_001", "B01001_002", "B01001_026")
+# These represent total population, male population, and female population respectively.
+```

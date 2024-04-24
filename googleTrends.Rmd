@@ -7,6 +7,10 @@ res <- gtrends("library near me", geo = c("US-FL-718"), time = "2021-12-01 2024-
 this worked... but not a span of 2 months
 
 ```{r}
+test2 <- google_trends_analysis %>% ungroup() %>% select(Trends_DMA) %>% distinct()
+```
+
+```{r}
 google_trends_analysis
 
 test1 <- gtrends("library near me", geo = c(google_trends_analysis[1, ]$Trends_DMA), time = paste(paste(sprintf("%s-%02s-01", google_trends_analysis[1, ]$Year, google_trends_analysis[1, ]$Month)), paste(
@@ -23,6 +27,28 @@ test1 <- gtrends("library near me", geo = "US-FL-548", time = "2021-10-01 2024-0
 test2 <- gtrends("library near me", geo = "US-TX-618", time = "2021-10-01 2024-01-01")
 ```
 
+```{r}
+library(gtrendsR)
+
+# results_list1 <- list()
+# nrow(google_trends_analysis)
+
+# Iterate over each row in google_trends_analysis
+for (i in 7:nrow(test2)) {
+  # Extract the DMA value from the ith row
+  dma <- google_trends_analysis[i, ]$Trends_DMA
+  paste(dma)
+  
+  # Fetch the data using gtrends
+  trend_data <- gtrends("public library near me", geo = c(dma), time = "2021-12-01 2024-01-01")
+  
+  # Store the interest over time data in the results list
+  results_list1[[i]] <- trend_data$interest_over_time
+}
+
+# combined_df <- do.call(rbind, results_list)
+```
+
 Loops
 ```{r}
 library(gtrendsR)
@@ -31,13 +57,13 @@ library(gtrendsR)
 # nrow(google_trends_analysis)
 
 # Iterate over each row in google_trends_analysis
-for (i in 1:4) {
+for (i in 72:nrow(test2)) {
   # Extract the DMA value from the ith row
-  dma <- google_trends_analysis[i, ]$Trends_DMA
+  dma <- test2[i, ]$Trends_DMA
   paste(dma)
   
   # Fetch the data using gtrends
-  trend_data <- gtrends("banned books", geo = c(dma), time = "2021-12-01 2024-01-01")
+  trend_data <- gtrends("library near me", geo = c(dma), time = "2021-12-01 2024-01-01")
   
   # Store the interest over time data in the results list
   results_list1[[i]] <- trend_data$interest_over_time
@@ -69,7 +95,7 @@ for (i in 40:nrow(google_trends_analysis)) {
 
 Attempt 2
 ```{r}
-combined_df <- combined_df_3 %>% 
+combined_df <- combined_df %>% 
   select(date, hits, keyword, geo)
   
 library(dplyr)
@@ -87,6 +113,7 @@ joined_df <- left_join(combined_df, google_trends_analysis, by = c("geo" = "Tren
 
 # Calculate average hits for the month before and after
 hit_change <- joined_df %>%
+  distinct() %>%
   mutate(
     prev_month = ifelse(Month == 1, 12, as.numeric(Month) - 1),
     prev_year = ifelse(Month == 1, as.numeric(Year) - 1, as.numeric(Year)),
@@ -121,9 +148,10 @@ hits_combined_df <- full_join(avg_hits_prev_month_1_avg, avg_hits_next_month_1_a
 * Negative binomial model (for skewed data)
 
 ```{r}
-libraries_near_me <- read.csv("./outputs/libraries_near_me.csv")
+libraries_near_me <- read.csv("./outputs/library_near_me_full.csv")
 library <- read.csv("./outputs/library.csv")
 library_index <- read.csv("./outputs/library_index.csv")
+book_bans_serach <- read.csv("./outputs/book-bans-search.csv")
 
 hits_combined_df <- full_join(libraries_near_me, library, by = c("X", "geo", "Month", "Year", "DMA", "STATE", "count")) %>%
   mutate(code = as.numeric(substr(geo, nchar(geo) - 2, nchar(geo)))) %>%
@@ -131,7 +159,8 @@ hits_combined_df <- full_join(libraries_near_me, library, by = c("X", "geo", "Mo
   mutate(avg_hits_next_month = rowMeans(select(., starts_with("avg_hits_next_month")), na.rm = TRUE),
          avg_hits_prev_month = rowMeans(select(., starts_with("avg_hits_prev_month")), na.rm = TRUE))
 
-hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month)
+hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month, main = "Distribution of Difference of Library Searches", xlab = "Difference in Average Hits (Next Month - Previous Month)", ylab = "Frequency")
+
 # neg bin
 
 # Fit OLS model
@@ -143,6 +172,32 @@ summary(ols_model)
 plot(ols_model, which = 1)
 
 ols_model <- lm(count ~ num_lib, data = hits_combined_df)
+
+# tidycensus?
+
+# Summarize the model
+summary(ols_model)
+
+plot(ols_model, which = 1)
+```
+Significance in count vs. library search terms
+```{r}
+# Fit OLS model
+ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ as.factor(STATE) + count + std_avg_index + num_lib, data = hits_combined_df)
+
+# Summarize the model
+summary(ols_model)
+
+plot(ols_model, which = 1)
+```
+
+Significance in Num_lib vs. library quality
+```{r}
+test3 <- google_trends_analysis %>% mutate(code = as.numeric(substr(Trends_DMA, nchar(Trends_DMA) - 2, nchar(Trends_DMA)))) %>%
+    left_join(library_index, by = "code")
+
+# Fit OLS model
+ols_model <- lm(std_avg_index ~ num_lib + count, data = test3)
 
 # Summarize the model
 summary(ols_model)

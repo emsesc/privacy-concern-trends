@@ -16,9 +16,9 @@ library_data <- read.csv("./data/library-survey-2021.csv")
 # Step 3: Aggregate Variables
 composite_scores <- library_data %>%
   mutate(
-    Circulation = rowMeans(select(., c("TOTCIR", "ELMATCIR")), na.rm = TRUE),
+    Circulation = rowMeans(select(., c("TOTCIR", "ELMATCIR", "PHYSCIR", "TOTCOLL")), na.rm = TRUE),
     Technology_Use = rowMeans(select(., c("PITUSR", "ELINFO", "ELCONT")), na.rm = TRUE),
-    Service = rowMeans(select(., c("VISITS", "REFERENC", "LOANTO")), na.rm = TRUE)
+    Service = rowMeans(select(., c("VISITS", "REFERENC", "LOANTO", "LIBRARIA", "TOTSTAFF")), na.rm = TRUE)
   )
 
 # Step 4: Calculate Weighted Composite Scores for Each Library

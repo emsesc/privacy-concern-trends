@@ -1,0 +1,252 @@
+"","Month","Year","Trends_DMA","DMA","STATE","count"
+"1","1","2022","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",11
+"2","1","2022","US-FL-718","JACKSONVILLE (FL)                                                    ","FL ",176
+"3","1","2022","US-GA-524","ATLANTA (GA)                                                         ","GA ",37
+"4","1","2022","US-MI-505","DETROIT (MI)                                                         ","MI ",1
+"5","1","2022","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",1
+"6","1","2022","US-NC-567","GREENVILLE (SC) - SPARTANBURG (SC) - ASHEVILLE (NC) - ANDERSON (SC)  ","NC ",1
+"7","1","2022","US-NY-501","NEW YORK (NY)                                                        ","NY ",9
+"8","1","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",71
+"9","1","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",536
+"10","1","2022","US-VA-556","RICHMOND (VA) - PETERSBURG (VA)                                      ","VA ",1
+"11","1","2022","US-VA-573","ROANOKE (VA) - LYNCHBURG (VA)                                        ","VA ",1
+"12","1","2022","US-WA-819","SEATTLE (WA) - TACOMA (WA)                                           ","WA ",3
+"13","1","2023","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",16
+"14","1","2023","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",28
+"15","1","2023","US-MI-505","DETROIT (MI)                                                         ","MI ",6
+"16","1","2023","US-NC-518","GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ","NC ",1
+"17","1","2023","US-NY-501","NEW YORK (NY)                                                        ","NY ",2
+"18","1","2023","US-PA-566","HARRISBURG (PA) - LANCASTER (PA) - LEBANON (PA) - YORK (PA)          ","PA ",2
+"19","1","2023","US-TN-659","NASHVILLE (TN)                                                       ","TN ",1
+"20","1","2023","US-TX-618","HOUSTON (TX)                                                         ","TX ",73
+"21","1","2023","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",26
+"22","1","2023","US-TX-635","AUSTIN (TX)                                                          ","TX ",3
+"23","1","2023","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",9
+"24","1","2023","US-VA-517","CHARLOTTESVILLE (VA)                                                 ","VA ",17
+"25","1","2023","US-VA-584","CHARLOTTESVILLE (VA)                                                 ","VA ",17
+"26","1","2023","US-WI-617","MILWAUKEE (WI)                                                       ","WI ",3
+"27","1","2023","US-WI-658","GREEN BAY (WI) - APPLETON (WI)                                       ","WI ",3
+"28","10","2021","US-AK-743","ANCHORAGE (AK)                                                       ","AK ",1
+"29","10","2021","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",2
+"30","10","2021","US-IA-679","DES MOINES (IA) - AMES (IA)                                          ","IA ",3
+"31","10","2021","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",12
+"32","10","2021","US-MO-616","KANSAS CITY (MO)                                                     ","MO ",4
+"33","10","2021","US-OK-650","OKLAHOMA CITY (OK)                                                   ","OK ",10
+"34","10","2021","US-PA-504","PHILADELPHIA (PA)                                                    ","PA ",4
+"35","10","2021","US-PA-566","HARRISBURG (PA) - LANCASTER (PA) - LEBANON (PA) - YORK (PA)          ","PA ",1
+"36","10","2021","US-TN-575","CHATTANOOGA (TN)                                                     ","TN ",12
+"37","10","2021","US-TX-618","HOUSTON (TX)                                                         ","TX ",14
+"38","10","2021","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",13
+"39","10","2021","US-TX-765","EL PASO (TX)                                                         ","TX ",1
+"40","10","2021","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",20
+"41","10","2021","US-VA-544","NORFOLK (VA) - PORTSMOUTH (VA) - NEWPORT NEWS (VA)                   ","VA ",6
+"42","10","2021","US-VA-556","RICHMOND (VA) - PETERSBURG (VA)                                      ","VA ",2
+"43","10","2022","US-AR-693","LITTLE ROCK (AR) - PINE BLUFF (AR)                                   ","AR ",2
+"44","10","2022","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",19
+"45","10","2022","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",2
+"46","10","2022","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",20
+"47","10","2022","US-FL-718","JACKSONVILLE (FL)                                                    ","FL ",18
+"48","10","2022","US-MI-563","GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ","MI ",1
+"49","10","2022","US-MI-773","GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ","MI ",1
+"50","10","2022","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",14
+"51","10","2022","US-OR-500","PORTLAND (OR)                                                        ","OR ",4
+"52","10","2022","US-OR-820","PORTLAND (OR)                                                        ","OR ",4
+"53","10","2022","US-SC-507","SAVANNAH (GA)                                                        ","SC ",99
+"54","10","2022","US-TX-612","SHREVEPORT (LA)                                                      ","TX ",58
+"55","10","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",2
+"56","10","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",510
+"57","10","2022","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",40
+"58","10","2022","US-VA-511","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",5
+"59","10","2022","US-VA-517","CHARLOTTESVILLE (VA)                                                 ","VA ",3
+"60","10","2022","US-VA-584","CHARLOTTESVILLE (VA)                                                 ","VA ",3
+"61","10","2022","US-WY-767","CASPER (WY) - RIVERTON (WY)                                          ","WY ",2
+"62","11","2021","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",7
+"63","11","2021","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",161
+"64","11","2021","US-IA-679","DES MOINES (IA) - AMES (IA)                                          ","IA ",3
+"65","11","2021","US-KS-678","WICHITA (KS) - HUTCHINSON (KS)                                       ","KS ",29
+"66","11","2021","US-NC-545","GREENVILLE (NC) - NEW BERN (NC) - WASHINGTON (NC)                    ","NC ",5
+"67","11","2021","US-PA-501","NEW YORK (NY)                                                        ","PA ",2
+"68","11","2021","US-PA-504","PHILADELPHIA (PA)                                                    ","PA ",1
+"69","11","2021","US-PA-577","WILKES BARRE (PA) - SCRANTON (PA)                                    ","PA ",2
+"70","11","2021","US-TX-618","HOUSTON (TX)                                                         ","TX ",46
+"71","11","2021","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",11
+"72","11","2021","US-VA-511","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",2
+"73","11","2021","US-VA-556","RICHMOND (VA) - PETERSBURG (VA)                                      ","VA ",1
+"74","11","2021","US-VA-569","HARRISONBURG                                                         ","VA ",1
+"75","11","2021","US-WA-819","SEATTLE (WA) - TACOMA (WA)                                           ","WA ",1
+"76","11","2022","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",2
+"77","11","2022","US-FL-718","JACKSONVILLE (FL)                                                    ","FL ",6
+"78","11","2022","US-IN-527","INDIANAPOLIS (IN)                                                    ","IN ",3
+"79","11","2022","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",12
+"80","11","2022","US-NY-501","NEW YORK (NY)                                                        ","NY ",1
+"81","11","2022","US-SC-567","GREENVILLE (SC) - SPARTANBURG (SC) - ASHEVILLE (NC) - ANDERSON (SC)  ","SC ",1
+"82","11","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",3
+"83","11","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",54
+"84","11","2022","US-TX-635","AUSTIN (TX)                                                          ","TX ",1
+"85","11","2022","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",152
+"86","11","2022","US-VA-511","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",2
+"87","12","2021","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",8
+"88","12","2021","US-GA-524","ATLANTA (GA)                                                         ","GA ",1
+"89","12","2021","US-IN-588","SOUTH BEND (IN) - ELKHART (IN)                                       ","IN ",8
+"90","12","2021","US-PA-504","PHILADELPHIA (PA)                                                    ","PA ",1
+"91","12","2021","US-TX-618","HOUSTON (TX)                                                         ","TX ",34
+"92","12","2021","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",2
+"93","12","2021","US-TX-641","SAN ANTONIO (TX)                                                     ","TX ",435
+"94","12","2022","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",2
+"95","12","2022","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",12
+"96","12","2022","US-MI-563","GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ","MI ",1
+"97","12","2022","US-MI-773","GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ","MI ",1
+"98","12","2022","US-NY-501","NEW YORK (NY)                                                        ","NY ",2
+"99","12","2022","US-PA-504","PHILADELPHIA (PA)                                                    ","PA ",2
+"100","12","2022","US-TN-659","NASHVILLE (TN)                                                       ","TN ",2
+"101","12","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",2
+"102","12","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",8
+"103","12","2022","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",23
+"104","2","2022","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",1
+"105","2","2022","US-FL-571","FT. MYERS (FL) - NAPLES (FL)                                         ","FL ",2
+"106","2","2022","US-GA-524","ATLANTA (GA)                                                         ","GA ",20
+"107","2","2022","US-MD-576","SALISBURY (MD)                                                       ","MD ",1
+"108","2","2022","US-MO-543","SPRINGFIELD (MO)                                                     ","MO ",18
+"109","2","2022","US-MO-619","SPRINGFIELD (MO)                                                     ","MO ",18
+"110","2","2022","US-NY-501","NEW YORK (NY)                                                        ","NY ",4
+"111","2","2022","US-TN-640","MEMPHIS (TN)                                                         ","TN ",327
+"112","2","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",17
+"113","2","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",2
+"114","2","2022","US-WA-810","YAKIMA (WA) - PASCO (WA) - RICHLAND (WA) - KENNEWICK (WA)            ","WA ",1
+"115","2","2023","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",85
+"116","2","2023","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",16
+"117","2","2023","US-MI-505","DETROIT (MI)                                                         ","MI ",11
+"118","2","2023","US-MI-540","TRAVERSE CITY (MI) - CADILLAC (MI)                                   ","MI ",1
+"119","2","2023","US-MI-553","MARQUETTE (MI)                                                       ","MI ",1
+"120","2","2023","US-NC-517","CHARLOTTE (NC)                                                       ","NC ",2
+"121","2","2023","US-NC-550","WILMINGTON (NC)                                                      ","NC ",41
+"122","2","2023","US-NC-584","CHARLOTTE (NC)                                                       ","NC ",2
+"123","2","2023","US-PA-508","PITTSBURGH (PA)                                                      ","PA ",151
+"124","2","2023","US-PA-516","ERIE (PA)                                                            ","PA ",151
+"125","2","2023","US-PA-577","WILKES BARRE (PA) - SCRANTON (PA)                                    ","PA ",1
+"126","2","2023","US-TN-659","NASHVILLE (TN)                                                       ","TN ",6
+"127","2","2023","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",22
+"128","2","2023","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",58
+"129","2","2023","US-VA-511","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",13
+"130","2","2023","US-WY-756","BILLINGS (MT)                                                        ","WY ",10
+"131","3","2022","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",20
+"132","3","2022","US-FL-571","FT. MYERS (FL) - NAPLES (FL)                                         ","FL ",18
+"133","3","2022","US-GA-524","ATLANTA (GA)                                                         ","GA ",5
+"134","3","2022","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",2
+"135","3","2022","US-NY-501","NEW YORK (NY)                                                        ","NY ",2
+"136","3","2022","US-PA-508","PITTSBURGH (PA)                                                      ","PA ",1
+"137","3","2022","US-TN-659","NASHVILLE (TN)                                                       ","TN ",2
+"138","3","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",42
+"139","3","2022","US-TX-635","AUSTIN (TX)                                                          ","TX ",84
+"140","3","2022","US-TX-641","SAN ANTONIO (TX)                                                     ","TX ",42
+"141","3","2023","US-FL-530","TALLAHASSEE (FL) - THOMASVILLE (GA)                                  ","FL ",20
+"142","3","2023","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",19
+"143","3","2023","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",36
+"144","3","2023","US-FL-571","FT. MYERS (FL) - NAPLES (FL)                                         ","FL ",23
+"145","3","2023","US-FL-592","GAINESVILLE (FL)                                                     ","FL ",9
+"146","3","2023","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",6
+"147","3","2023","US-FL-718","JACKSONVILLE (FL)                                                    ","FL ",24
+"148","3","2023","US-IA-624","SIOUX CITY (IA)                                                      ","IA ",2
+"149","3","2023","US-IA-725","SIOUX CITY (IA)                                                      ","IA ",2
+"150","3","2023","US-KS-616","KANSAS CITY (MO)                                                     ","KS ",7
+"151","3","2023","US-OR-500","PORTLAND (OR)                                                        ","OR ",70
+"152","3","2023","US-OR-820","PORTLAND (OR)                                                        ","OR ",70
+"153","3","2023","US-PA-504","PHILADELPHIA (PA)                                                    ","PA ",2
+"154","3","2023","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",90
+"155","3","2023","US-TX-635","AUSTIN (TX)                                                          ","TX ",10
+"156","3","2023","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",30
+"157","3","2023","US-VA-511","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",14
+"158","3","2023","US-WY-767","CASPER (WY) - RIVERTON (WY)                                          ","WY ",2
+"159","4","2022","US-FL-656","PANAMA CITY (FL)                                                     ","FL ",228
+"160","4","2022","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",9
+"161","4","2022","US-IA-631","OTTUMWA (IA) - KIRKSVILLE (MO)                                       ","IA ",1
+"162","4","2022","US-IA-717","QUINCY (IL) - HANNIBAL (MO) - KEOKUK (IA)                            ","IA ",1
+"163","4","2022","US-MS-718","JACKSON (MS)                                                         ","MS ",22
+"164","4","2022","US-NC-518","GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ","NC ",1
+"165","4","2022","US-NC-560","RALEIGH (NC) - DURHAM (NC) - FAYETTEVILLE (NC)                       ","NC ",2
+"166","4","2022","US-NY-501","NEW YORK (NY)                                                        ","NY ",1
+"167","4","2022","US-PA-566","HARRISBURG (PA) - LANCASTER (PA) - LEBANON (PA) - YORK (PA)          ","PA ",1
+"168","4","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",19
+"169","4","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",8
+"170","4","2023","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",2
+"171","4","2023","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",1
+"172","4","2023","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",11
+"173","4","2023","US-IA-679","DES MOINES (IA) - AMES (IA)                                          ","IA ",2
+"174","4","2023","US-MO-543","SPRINGFIELD (MO)                                                     ","MO ",30
+"175","4","2023","US-MO-619","SPRINGFIELD (MO)                                                     ","MO ",30
+"176","4","2023","US-NC-560","RALEIGH (NC) - DURHAM (NC) - FAYETTEVILLE (NC)                       ","NC ",9
+"177","4","2023","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",5
+"178","4","2023","US-VA-511","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",1
+"179","5","2022","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",22
+"180","5","2022","US-FL-571","FT. MYERS (FL) - NAPLES (FL)                                         ","FL ",10
+"181","5","2022","US-FL-718","JACKSONVILLE (FL)                                                    ","FL ",6
+"182","5","2022","US-MI-540","TRAVERSE CITY (MI) - CADILLAC (MI)                                   ","MI ",34
+"183","5","2022","US-MO-543","SPRINGFIELD (MO)                                                     ","MO ",9
+"184","5","2022","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",2
+"185","5","2022","US-MO-619","SPRINGFIELD (MO)                                                     ","MO ",9
+"186","5","2022","US-NC-518","GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ","NC ",3
+"187","5","2022","US-TN-659","NASHVILLE (TN)                                                       ","TN ",4
+"188","5","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",3
+"189","5","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",4
+"190","5","2022","US-VA-544","NORFOLK (VA) - PORTSMOUTH (VA) - NEWPORT NEWS (VA)                   ","VA ",2
+"191","5","2022","US-WI-617","MILWAUKEE (WI)                                                       ","WI ",3
+"192","5","2023","US-CO-752","COLORADO SPRINGS (CO) - PUEBLO (CO)                                  ","CO ",3
+"193","5","2023","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",26
+"194","5","2023","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",20
+"195","5","2023","US-NC-517","CHARLOTTE (NC)                                                       ","NC ",4
+"196","5","2023","US-NC-584","CHARLOTTE (NC)                                                       ","NC ",4
+"197","5","2023","US-NJ-501","NEW YORK (NY)                                                        ","NJ ",1
+"198","5","2023","US-TN-575","CHATTANOOGA (TN)                                                     ","TN ",2
+"199","5","2023","US-TN-659","NASHVILLE (TN)                                                       ","TN ",2
+"200","5","2023","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",5
+"201","5","2023","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",1
+"202","5","2023","US-WY-767","CASPER (WY) - RIVERTON (WY)                                          ","WY ",1
+"203","6","2022","US-NC-518","GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ","NC ",2
+"204","6","2022","US-PA-516","ERIE (PA)                                                            ","PA ",1
+"205","6","2023","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",214
+"206","6","2023","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",15
+"207","6","2023","US-GA-524","ATLANTA (GA)                                                         ","GA ",4
+"208","6","2023","US-MO-543","SPRINGFIELD (MO)                                                     ","MO ",15
+"209","6","2023","US-MO-619","SPRINGFIELD (MO)                                                     ","MO ",15
+"210","6","2023","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",5
+"211","6","2023","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",25
+"212","6","2023","US-VA-556","RICHMOND (VA) - PETERSBURG (VA)                                      ","VA ",18
+"213","7","2021","US-IN-527","INDIANAPOLIS (IN)                                                    ","IN ",10
+"214","7","2022","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",3
+"215","7","2022","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",23
+"216","7","2022","US-FL-718","JACKSONVILLE (FL)                                                    ","FL ",102
+"217","7","2022","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",1
+"218","7","2022","US-PA-577","WILKES BARRE (PA) - SCRANTON (PA)                                    ","PA ",27
+"219","7","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",2
+"220","7","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",2
+"221","7","2022","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",130
+"222","8","2021","US-PA-504","PHILADELPHIA (PA)                                                    ","PA ",2
+"223","8","2021","US-PA-566","HARRISBURG (PA) - LANCASTER (PA) - LEBANON (PA) - YORK (PA)          ","PA ",441
+"224","8","2022","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",69
+"225","8","2022","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",2
+"226","8","2022","US-FL-718","JACKSONVILLE (FL)                                                    ","FL ",2034
+"227","8","2022","US-IA-679","DES MOINES (IA) - AMES (IA)                                          ","IA ",3
+"228","8","2022","US-MI-505","DETROIT (MI)                                                         ","MI ",8
+"229","8","2022","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",49
+"230","8","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",3
+"231","8","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",10
+"232","8","2022","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",59
+"233","9","2021","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",1
+"234","9","2021","US-PA-504","PHILADELPHIA (PA)                                                    ","PA ",6
+"235","9","2021","US-TX-618","HOUSTON (TX)                                                         ","TX ",7
+"236","9","2021","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",2
+"237","9","2021","US-TX-635","AUSTIN (TX)                                                          ","TX ",23
+"238","9","2021","US-VA-511","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",3
+"239","9","2022","US-CA-803","LOS ANGELES (CA)                                                     ","CA ",1
+"240","9","2022","US-FL-534","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",13
+"241","9","2022","US-FL-548","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",2
+"242","9","2022","US-FL-686","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",111
+"243","9","2022","US-FL-718","JACKSONVILLE (FL)                                                    ","FL ",252
+"244","9","2022","US-MI-588","SOUTH BEND (IN) - ELKHART (IN)                                       ","MI ",1
+"245","9","2022","US-MO-609","ST. LOUIS (MO)                                                       ","MO ",239
+"246","9","2022","US-MO-616","KANSAS CITY (MO)                                                     ","MO ",14
+"247","9","2022","US-NY-501","NEW YORK (NY)                                                        ","NY ",1
+"248","9","2022","US-SC-567","GREENVILLE (SC) - SPARTANBURG (SC) - ASHEVILLE (NC) - ANDERSON (SC)  ","SC ",2
+"249","9","2022","US-TX-618","HOUSTON (TX)                                                         ","TX ",10
+"250","9","2022","US-TX-623","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",87
+"251","9","2022","US-UT-770","SALT LAKE CITY (UT)                                                  ","UT ",10

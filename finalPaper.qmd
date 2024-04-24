@@ -1,5 +1,6 @@
 ---
-title: "Book Bans Ban Books? An Analysis of Library Usage"
+title: "Book Bans Ban Books?"
+subtitle: "Library Usage in Areas Affected by Book Bans"
 author: "Emily Chen"
 format: html
 ---
@@ -10,12 +11,26 @@ slkfdjdlsfjlskjf
 
 ## Background and Hypotheses
 
-slfkjsdkl
+**Public Libraries and Book Bans**
+
+-   public libraries targeted
+
+-   why public libraries? book bans are usually in school libraries
+
+**\[Some social theory, look at previous book ban articles\]**
 
 ## Methods
 
-### Data Collection and Cleaning
+**Data Collection**
 
-lskfjds
+**Google Trends**
+
+**Data Cleaning**
 
 ## Analysis and Results
+
+## Discussion
+
+## Conclusion & Limitations
+
+## Bibliography

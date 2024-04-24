@@ -1,0 +1,44 @@
+"","geo","Month","Year","DMA","STATE","count","avg_hits_prev_month","avg_hits_next_month"
+"1","US-FL-534",6,2023,"ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",214,40,20
+"2","US-FL-534",8,2022,"ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",69,0,29.5
+"3","US-FL-548",2,2023,"WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",85,16.5,32.8181818181818
+"4","US-FL-548",3,2023,"WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",36,13.4,8.5
+"5","US-FL-656",4,2022,"PANAMA CITY (FL)                                                     ","FL ",228,0,0
+"6","US-FL-686",9,2022,"MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",111,18.25,0
+"7","US-FL-718",1,2022,"JACKSONVILLE (FL)                                                    ","FL ",176,0,0
+"8","US-FL-718",7,2022,"JACKSONVILLE (FL)                                                    ","FL ",102,0,0
+"9","US-FL-718",8,2022,"JACKSONVILLE (FL)                                                    ","FL ",2034,0,0
+"10","US-FL-718",9,2022,"JACKSONVILLE (FL)                                                    ","FL ",252,0,0
+"11","US-GA-524",1,2022,"ATLANTA (GA)                                                         ","GA ",37,0,18
+"12","US-MI-540",5,2022,"TRAVERSE CITY (MI) - CADILLAC (MI)                                   ","MI ",34,0,0
+"13","US-MO-543",4,2023,"SPRINGFIELD (MO)                                                     ","MO ",30,0,0
+"14","US-MO-609",8,2022,"ST. LOUIS (MO)                                                       ","MO ",49,0,33
+"15","US-MO-609",9,2022,"ST. LOUIS (MO)                                                       ","MO ",239,9,0
+"16","US-MO-619",4,2023,"SPRINGFIELD (MO)                                                     ","MO ",30,0,0
+"17","US-NC-550",2,2023,"WILMINGTON (NC)                                                      ","NC ",41,0,0
+"18","US-OR-500",3,2023,"PORTLAND (OR)                                                        ","OR ",70,0,0
+"19","US-OR-820",3,2023,"PORTLAND (OR)                                                        ","OR ",70,5,11.2
+"20","US-PA-508",2,2023,"PITTSBURGH (PA)                                                      ","PA ",151,11.8,0
+"21","US-PA-516",2,2023,"ERIE (PA)                                                            ","PA ",151,0,0
+"22","US-TN-640",2,2022,"MEMPHIS (TN)                                                         ","TN ",327,0,0
+"23","US-TX-612",10,2022,"SHREVEPORT (LA)                                                      ","TX ",58,0,0
+"24","US-TX-618",1,2022,"HOUSTON (TX)                                                         ","TX ",71,0,19.5714285714286
+"25","US-TX-618",1,2023,"HOUSTON (TX)                                                         ","TX ",73,4.4,18
+"26","US-TX-618",12,2021,"HOUSTON (TX)                                                         ","TX ",34,0,28.8333333333333
+"27","US-TX-623",1,2022,"DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",536,0,31.5714285714286
+"28","US-TX-623",3,2022,"DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",42,31.5714285714286,23.125
+"29","US-TX-623",3,2023,"DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",90,22,29.1
+"30","US-TX-623",9,2022,"DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",87,32.4285714285714,7.14285714285714
+"31","US-TX-623",10,2022,"DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",510,47.5,4.2
+"32","US-TX-623",11,2022,"DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",54,7.14285714285714,0
+"33","US-TX-635",3,2022,"AUSTIN (TX)                                                          ","TX ",84,9.25,0
+"34","US-TX-641",3,2022,"SAN ANTONIO (TX)                                                     ","TX ",42,14.4,0
+"35","US-TX-641",12,2021,"SAN ANTONIO (TX)                                                     ","TX ",435,0,30.6666666666667
+"36","US-UT-770",2,2023,"SALT LAKE CITY (UT)                                                  ","UT ",58,0,28
+"37","US-UT-770",3,2023,"SALT LAKE CITY (UT)                                                  ","UT ",30,12.8333333333333,5.5
+"38","US-UT-770",7,2022,"SALT LAKE CITY (UT)                                                  ","UT ",130,0,14.6
+"39","US-UT-770",8,2022,"SALT LAKE CITY (UT)                                                  ","UT ",59,0,35.4285714285714
+"40","US-UT-770",10,2022,"SALT LAKE CITY (UT)                                                  ","UT ",40,35.4285714285714,0
+"41","US-UT-770",11,2022,"SALT LAKE CITY (UT)                                                  ","UT ",152,0,0
+"42","US-FL-548",11,2021,"WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",161,NA,12
+"43","US-TX-618",11,2021,"HOUSTON (TX)                                                         ","TX ",46,NA,0

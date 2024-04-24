@@ -43,7 +43,7 @@ ggplot() +
   # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
   theme_void() +  # Removes background axes and grid lines
   theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
-  ggtitle("Book Bans by DMA from 2021-2023") +
+  ggtitle("Book Bans and Challenges by DMA from 2021-2023") +
   scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey")
 ```
 
