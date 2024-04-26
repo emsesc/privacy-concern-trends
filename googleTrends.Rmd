@@ -1,32 +1,4 @@
 Analyzing before and after trend data
-
-- summarize the before and after months for analysis
-- add census DMAs data
-
-res <- gtrends("library near me", geo = c("US-FL-718"), time = "2021-12-01 2024-01-01")
-this worked... but not a span of 2 months
-
-```{r}
-test2 <- google_trends_analysis %>% ungroup() %>% select(Trends_DMA) %>% distinct()
-```
-
-```{r}
-google_trends_analysis
-
-test1 <- gtrends("library near me", geo = c(google_trends_analysis[1, ]$Trends_DMA), time = paste(paste(sprintf("%s-%02s-01", google_trends_analysis[1, ]$Year, google_trends_analysis[1, ]$Month)), paste(
-  sprintf("%s-%02d-28", google_trends_analysis[1, ]$Year, as.numeric(google_trends_analysis[1, ]$Month) + 1))))
-```
-
-Second attempt
-```{r}
-library(gtrendsR)
-
-google_trends_analysis
-
-test1 <- gtrends("library near me", geo = "US-FL-548", time = "2021-10-01 2024-01-01")
-test2 <- gtrends("library near me", geo = "US-TX-618", time = "2021-10-01 2024-01-01")
-```
-
 ```{r}
 library(gtrendsR)
 
@@ -34,13 +6,13 @@ library(gtrendsR)
 # nrow(google_trends_analysis)
 
 # Iterate over each row in google_trends_analysis
-for (i in 7:nrow(test2)) {
+for (i in 5:nrow(test2)) {
   # Extract the DMA value from the ith row
-  dma <- google_trends_analysis[i, ]$Trends_DMA
+  dma <- test2[i, ]$Trends_DMA
   paste(dma)
   
   # Fetch the data using gtrends
-  trend_data <- gtrends("public library near me", geo = c(dma), time = "2021-12-01 2024-01-01")
+  trend_data <- gtrends("library", geo = c(dma), time = "2021-12-01 2024-01-01")
   
   # Store the interest over time data in the results list
   results_list1[[i]] <- trend_data$interest_over_time
@@ -67,27 +39,6 @@ for (i in 72:nrow(test2)) {
   
   # Store the interest over time data in the results list
   results_list1[[i]] <- trend_data$interest_over_time
-}
-
-# combined_df <- do.call(rbind, results_list)
-```
-
-```{r}
-library(gtrendsR)
-
-# results_list1 <- list()
-
-# Iterate over each row in google_trends_analysis
-for (i in 40:nrow(google_trends_analysis)) {
-  # Extract the DMA value from the ith row
-  dma <- google_trends_analysis[i, ]$Trends_DMA
-  paste(dma)
-  
-  # Fetch the data using gtrends
-  trend_data <- gtrends("library", geo = c(dma), time = "2021-12-01 2024-01-01")
-  
-  # Store the interest over time data in the results list
-  results_list2[[i]] <- trend_data$interest_over_time
 }
 
 # combined_df <- do.call(rbind, results_list)
@@ -149,19 +100,16 @@ hits_combined_df <- full_join(avg_hits_prev_month_1_avg, avg_hits_next_month_1_a
 
 ```{r}
 libraries_near_me <- read.csv("./outputs/library_near_me_full.csv")
-library <- read.csv("./outputs/library.csv")
+library <- read.csv("./outputs/real-libraries-search.csv")
 library_index <- read.csv("./outputs/library_index.csv")
-book_bans_serach <- read.csv("./outputs/book-bans-search.csv")
 
 hits_combined_df <- full_join(libraries_near_me, library, by = c("X", "geo", "Month", "Year", "DMA", "STATE", "count")) %>%
   mutate(code = as.numeric(substr(geo, nchar(geo) - 2, nchar(geo)))) %>%
   left_join(library_index, by = "code") %>%
-  mutate(avg_hits_next_month = rowMeans(select(., starts_with("avg_hits_next_month")), na.rm = TRUE),
-         avg_hits_prev_month = rowMeans(select(., starts_with("avg_hits_prev_month")), na.rm = TRUE))
+  mutate(avg_hits_next_month = rowSums(select(., starts_with("avg_hits_next_month")), na.rm = TRUE),
+         avg_hits_prev_month = rowSums(select(., starts_with("avg_hits_prev_month")), na.rm = TRUE))
 
 hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month, main = "Distribution of Difference of Library Searches", xlab = "Difference in Average Hits (Next Month - Previous Month)", ylab = "Frequency")
-
-# neg bin
 
 # Fit OLS model
 ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ as.factor(STATE) + count + std_avg_index + num_lib, data = hits_combined_df)
@@ -200,10 +148,27 @@ test_hits <- hits_combined_df %>% mutate(code = as.numeric(substr(geo, nchar(geo
 test3 <- google_trends_analysis %>% mutate(code = as.numeric(substr(Trends_DMA, nchar(Trends_DMA) - 2, nchar(Trends_DMA)))) %>%
     left_join(library_index, by = "code") %>%
     left_join(dma_pop, by = "code") %>%
+    left_join(dma_income, by = "code") %>%
     left_join(test_hits, by = c("Month", "Year", "STATE", "count", "code"))
 
 # Fit OLS model
-ols_model <- lm(std_avg_index ~ num_lib + count + offset(log(tot_pop)) + avg_hits_next_month, data = test3)
+ols_model <- lm(std_avg_index ~ num_lib + count + tot_income + offset(log(tot_pop)) + avg_hits_next_month, data = test3)
+
+# Summarize the model
+summary(ols_model)
+
+plot(ols_model, which = 1)
+
+ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ tot_income + tot_pop, data = test3)
+
+# Summarize the model
+summary(ols_model)
+
+plot(ols_model, which = 1)
+
+# the more libraries the less book bans???
+
+ols_model <- lm(count ~ num_lib, data = test3)
 
 # Summarize the model
 summary(ols_model)
@@ -211,43 +176,4 @@ summary(ols_model)
 plot(ols_model, which = 1)
 ```
 
-Gathering Data
-```{r}
-res <- gtrends("library near me", geo = c("US-FL"), time = "2021-12-01 2024-01-01")
-plot(res)
-```
-
-Plotting
-```{r}
-library(gtrendsR)
-
-# by state
-res <- gtrends("library near me", geo = c("US-FL"), time = "2021-12-01 2024-01-01")
-plot(res)
-
-# by DMA
-res <- gtrends("library near me", geo = c("US-FL-718"), time = "today 12-m")
-plot(res)
-```
-
-Basic Trend Data from 1 year ago
-```{r}
-# Load required libraries
-library(gtrendsR)
-
-# Define search term and location
-search_term <- "library near me"
-geo <- "US-FL" # Florida overall
-
-# Fetch trends data for the last year
-trends_data <- gtrends(keyword = search_term, 
-                       geo = geo, 
-                       time = "today 12-m", 
-                       category = "0")
-
-# Print trends data
-print(trends_data)
-
-# Logout from Google
-gdisconnect()
-```
+\

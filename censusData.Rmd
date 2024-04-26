@@ -29,3 +29,34 @@ dma_pop <- left_join(county_dma, county_population, by = "GEOID") %>%
 # variables = c("B01001_001", "B01001_002", "B01001_026")
 # These represent total population, male population, and female population respectively.
 ```
+
+```{r}
+library(tidycensus)
+library(dplyr)
+
+# API key registration
+census_api_key(api_key)  # Replace "your_api_key_here" with your actual Census API key
+
+# Get population data for all counties in the US
+county_population <- get_acs(geography = "county", 
+              variables = c(medincome = "B19013_001"),
+              year = 2022)
+
+county_dma <- read.csv("./data/county_dma_mapping.csv") %>%
+  mutate(GEOID = paste0(sprintf("%02d", as.numeric(STATEFP)), sprintf("%03d", as.numeric(CNTYFP))))
+
+joiner <- read.csv("./outputs/clean_pen_index.csv") %>%
+  select(DMAINDEX, code, Trends_DMA) %>%
+  distinct()
+
+dma_income <- left_join(county_dma, county_population, by = "GEOID") %>%
+  group_by(DMAINDEX, DMA) %>%
+  summarise(tot_income = sum(estimate)) %>%
+  left_join(joiner, by = "DMAINDEX") %>%
+  select(code, tot_income)
+
+# Variable B01003_001 represents total population
+# You can add more variables if needed, for example:
+# variables = c("B01001_001", "B01001_002", "B01001_026")
+# These represent total population, male population, and female population respectively.
+```
