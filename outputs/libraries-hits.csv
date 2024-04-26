@@ -1,0 +1,243 @@
+"","geo","Month","Year","DMA","STATE","count","avg_hits_prev_month","avg_hits_next_month"
+"1","US-AR-693","10","2022","LITTLE ROCK (AR) - PINE BLUFF (AR)                                   ","AR ",2,69.25,55
+"2","US-CA-803","9","2022","LOS ANGELES (CA)                                                     ","CA ",1,85.75,85.4
+"3","US-CO-752","5","2023","COLORADO SPRINGS (CO) - PUEBLO (CO)                                  ","CO ",3,87.4,82.75
+"4","US-FL-530","3","2023","TALLAHASSEE (FL) - THOMASVILLE (GA)                                  ","FL ",20,86.75,72.2
+"5","US-FL-534","1","2023","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",16,66.25,90.5
+"6","US-FL-534","10","2022","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",19,87,77.25
+"7","US-FL-534","11","2022","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",2,88.8,66.25
+"8","US-FL-534","12","2022","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",2,77.25,85.4
+"9","US-FL-534","3","2022","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",20,83,80.75
+"10","US-FL-534","3","2023","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",19,90.5,79.2
+"11","US-FL-534","4","2023","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",2,83.25,78.75
+"12","US-FL-534","5","2022","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",22,80.75,84.25
+"13","US-FL-534","5","2023","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",26,79.2,87.5
+"14","US-FL-534","6","2023","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",214,78.75,81.4
+"15","US-FL-534","7","2022","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",3,84.25,92
+"16","US-FL-534","8","2022","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",69,80.4,87
+"17","US-FL-534","9","2022","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",13,92,88.8
+"18","US-FL-548","1","2022","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",11,64.5,77.25
+"19","US-FL-548","10","2022","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",2,84.25,77.75
+"20","US-FL-548","12","2021","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",8,64,87.4
+"21","US-FL-548","2","2022","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",1,87.4,75.75
+"22","US-FL-548","2","2023","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",85,84.4,82.25
+"23","US-FL-548","3","2023","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",36,81,78
+"24","US-FL-548","4","2023","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",1,82.25,76.75
+"25","US-FL-548","7","2022","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",23,87.5,88.25
+"26","US-FL-548","9","2022","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",2,88.25,86.6
+"27","US-FL-571","2","2022","FT. MYERS (FL) - NAPLES (FL)                                         ","FL ",2,79.6,67
+"28","US-FL-571","3","2022","FT. MYERS (FL) - NAPLES (FL)                                         ","FL ",18,71.75,68.25
+"29","US-FL-571","3","2023","FT. MYERS (FL) - NAPLES (FL)                                         ","FL ",23,77.5,67
+"30","US-FL-571","5","2022","FT. MYERS (FL) - NAPLES (FL)                                         ","FL ",10,68.25,74.75
+"31","US-FL-592","3","2023","GAINESVILLE (FL)                                                     ","FL ",9,78.75,77
+"32","US-FL-656","4","2022","PANAMA CITY (FL)                                                     ","FL ",228,57,51
+"33","US-FL-686","1","2023","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",28,67.5,86.25
+"34","US-FL-686","10","2022","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",20,89.5,78.25
+"35","US-FL-686","12","2022","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",12,78.25,87
+"36","US-FL-686","2","2023","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",16,87,81.25
+"37","US-FL-686","3","2023","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",6,86.25,79
+"38","US-FL-686","4","2022","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",9,81.5,73.2
+"39","US-FL-686","4","2023","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",11,81.25,74.75
+"40","US-FL-686","5","2023","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",20,79,82.5
+"41","US-FL-686","6","2023","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",15,74.75,86
+"42","US-FL-686","8","2022","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",2,81.4,89.5
+"43","US-FL-686","9","2022","MOBILE (AL) - PENSACOLA (FL) - FT. WALTON (FL)                       ","FL ",111,86.25,83
+"44","US-FL-718","1","2022","JACKSONVILLE (FL)                                                    ","FL ",176,44.75,65.25
+"45","US-FL-718","10","2022","JACKSONVILLE (FL)                                                    ","FL ",18,72.75,67.5
+"46","US-FL-718","11","2022","JACKSONVILLE (FL)                                                    ","FL ",6,67.6,59.25
+"47","US-FL-718","3","2023","JACKSONVILLE (FL)                                                    ","FL ",24,83.25,73.6
+"48","US-FL-718","5","2022","JACKSONVILLE (FL)                                                    ","FL ",6,69,82.25
+"49","US-FL-718","7","2022","JACKSONVILLE (FL)                                                    ","FL ",102,82.25,85
+"50","US-FL-718","8","2022","JACKSONVILLE (FL)                                                    ","FL ",2034,77.6,72.75
+"51","US-FL-718","9","2022","JACKSONVILLE (FL)                                                    ","FL ",252,85,67.6
+"52","US-GA-524","1","2022","ATLANTA (GA)                                                         ","GA ",37,55,86.75
+"53","US-GA-524","12","2021","ATLANTA (GA)                                                         ","GA ",1,62,80.4
+"54","US-GA-524","2","2022","ATLANTA (GA)                                                         ","GA ",20,80.4,80.25
+"55","US-GA-524","3","2022","ATLANTA (GA)                                                         ","GA ",5,86.75,83.5
+"56","US-GA-524","6","2023","ATLANTA (GA)                                                         ","GA ",4,84.5,84
+"57","US-IA-624","3","2023","SIOUX CITY (IA)                                                      ","IA ",2,78,68.2
+"58","US-IA-631","4","2022","OTTUMWA (IA) - KIRKSVILLE (MO)                                       ","IA ",1,60.25,34.8
+"59","US-IA-679","4","2023","DES MOINES (IA) - AMES (IA)                                          ","IA ",2,88.5,89.5
+"60","US-IA-679","8","2022","DES MOINES (IA) - AMES (IA)                                          ","IA ",3,91.2,87
+"61","US-IA-717","4","2022","QUINCY (IL) - HANNIBAL (MO) - KEOKUK (IA)                            ","IA ",1,49.5,61.2
+"62","US-IA-725","3","2023","SIOUX CITY (IA)                                                      ","IA ",2,79.5,72.6
+"63","US-IN-527","11","2022","INDIANAPOLIS (IN)                                                    ","IN ",3,81.4,74.25
+"64","US-IN-588","12","2021","SOUTH BEND (IN) - ELKHART (IN)                                       ","IN ",8,65,76
+"65","US-KS-616","3","2023","KANSAS CITY (MO)                                                     ","KS ",7,90.75,85.6
+"66","US-MD-576","2","2022","SALISBURY (MD)                                                       ","MD ",1,89.6,76.5
+"67","US-MI-505","1","2022","DETROIT (MI)                                                         ","MI ",1,53,73
+"68","US-MI-505","1","2023","DETROIT (MI)                                                         ","MI ",6,67,93.25
+"69","US-MI-505","2","2023","DETROIT (MI)                                                         ","MI ",11,88.6,89.75
+"70","US-MI-505","8","2022","DETROIT (MI)                                                         ","MI ",8,78.6,89.25
+"71","US-MI-540","2","2023","TRAVERSE CITY (MI) - CADILLAC (MI)                                   ","MI ",1,87.2,76.25
+"72","US-MI-540","5","2022","TRAVERSE CITY (MI) - CADILLAC (MI)                                   ","MI ",34,77.25,76.5
+"73","US-MI-553","2","2023","MARQUETTE (MI)                                                       ","MI ",1,65.2,84.75
+"74","US-MI-563","10","2022","GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ","MI ",1,85.5,76.25
+"75","US-MI-563","12","2022","GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ","MI ",1,76.25,83.2
+"76","US-MI-588","9","2022","SOUTH BEND (IN) - ELKHART (IN)                                       ","MI ",1,79.75,88
+"77","US-MI-773","10","2022","GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ","MI ",1,82.75,59.25
+"78","US-MI-773","12","2022","GRAND RAPIDS (MI) - KALAMAZOO (MI) - BATTLE CREEK (MI)               ","MI ",1,59.25,62.2
+"79","US-MO-543","2","2022","SPRINGFIELD (MO)                                                     ","MO ",18,60,62.5
+"80","US-MO-543","4","2023","SPRINGFIELD (MO)                                                     ","MO ",30,74,68.5
+"81","US-MO-543","5","2022","SPRINGFIELD (MO)                                                     ","MO ",9,74.75,66.25
+"82","US-MO-543","6","2023","SPRINGFIELD (MO)                                                     ","MO ",15,68.5,78
+"83","US-MO-609","1","2022","ST. LOUIS (MO)                                                       ","MO ",1,56.5,78
+"84","US-MO-609","10","2022","ST. LOUIS (MO)                                                       ","MO ",14,80,75.75
+"85","US-MO-609","11","2022","ST. LOUIS (MO)                                                       ","MO ",12,75.2,67
+"86","US-MO-609","3","2022","ST. LOUIS (MO)                                                       ","MO ",2,78,79
+"87","US-MO-609","5","2022","ST. LOUIS (MO)                                                       ","MO ",2,79,83
+"88","US-MO-609","7","2022","ST. LOUIS (MO)                                                       ","MO ",1,83,85
+"89","US-MO-609","8","2022","ST. LOUIS (MO)                                                       ","MO ",49,81.2,80
+"90","US-MO-609","9","2022","ST. LOUIS (MO)                                                       ","MO ",239,85,75.2
+"91","US-MO-616","9","2022","KANSAS CITY (MO)                                                     ","MO ",14,87.75,84.8
+"92","US-MO-619","2","2022","SPRINGFIELD (MO)                                                     ","MO ",18,63,58.25
+"93","US-MO-619","4","2023","SPRINGFIELD (MO)                                                     ","MO ",30,64,55.75
+"94","US-MO-619","5","2022","SPRINGFIELD (MO)                                                     ","MO ",9,59.5,58.5
+"95","US-MO-619","6","2023","SPRINGFIELD (MO)                                                     ","MO ",15,55.75,62.2
+"96","US-MS-718","4","2022","JACKSON (MS)                                                         ","MS ",22,58,58.2
+"97","US-NC-517","2","2023","CHARLOTTE (NC)                                                       ","NC ",2,89.4,86.75
+"98","US-NC-517","5","2023","CHARLOTTE (NC)                                                       ","NC ",4,90,93.75
+"99","US-NC-518","1","2023","GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ","NC ",1,65,80.25
+"100","US-NC-518","4","2022","GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ","NC ",1,71,65.2
+"101","US-NC-518","5","2022","GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ","NC ",3,77.75,75.25
+"102","US-NC-518","6","2022","GREENSBORO (NC) - HIGH POINT (NC) - WINSTON SALEM (NC)               ","NC ",2,65.2,73.8
+"103","US-NC-550","2","2023","WILMINGTON (NC)                                                      ","NC ",41,81.8,81
+"104","US-NC-560","4","2022","RALEIGH (NC) - DURHAM (NC) - FAYETTEVILLE (NC)                       ","NC ",2,77.25,69.8
+"105","US-NC-560","4","2023","RALEIGH (NC) - DURHAM (NC) - FAYETTEVILLE (NC)                       ","NC ",9,81.25,73.5
+"106","US-NC-567","1","2022","GREENVILLE (SC) - SPARTANBURG (SC) - ASHEVILLE (NC) - ANDERSON (SC)  ","NC ",1,61.5,82.25
+"107","US-NC-584","2","2023","CHARLOTTE (NC)                                                       ","NC ",2,86.4,76
+"108","US-NC-584","5","2023","CHARLOTTE (NC)                                                       ","NC ",4,77.6,61.25
+"109","US-NJ-501","5","2023","NEW YORK (NY)                                                        ","NJ ",1,88.8,84.25
+"110","US-NY-501","1","2022","NEW YORK (NY)                                                        ","NY ",9,54.25,81.25
+"111","US-NY-501","1","2023","NEW YORK (NY)                                                        ","NY ",2,73.25,92.25
+"112","US-NY-501","11","2022","NEW YORK (NY)                                                        ","NY ",1,87,73.25
+"113","US-NY-501","12","2022","NEW YORK (NY)                                                        ","NY ",2,83,88.8
+"114","US-NY-501","2","2022","NEW YORK (NY)                                                        ","NY ",4,67,82.5
+"115","US-NY-501","3","2022","NEW YORK (NY)                                                        ","NY ",2,81.25,87
+"116","US-NY-501","4","2022","NEW YORK (NY)                                                        ","NY ",1,82.5,75.8
+"117","US-NY-501","9","2022","NEW YORK (NY)                                                        ","NY ",1,88.75,87
+"118","US-OR-500","10","2022","PORTLAND (OR)                                                        ","OR ",4,81.25,75.75
+"119","US-OR-500","3","2023","PORTLAND (OR)                                                        ","OR ",70,87.75,84.2
+"120","US-OR-820","10","2022","PORTLAND (OR)                                                        ","OR ",4,81,83.75
+"121","US-OR-820","3","2023","PORTLAND (OR)                                                        ","OR ",70,90.25,85.8
+"122","US-PA-504","12","2021","PHILADELPHIA (PA)                                                    ","PA ",1,66,77
+"123","US-PA-504","12","2022","PHILADELPHIA (PA)                                                    ","PA ",2,84.25,89.2
+"124","US-PA-504","3","2023","PHILADELPHIA (PA)                                                    ","PA ",2,93.25,91
+"125","US-PA-508","2","2023","PITTSBURGH (PA)                                                      ","PA ",151,88.2,89
+"126","US-PA-508","3","2022","PITTSBURGH (PA)                                                      ","PA ",1,80.5,81
+"127","US-PA-516","2","2023","ERIE (PA)                                                            ","PA ",151,82.8,75.25
+"128","US-PA-516","6","2022","ERIE (PA)                                                            ","PA ",1,58.4,56.8
+"129","US-PA-566","1","2023","HARRISBURG (PA) - LANCASTER (PA) - LEBANON (PA) - YORK (PA)          ","PA ",2,73,94.25
+"130","US-PA-566","4","2022","HARRISBURG (PA) - LANCASTER (PA) - LEBANON (PA) - YORK (PA)          ","PA ",1,75.5,75.4
+"131","US-PA-577","2","2023","WILKES BARRE (PA) - SCRANTON (PA)                                    ","PA ",1,85,86
+"132","US-PA-577","7","2022","WILKES BARRE (PA) - SCRANTON (PA)                                    ","PA ",27,77.75,90.25
+"133","US-SC-507","10","2022","SAVANNAH (GA)                                                        ","SC ",99,81.75,79.25
+"134","US-SC-567","11","2022","GREENVILLE (SC) - SPARTANBURG (SC) - ASHEVILLE (NC) - ANDERSON (SC)  ","SC ",1,91.8,74.25
+"135","US-SC-567","9","2022","GREENVILLE (SC) - SPARTANBURG (SC) - ASHEVILLE (NC) - ANDERSON (SC)  ","SC ",2,90,91.8
+"136","US-TN-575","5","2023","CHATTANOOGA (TN)                                                     ","TN ",2,77.6,77.25
+"137","US-TN-640","2","2022","MEMPHIS (TN)                                                         ","TN ",327,52.6,55
+"138","US-TN-659","1","2023","NASHVILLE (TN)                                                       ","TN ",1,71,92.25
+"139","US-TN-659","12","2022","NASHVILLE (TN)                                                       ","TN ",2,81.5,87.2
+"140","US-TN-659","2","2023","NASHVILLE (TN)                                                       ","TN ",6,87.2,86.75
+"141","US-TN-659","3","2022","NASHVILLE (TN)                                                       ","TN ",2,85.5,84
+"142","US-TN-659","5","2022","NASHVILLE (TN)                                                       ","TN ",4,84,86.5
+"143","US-TN-659","5","2023","NASHVILLE (TN)                                                       ","TN ",2,86.2,87.75
+"144","US-TX-612","10","2022","SHREVEPORT (LA)                                                      ","TX ",58,82.5,70.25
+"145","US-TX-618","1","2022","HOUSTON (TX)                                                         ","TX ",71,50.25,79
+"146","US-TX-618","1","2023","HOUSTON (TX)                                                         ","TX ",73,63.5,85.75
+"147","US-TX-618","10","2022","HOUSTON (TX)                                                         ","TX ",2,86.5,70.25
+"148","US-TX-618","11","2022","HOUSTON (TX)                                                         ","TX ",3,81.6,63.5
+"149","US-TX-618","12","2021","HOUSTON (TX)                                                         ","TX ",34,61,74
+"150","US-TX-618","12","2022","HOUSTON (TX)                                                         ","TX ",2,70.25,82
+"151","US-TX-618","2","2022","HOUSTON (TX)                                                         ","TX ",17,74,76.75
+"152","US-TX-618","4","2022","HOUSTON (TX)                                                         ","TX ",19,76.75,78.8
+"153","US-TX-618","5","2022","HOUSTON (TX)                                                         ","TX ",3,80.5,92
+"154","US-TX-618","7","2022","HOUSTON (TX)                                                         ","TX ",2,92,88.25
+"155","US-TX-618","8","2022","HOUSTON (TX)                                                         ","TX ",3,84,86.5
+"156","US-TX-618","9","2022","HOUSTON (TX)                                                         ","TX ",10,88.25,81.6
+"157","US-TX-623","1","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",536,54,80
+"158","US-TX-623","1","2023","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",26,64.75,88.25
+"159","US-TX-623","10","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",510,84,71.5
+"160","US-TX-623","11","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",54,82,64.75
+"161","US-TX-623","12","2021","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",2,57,69.4
+"162","US-TX-623","12","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",8,71.5,78.2
+"163","US-TX-623","2","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",2,69.4,77.5
+"164","US-TX-623","2","2023","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",22,78.2,88.5
+"165","US-TX-623","3","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",42,80,77.5
+"166","US-TX-623","3","2023","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",90,88.25,84
+"167","US-TX-623","4","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",8,77.5,74.8
+"168","US-TX-623","4","2023","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",5,88.5,79.75
+"169","US-TX-623","5","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",4,77.5,82.5
+"170","US-TX-623","5","2023","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",5,84,92.25
+"171","US-TX-623","6","2023","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",5,79.75,86
+"172","US-TX-623","7","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",2,82.5,84
+"173","US-TX-623","8","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",10,85,84
+"174","US-TX-623","9","2022","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",87,84,82
+"175","US-TX-635","1","2023","AUSTIN (TX)                                                          ","TX ",3,65.5,90.75
+"176","US-TX-635","11","2022","AUSTIN (TX)                                                          ","TX ",1,84.2,65.5
+"177","US-TX-635","3","2022","AUSTIN (TX)                                                          ","TX ",84,78,82.25
+"178","US-TX-635","3","2023","AUSTIN (TX)                                                          ","TX ",10,90.75,87.8
+"179","US-TX-641","12","2021","SAN ANTONIO (TX)                                                     ","TX ",435,61,67.4
+"180","US-TX-641","3","2022","SAN ANTONIO (TX)                                                     ","TX ",42,75.5,71.25
+"181","US-UT-770","1","2023","SALT LAKE CITY (UT)                                                  ","UT ",9,70.75,94
+"182","US-UT-770","10","2022","SALT LAKE CITY (UT)                                                  ","UT ",40,90,82.25
+"183","US-UT-770","11","2022","SALT LAKE CITY (UT)                                                  ","UT ",152,87.4,70.75
+"184","US-UT-770","12","2022","SALT LAKE CITY (UT)                                                  ","UT ",23,82.25,90
+"185","US-UT-770","2","2023","SALT LAKE CITY (UT)                                                  ","UT ",58,90,87
+"186","US-UT-770","3","2023","SALT LAKE CITY (UT)                                                  ","UT ",30,94,84.6
+"187","US-UT-770","5","2023","SALT LAKE CITY (UT)                                                  ","UT ",1,84.6,85.25
+"188","US-UT-770","6","2023","SALT LAKE CITY (UT)                                                  ","UT ",25,78.5,81.8
+"189","US-UT-770","7","2022","SALT LAKE CITY (UT)                                                  ","UT ",130,83.5,84.5
+"190","US-UT-770","8","2022","SALT LAKE CITY (UT)                                                  ","UT ",59,81.2,90
+"191","US-UT-770","9","2022","SALT LAKE CITY (UT)                                                  ","UT ",10,84.5,87.4
+"192","US-VA-511","10","2022","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",5,77.75,68
+"193","US-VA-511","11","2022","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",2,72.6,66.75
+"194","US-VA-511","2","2023","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",13,74.2,73.5
+"195","US-VA-511","3","2023","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",14,83,75.2
+"196","US-VA-511","4","2023","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",1,73.5,65.75
+"197","US-VA-517","1","2023","CHARLOTTESVILLE (VA)                                                 ","VA ",17,78.25,94
+"198","US-VA-517","10","2022","CHARLOTTESVILLE (VA)                                                 ","VA ",3,92.75,85
+"199","US-VA-544","5","2022","NORFOLK (VA) - PORTSMOUTH (VA) - NEWPORT NEWS (VA)                   ","VA ",2,81,83.75
+"200","US-VA-556","1","2022","RICHMOND (VA) - PETERSBURG (VA)                                      ","VA ",1,67.75,78
+"201","US-VA-556","6","2023","RICHMOND (VA) - PETERSBURG (VA)                                      ","VA ",18,81.5,87.4
+"202","US-VA-573","1","2022","ROANOKE (VA) - LYNCHBURG (VA)                                        ","VA ",1,49.25,77.5
+"203","US-VA-584","1","2023","CHARLOTTESVILLE (VA)                                                 ","VA ",17,62.25,88.25
+"204","US-VA-584","10","2022","CHARLOTTESVILLE (VA)                                                 ","VA ",3,91.5,80
+"205","US-WA-810","2","2022","YAKIMA (WA) - PASCO (WA) - RICHLAND (WA) - KENNEWICK (WA)            ","WA ",1,70.8,68.25
+"206","US-WA-819","1","2022","SEATTLE (WA) - TACOMA (WA)                                           ","WA ",3,58.75,80.5
+"207","US-WI-617","1","2023","MILWAUKEE (WI)                                                       ","WI ",3,75.5,93
+"208","US-WI-617","5","2022","MILWAUKEE (WI)                                                       ","WI ",3,82.5,91
+"209","US-WI-658","1","2023","GREEN BAY (WI) - APPLETON (WI)                                       ","WI ",3,76.5,89
+"210","US-WY-756","2","2023","BILLINGS (MT)                                                        ","WY ",10,64.2,68
+"211","US-WY-767","10","2022","CASPER (WY) - RIVERTON (WY)                                          ","WY ",2,61,55.75
+"212","US-WY-767","3","2023","CASPER (WY) - RIVERTON (WY)                                          ","WY ",2,67.25,72
+"213","US-WY-767","5","2023","CASPER (WY) - RIVERTON (WY)                                          ","WY ",1,72,71.75
+"214","US-AK-743","10","2021","ANCHORAGE (AK)                                                       ","AK ",1,NA,77
+"215","US-FL-534","10","2021","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",2,NA,67
+"216","US-FL-534","11","2021","ORLANDO (FL) - DAYTONA BEACH (FL) - MELBOURNE (FL)                   ","FL ",7,NA,58.25
+"217","US-FL-548","11","2021","WEST PALM BEACH (FL) - FT. PIERCE (FL)                               ","FL ",161,NA,64.5
+"218","US-IA-679","10","2021","DES MOINES (IA) - AMES (IA)                                          ","IA ",3,NA,58
+"219","US-IA-679","11","2021","DES MOINES (IA) - AMES (IA)                                          ","IA ",3,NA,61
+"220","US-KS-678","11","2021","WICHITA (KS) - HUTCHINSON (KS)                                       ","KS ",29,NA,50.75
+"221","US-MO-609","10","2021","ST. LOUIS (MO)                                                       ","MO ",12,NA,64
+"222","US-MO-616","10","2021","KANSAS CITY (MO)                                                     ","MO ",4,NA,72
+"223","US-NC-545","11","2021","GREENVILLE (NC) - NEW BERN (NC) - WASHINGTON (NC)                    ","NC ",5,NA,51.5
+"224","US-OK-650","10","2021","OKLAHOMA CITY (OK)                                                   ","OK ",10,NA,58
+"225","US-PA-501","11","2021","NEW YORK (NY)                                                        ","PA ",2,NA,54.25
+"226","US-PA-504","10","2021","PHILADELPHIA (PA)                                                    ","PA ",4,NA,66
+"227","US-PA-504","11","2021","PHILADELPHIA (PA)                                                    ","PA ",1,NA,59.5
+"228","US-PA-566","10","2021","HARRISBURG (PA) - LANCASTER (PA) - LEBANON (PA) - YORK (PA)          ","PA ",1,NA,74
+"229","US-PA-577","11","2021","WILKES BARRE (PA) - SCRANTON (PA)                                    ","PA ",2,NA,52.5
+"230","US-TN-575","10","2021","CHATTANOOGA (TN)                                                     ","TN ",12,NA,69
+"231","US-TX-618","10","2021","HOUSTON (TX)                                                         ","TX ",14,NA,61
+"232","US-TX-618","11","2021","HOUSTON (TX)                                                         ","TX ",46,NA,50.25
+"233","US-TX-623","10","2021","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",13,NA,57
+"234","US-TX-623","11","2021","DALLAS (TX) - FT. WORTH (TX)                                         ","TX ",11,NA,54
+"235","US-TX-765","10","2021","EL PASO (TX)                                                         ","TX ",1,NA,55
+"236","US-UT-770","10","2021","SALT LAKE CITY (UT)                                                  ","UT ",20,NA,66
+"237","US-VA-511","11","2021","WASHINGTON (DC) - HAGERSTOWN (MD)                                    ","VA ",2,NA,63.5
+"238","US-VA-544","10","2021","NORFOLK (VA) - PORTSMOUTH (VA) - NEWPORT NEWS (VA)                   ","VA ",6,NA,65
+"239","US-VA-556","10","2021","RICHMOND (VA) - PETERSBURG (VA)                                      ","VA ",2,NA,61
+"240","US-VA-556","11","2021","RICHMOND (VA) - PETERSBURG (VA)                                      ","VA ",1,NA,67.75
+"241","US-VA-569","11","2021","HARRISONBURG                                                         ","VA ",1,NA,68
+"242","US-WA-819","11","2021","SEATTLE (WA) - TACOMA (WA)                                           ","WA ",1,NA,58.75

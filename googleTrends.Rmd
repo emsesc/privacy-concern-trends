@@ -99,9 +99,9 @@ hits_combined_df <- full_join(avg_hits_prev_month_1_avg, avg_hits_next_month_1_a
 * Negative binomial model (for skewed data)
 
 ```{r}
-libraries_near_me <- read.csv("./outputs/library_near_me_full.csv")
-library <- read.csv("./outputs/real-libraries-search.csv")
-library_index <- read.csv("./outputs/library_index.csv")
+libraries_near_me <- read.csv("library-near-me-hits.csv")
+library <- read.csv("./outputs/libraries-hits.csv")
+library_index <- read.csv("./outputs/library-index-full.csv")
 
 hits_combined_df <- full_join(libraries_near_me, library, by = c("X", "geo", "Month", "Year", "DMA", "STATE", "count")) %>%
   mutate(code = as.numeric(substr(geo, nchar(geo) - 2, nchar(geo)))) %>%
@@ -110,28 +110,42 @@ hits_combined_df <- full_join(libraries_near_me, library, by = c("X", "geo", "Mo
          avg_hits_prev_month = rowSums(select(., starts_with("avg_hits_prev_month")), na.rm = TRUE))
 
 hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month, main = "Distribution of Difference of Library Searches", xlab = "Difference in Average Hits (Next Month - Previous Month)", ylab = "Frequency")
+```
+
+Significance in Library Revenue and bans
+```{r}
+hits_combined_df_grouped <- hits_combined_df %>%
+  group_by(geo, DMA, STATE, code, std_avg_index_2019, avg_expenses_2019, avg_revenue_2019, std_avg_index_2021, avg_expenses_2021, avg_revenue_2021, num_lib_2019, num_lib_2021) %>%
+  summarise(tot_searches_after = mean(avg_hits_next_month), tot_count = sum(count)) %>% ungroup()
+
+hist(hits_combined_df_grouped$tot_count)
+
+model <- glm(avg_expenses_2021 ~ tot_count, data = hits_combined_df_grouped, family = Gamma)
+plot(model, which = 1)  # Residuals vs Fitted
+plot(predict(model), residuals(model))
+
+library(ggplot2)
+ggplot(model, aes(x = tot_count, y = residuals(model, type = "partial"))) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+Significance in change in funding and count
+```{r}
+hist(hits_combined_df_grouped$avg_revenue_2021 - hits_combined_df_grouped$avg_revenue_2019)
 
 # Fit OLS model
-ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ as.factor(STATE) + count + std_avg_index + num_lib, data = hits_combined_df)
-
-# Summarize the model
-summary(ols_model)
-
-plot(ols_model, which = 1)
-
-ols_model <- lm(count ~ num_lib, data = hits_combined_df)
-
-# tidycensus?
+ols_model <- lm(avg_revenue_2021 ~ tot_count, data = hits_combined_df_grouped)
 
 # Summarize the model
 summary(ols_model)
 
 plot(ols_model, which = 1)
 ```
+
 Significance in count vs. library search terms
 ```{r}
 # Fit OLS model
-ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ as.factor(STATE) + count + std_avg_index + num_lib, data = hits_combined_df)
+ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ count, data = hits_combined_df)
 
 # Summarize the model
 summary(ols_model)
@@ -139,7 +153,7 @@ summary(ols_model)
 plot(ols_model, which = 1)
 ```
 
-Significance in Num_lib vs. library quality
+Getting Pop data
 ```{r}
 dma_pop <- read.csv("outputs/dma_pop.csv")
 
@@ -150,22 +164,31 @@ test3 <- google_trends_analysis %>% mutate(code = as.numeric(substr(Trends_DMA, 
     left_join(dma_pop, by = "code") %>%
     left_join(dma_income, by = "code") %>%
     left_join(test_hits, by = c("Month", "Year", "STATE", "count", "code"))
+```
 
+Significance in Num_lib vs. library quality
+```{r}
 # Fit OLS model
-ols_model <- lm(std_avg_index ~ num_lib + count + tot_income + offset(log(tot_pop)) + avg_hits_next_month, data = test3)
+ols_model <- lm(std_avg_index ~ num_lib + count + tot_pop, data = test3)
 
 # Summarize the model
 summary(ols_model)
 
 plot(ols_model, which = 1)
+```
 
+Library search terms vs. income
+```{r}
 ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ tot_income + tot_pop, data = test3)
 
 # Summarize the model
 summary(ols_model)
 
 plot(ols_model, which = 1)
+```
 
+More libraries the less book bans?
+```{r}
 # the more libraries the less book bans???
 
 ols_model <- lm(count ~ num_lib, data = test3)
@@ -175,5 +198,3 @@ summary(ols_model)
 
 plot(ols_model, which = 1)
 ```
-
-\
