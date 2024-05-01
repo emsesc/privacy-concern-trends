@@ -1,25 +1,108 @@
 ---
-title: "Book Bans Ban Books?"
-subtitle: "Library Usage in Areas Affected by Book Bans"
+title: "The Impact of Book Bans on Libraries"
+subtitle: "Library Usage & Demand in Areas Affected by Book Bans"
 author: "Emily Chen"
 format: html
 ---
 
 ## Introduction
 
-slkfdjdlsfjlskjf
+Since 2021, book bans have become a regular in U.S. headlines (Ananthakrishnan, 2023). Though they are not a new phenomenon, George Floyd’s death in 2020 spurred a social movement that triggered an opposing effort that aimed to censor literature related to “critical race theory” (Shearer, 2022). This has also extended to books surrounding topics related to race, gender, and LGBTQ+ issues (Ananthakrishnan, 2023). In 2023, the majority of challenges took place at public libraries (54%) with school libraries coming in second at 39% (ALA, 2023). According to the American Library Association, 2023 had the highest number of unique book titles (4,240) targeted for a book ban out of twenty years of tracking, increasing by 65% since 2022 (ALA, 2023). Part of this significant rise in bans is due to the recent development of the political nature of book bans; censorship in libraries is now an organized operation that aims to galvanize voting populations instead of a means of effective censorship (Langrock 2023). Other literature on censorship also supports the claim that forms of intellectual suppression tend to have the opposite intended effect (Hobbs, 2017).
+
+Previous research has analyzed the effect of book bans on the censorship of the specific literature these efforts target, and most have concluded that they are ineffective and raise more awareness. However, impacts on the libraries that provide these resources have not been as researched, and evidence for these effects are anecdotal or isolated incidents. Library funding has been cut in areas that have efforts resisting book bans, and processing book bans is a significant expense (Archie, 2023). Aside from monetary resources, human resources have also been depleted as librarians quit due to fears of safety from harassment from book-banning advocates (NPR, 2023). Identifying the potential impacts that book bans have on public libraries can assist in deciding where resources should best be allocated; if censorship is ineffective but libraries are becoming less-resourced, efforts can be refocused on assisting impacted libraries rather than focusing on spreading awareness about banned books. These analyses aim to explore (1) the funding of libraries in areas targeted by book bans and challenges and (2) how book bans and challenges affect interest and engagement in local public libraries and their programs, filling a gap in current research about the impacts of book bans.
 
 ## Background and Hypotheses
 
-**Public Libraries and Book Bans**
+### Public Library Funding
 
--   public libraries targeted
+Book bans ultimately require a significant amount of funding to process (Langrock, 2023). On top of this, states such as Missouri, Michigan, Texas, Arkansas, and Wyoming among others, typically with larger Republican voter populations, have begun to defund libraries. Langrock and colleagues found that books are typically banned in libraries located in counties where there was a change in vote share won by Republican candidates in U.S. presidential elections (Langrock, 2023). Considering that book banning is a political strategy under this current context, there is a potential indication that book bans are in areas with under-resourced public libraries or currently deteriorating libraries. The effect of redistribution of library expenses to book ban processing, funding cuts from state governments, and a decrease in library staffing due to safety concerns could support a correlated decrease in library funds (NPR, 2023).
 
--   why public libraries? book bans are usually in school libraries
+***Hypothesis 1a:*** The amount of funding provisioned to libraries in areas targeted by more book bans and challenges has decreased from 2019 to 2021.
 
-**\[Some social theory, look at previous book ban articles\]**
+***Hypothesis 1b:*** There is less funding provisioned to libraries in areas targeted by more book bans and challenges.
+
+### Levels of Usage and Interest
+
+Two studies specifically looking at book bans found inverse relationships between the number of book bans and awareness. Authors found that book banning is an ineffective censorship tactic and in some cases, may raise more awareness around these books (Langrock, 2023). Ananthakrishnan and colleagues found that the circulation of banned books counterintuitively increased by 12% (Ananthakrishnan, 2023). However, there is a gap in research on whether communities targeted by book bans seek resources from their local libraries and if book bans impact demand on libraries. Counterproductive censorship attempts, a phenomenon primarily known as the “Streisand effect,” have been exhibited in Barbara Streisand’s attempts to censor online views on her property and state-level censorship in Pakistan and Turkey (Jansen, 2015; Nabi 2014). Research that has found an increase in attention surrounding banned books and previously known examples of the “Streisand effect” could support a potential increase in libraries or general usage in areas affected by book bans.
+
+***Hypothesis 2a:*** Interest in public libraries increases in areas that are targeted by book bans.
+
+***Hypothesis 2b:*** The usage of libraries in areas targeted by more book bans and challenges increases.
 
 ## Methods
+
+### PEN America’s Index of School Book Bans
+
+PEN America’s new Index of School Book Bans records provides a list of book titles as well as their corresponding district banned during the 2021-2022 and 2022-2023 school years across 33 states (PEN America, 2023). When the data across both school years are combined, there are 5,894 unique instances of a book at a school library being challenged based on its content between 2021 and 2023. Dates of book bans were standardized into month and year variables, school districts were mapped to counties, and DMA (Designated Market Area) regions (Nielsen, 2024).
+
+### IMLS Public Library Survey
+
+The Institute of Museum and Library Services conducts an annual voluntary census of public libraries in the United States called the “Public Libraries Survey” (IMLS, 2023). The most recent publicly available census was from 2021, which was compared with survey data from 2019. To measure library usage and library funding, the following variables were used from the surveys (IMLS, 2023).
+
+**To calculate a “library usage index”:**
+
+[Circulation]{.underline}
+
+`TOTCIR`: Total circulation of materials.
+
+`TOTCOLL`: Total collection use.
+
+[Technology Use]{.underline}
+
+`PITUSR`: Public internet computer uses per year.
+
+`ELINFO`: Retrieval of electronic information.
+
+`ELCONT`: Electronic content use.
+
+[Service]{.underline}
+
+`VISITS`: Library visits.
+
+`REFERENC`: Total reference transactions.
+
+`LOANTO`: Total loans provided to other libraries.
+
+`LIBRARIA`: Total librarians.
+
+**To calculate the total funding that year:**
+
+`CAP_REV`: Total capital revenue.
+
+`TOTINCM`: Total operating revenue.
+
+To calculate the “library usage index,” the various categories of variables were summed then weighted differently: circulation (0.4), technology use (0.3), and service (0.3). The index was then standardized and averaged by DMA. Total funding was calculated by summing capital and operating revenue and averaging it by DMA. In order to account for population size in relation to library funding, population totals were also calculated for each DMA using census data collected using the R package “tidycensus” (Walker, 2024). 
+
+### Google Trends
+
+Google Trends, part of the Google News Initiative, analyzes samples of Google searches to provide data that determines volumes of searches for a specific topic over a specific period of time (Google News Initiative, 2016). Data is normalized on a 0-100 scale, and location can be provided as a parameter. Since DMAs (Designated Market Area) were the smallest geographical areas Google Trends supports, county-level data during cleaning was mapped to corresponding DMAs.
+
+Because there is no national real-time data for interest or visits to public libraries, analyzing the volume of Google searches is an alternative way to analyze this variable. The two search terms used to measure interest were “library near me” and “library”. For each unique DMA region and corresponding book banning month and year, Google Trends was queried with the “gtrendsR” package (Massicotte, 2022). The sum of interest for both search terms and the difference in search interest the month before the book ban and the month after the book ban was calculated.
+
+### Models & Variables
+
+-   `avg_hits_next_month`: Average search interest in local libraries in a DMA the month before bans.
+-   `avg_hits_prev_month`: Average search interest in local libraries in a DMA the month after bans.
+-   `avg_revenue_2019:` Average total revenue of libraries in a DMA in 2019.
+-   `avg_revenue_2021`: Average total revenue of libraries in a DMA in 2021.
+-   `tot_pop`: Total estimated population in a DMA.
+-   `count`: Total book bans and challenges in a DMA during a specific month and year.
+-   `tot_count`: Total book bans and challenges in a DMA from 2021 - 2023.
+-   `std_avg_index_2019`: Standardized “library usage index” in 2019.
+-   `std_avg_index_2021`: Standardized “library usage index” in 2021.
+-   `num_lib_2021`: Number of libraries in a DMA in 2021.
+
+***Model 1a:*** `avg_revenue_2021 - avg_revenue_2019 = tot_count + tot_pop`
+
+***Model 1b:*** `avg_revenue_2021 = tot_count + tot_pop`
+
+***Model 2a:*** `avg_hits_next_month - avg_hits_prev_month = count + num_lib_2021`
+
+***Model 2b:*** `std_avg_index_2021 - std_avg_index_2019 = tot_count + tot_pop`
+
+***Model 2c:*** `std_avg_index_2021 = tot_count + tot_pop`
+
+***Figure 1.*** Map of Count of Book Bans by DMA
 
 ```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
 library(sf)
@@ -59,6 +142,8 @@ ggplot() +
   labs(fill = "Number of Bans\nor Challenges")
 ```
 
+***Figure 2.*** Top 20 DMAs by Book Bans Count
+
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(dplyr)
 library(ggplot2)
@@ -81,6 +166,8 @@ bar_plot <- hits_combined_df_grouped[order(hits_combined_df_grouped$tot_count, d
 print(bar_plot)
 ```
 
+***Figure 3.*** Histogram of Distribution of Difference in Search hits
+
 ```{r echo=FALSE}
 hits_combined_df <- read.csv("hits_combined_df.csv")
 
@@ -91,6 +178,8 @@ top_10_table <- read.csv("top_10_table.csv") %>%
 
 knitr::kable(top_10_table, format = "html")
 ```
+
+***Figure 4.*** Map of Average Library Usage Index by DMA
 
 ```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
 # Read the Google Trends analysis data
@@ -110,14 +199,14 @@ ggplot() +
   labs(fill = "Average Library\nUsage Index")
 ```
 
-```{}
+```         
 ```
 
 ## Analysis and Results
 
-Hypothesis 1:
+### Hypothesis 1:
 
-Figure 1:
+***Figure 5.*** Average Revenue Difference (2021-2019) vs. Total Book Bans Count
 
 ```{r echo=FALSE}
 hits_combined_df_grouped$diff <- hits_combined_df_grouped$avg_revenue_2021 - hits_combined_df_grouped$avg_revenue_2019
@@ -135,7 +224,7 @@ plot(hits_combined_df_grouped$tot_count, hits_combined_df_grouped$diff,
 abline(model, col = "red")
 ```
 
-Table 1:
+***Table 1:*** Regression Results of Model 1a
 
 ```{r echo=FALSE, warning=FALSE}
 test3 <- read.csv("test.csv")
@@ -148,6 +237,8 @@ ols_model <- lm(avg_revenue_2021 - avg_revenue_2019 ~ tot_count + tot_pop, data 
 # Summarize the model
 summary(ols_model)
 ```
+
+***Figure 6.*** Map of Average Library Revenue in 2021 by DMA
 
 ```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
 # Read the Google Trends analysis data
@@ -167,7 +258,7 @@ ggplot() +
   labs(fill = "Average Revenue in 2021\n(Dollars)")
 ```
 
-Table 2:
+***Table 2:*** Regression Results of Model 1b
 
 ```{r echo=FALSE}
 hits_combined_df_grouped$log_avg_revenue_2021 <- log(hits_combined_df_grouped$avg_revenue_2021)
@@ -179,7 +270,9 @@ lm_model <- lm(log_avg_revenue_2021 ~ tot_count + tot_pop, data = hits_combined_
 summary(lm_model)
 ```
 
-Hypothesis 2:
+### Hypothesis 2:
+
+***Figure 7.*** Average Search Hit Difference (Next Month - Previous Month) vs. Book Bans Count
 
 ```{r echo=FALSE}
 hits_combined_df$diff <- hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month
@@ -197,7 +290,7 @@ plot(hits_combined_df$count, hits_combined_df$diff,
 abline(model, col = "red")
 ```
 
-Table 3:
+***Table 3:*** Regression Results of Model 2a
 
 ```{r echo=FALSE}
 # Fit OLS model
@@ -207,9 +300,25 @@ ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ count + num_lib_2021
 summary(ols_model)
 ```
 
-\`\`\`
+***Figure 8.*** Average Usage Index Difference (2021 - 2019) vs. Total Book Bans Count
 
-Table 4:
+```{r echo=FALSE}
+hits_combined_df_grouped$diff_index <- hits_combined_df_grouped$std_avg_index_2021 - hits_combined_df_grouped$std_avg_index_2019
+
+model <- lm(diff_index ~ tot_count, data = hits_combined_df_grouped)
+
+# Plot scatter plot
+plot(hits_combined_df_grouped$tot_count, hits_combined_df_grouped$diff_index, 
+     main = "Usage Index Difference vs Total Count",
+     xlab = "Total Book Bans Count",
+     ylab = "Average Usage Index Difference (2021 - 2019)",
+     pch = 19, col = "blue")
+
+# Add regression line
+abline(model, col = "red")
+```
+
+***Table 4:*** Regression Results of Model 2b
 
 ```{r echo=FALSE}
 # Fit OLS model
@@ -219,7 +328,7 @@ ols_model <- lm(std_avg_index_2021 - std_avg_index_2019 ~ tot_count + tot_pop, d
 summary(ols_model)
 ```
 
-Table 5:
+***Table 5:*** Regression Results of Model 2c
 
 ```{r echo=FALSE}
 # Fit OLS model
@@ -234,3 +343,33 @@ summary(ols_model)
 ## Conclusion & Limitations
 
 ## Bibliography
+
+American Library Association. (2023, April 20). Censorship by the Numbers. Retrieved April 29, 2024, from Advocacy, Legislation & Issues website: https://www.ala.org/advocacy/bbooks/by-the-numbers
+
+Archie, A. (2023, September 20). There have been attempts to censor more than 1,900 library book titles so far in 2023. Retrieved April 29, 2024, from NPR website: https://www.npr.org/2023/09/20/1200647985/book-bans-libraries-schools
+
+Ananthakrishnan, U. M., Basavaraj, N., Karmegam, S. R., Sen, A., & Smith, M. D. (2023). Book Bans in American Libraries: Impact of Politics on Inclusive Content Consumption. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.4489684
+
+Google News Initiative. (2016). Google Trends: Understanding the data. Retrieved April 30, 2024, from https://newsinitiative.withgoogle.com/resources/trainings/google-trends-understanding-the-data/
+
+Hobbs, W. R., & Roberts, M. (2017). How Sudden Censorship Can Increase Access to Information. Social Science Research Network. https://doi.org/10.2139/ssrn.2990593
+
+Institute of Museum and Library Services (2023). Public Libraries Survey Fiscal Year 2021 Data File Documentation and User’s Guide. Retrieved from https://www.imls.gov/sites/default/files/2023-06/2021_pls_data_file_documentation.pdf
+
+Jansen, S. C., & Martin, B. (2015). The Streisand Effect and Censorship Backfire. International Journal of Communication, 9(0), Article 0.
+
+Langrock, I., LaViolette, J., Goncalves, M., & Spoon, K. (2023). Book Bans in Political Context: Evidence from U.S. Public Schools. Social Science Research Network. https://doi.org/10.2139/ssrn.4618699
+
+Massicotte, P. (2022). Perform and Display Google Trends Queries \[R package gtrendsR version 1.5.1\]. (2022). R-Project.org. https://cran.r-project.org/package=gtrendsR
+
+Nabi, Z. (2014). R̶e̶s̶i̶s̶t̶a̶n̶c̶e̶ censorship is futile. First Monday. https://doi.org/10.5210/fm.v19i11.5525
+
+Nielsen. (2024, March 11). DMA® Regions Retrieved April 30, 2024, from Nielsen website: https://www.nielsen.com/dma-regions/
+
+NPR. (2023, August 11). The Battle Over Book Bans Takes a Toll on Librarians and Comes at a Financial cost. Retrieved April 29, 2024, from NPR website: https://www.npr.org/transcripts/1193446007
+
+PEN America. (2023, September 21). Banned Book List: 3,362 Books Banned in 2022-2023.  Retrieved April 30, 2024, from PEN America website: https://pen.org/2023-banned-book-list/
+
+Shearer, M. (2022). Banning Books or Banning BIPOC? Northwestern University Law Review Online, 117, 24–45.
+
+Walker, K. (2024). Load US Census Boundary and Attribute Data as “tidyverse” and “sf”-Ready Data Frames \[R package tidycensus version 1.6.3\]. R-Project.org. https://cran.r-project.org/package=tidycensus
