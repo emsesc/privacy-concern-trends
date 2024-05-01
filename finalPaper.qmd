@@ -27,7 +27,135 @@ slkfdjdlsfjlskjf
 
 **Data Cleaning**
 
+```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
+library(sf)
+library(ggplot2)
+library(dplyr)
+
+# Read the shapefile
+dma_boundary <- st_read("./data/dma_boundary.geojson")
+state_boundary <- st_read("./data/us_states.geojson")
+
+# Read the Google Trends analysis data
+clean_pen_index <- read.csv("./outputs/clean_pen_index.csv")  # Adjust the file path and format accordingly
+
+map_dma <- clean_pen_index %>%
+  select(Month, Year, Trends_DMA, DMA, STATE) %>%
+  group_by(Trends_DMA, DMA, STATE) %>%
+  summarize(count = n()) %>%
+  distinct()
+
+# Extract the last three characters from Trends_DMA
+map_dma$dma_code <- as.numeric(substr(map_dma$Trends_DMA, nchar(map_dma$Trends_DMA) - 2, nchar(map_dma$Trends_DMA)))
+map_dma$STATE <- gsub(" ", "", map_dma$STATE)
+
+dma_boundary$STATE <- substr(dma_boundary$dma_1, nchar(dma_boundary$dma_1) - 1, nchar(dma_boundary$dma_1))
+
+# Merge the attribute data with the shapefile based on the extracted common column
+merged_data <- left_join(dma_boundary, map_dma, by = c("dma0" = "dma_code", "STATE"))
+
+# Plot the merged data
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = count), color = "white") +  
+  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
+  theme_void() +  # Removes background axes and grid lines
+  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
+  ggtitle("Book Bans and Challenges by DMA from 2021-2023") +
+  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey")
+
+# Read the shapefile
+dma_boundary <- st_read("./data/dma_boundary.geojson")
+
+# Read the Google Trends analysis data
+library_index <- read.csv("outputs/library_index.csv")
+
+# Merge the attribute data with the shapefile based on the extracted common column
+merged_data <- left_join(dma_boundary, library_index, by = c("dma0" = "code"))
+
+# Plot the merged data
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = std_avg_index), color = "white") +  
+  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
+  theme_void() +  # Removes background axes and grid lines
+  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
+  ggtitle("Library Usage Index by DMA in 2021") +
+  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey")
+
+# Read the shapefile
+dma_boundary <- st_read("./data/dma_boundary.geojson")
+
+# Read the Google Trends analysis data
+library_index <- read.csv("outputs/library-index-full.csv")
+
+# Merge the attribute data with the shapefile based on the extracted common column
+merged_data <- left_join(dma_boundary, library_index, by = c("dma0" = "code"))
+
+# Plot the merged data
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = avg_revenue_2021), color = "white") +  
+  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
+  theme_void() +  # Removes background axes and grid lines
+  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
+  ggtitle("Library Revenue by DMA in 2021") +
+  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey")
+```
+
 ## Analysis and Results
+
+Hypothesis 1:
+
+Table 1:
+
+```{r echo=FALSE}
+test3 <- read.csv("test.csv")
+hits_combined_df <- read.csv("hits_combined_df.csv")
+hits_combined_df_grouped <- read.csv("hits_combined_df_grouped.csv")
+
+ols_model <- lm(avg_revenue_2021- avg_revenue_2019 ~ tot_count + tot_pop, data = hits_combined_df_grouped)
+
+# Summarize the model
+summary(ols_model)
+```
+
+Table 2:
+
+```{r echo=FALSE}
+glm_model <- glm(tot_searches_after ~ tot_count + tot_pop, data = hits_combined_df_grouped, family = Gamma)
+
+summary(glm_model)
+```
+
+Hypothesis 2:
+
+Table 3:
+
+```{r echo=FALSE}
+# Fit OLS model
+ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ count + num_lib_2021, data = hits_combined_df)
+
+# Summarize the model
+summary(ols_model)
+```
+
+Table 4:
+
+```{r echo=FALSE}
+# Fit OLS model
+ols_model <- lm(std_avg_index_2021 - std_avg_index_2019 ~ tot_count + tot_pop, data = hits_combined_df_grouped)
+
+# Summarize the model
+summary(ols_model)
+```
+
+Table 5:
+
+```{r echo=FALSE}
+# Fit OLS model
+ols_model <- lm(std_avg_index_2021 ~ tot_count + tot_pop, data = hits_combined_df_grouped)
+
+# Summarize the model
+summary(ols_model)
+```
 
 ## Discussion
 

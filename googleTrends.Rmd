@@ -134,7 +134,7 @@ Significance in change in funding and count
 hist(hits_combined_df_grouped$avg_revenue_2021 - hits_combined_df_grouped$avg_revenue_2019)
 
 # Fit OLS model
-ols_model <- lm(avg_revenue_2021 ~ tot_count, data = hits_combined_df_grouped)
+ols_model <- lm(avg_revenue_2021 - avg_revenue_2019 ~ tot_count + tot_pop, data = hits_combined_df_grouped)
 
 # Summarize the model
 summary(ols_model)
@@ -191,7 +191,7 @@ More libraries the less book bans?
 ```{r}
 # the more libraries the less book bans???
 
-ols_model <- lm(count ~ num_lib, data = test3)
+ols_model <- lm(count ~ num_lib + tot_pop, data = test3)
 
 # Summarize the model
 summary(ols_model)
