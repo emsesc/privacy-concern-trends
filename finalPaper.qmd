@@ -21,39 +21,6 @@ slkfdjdlsfjlskjf
 
 ## Methods
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(dplyr)
-library(ggplot2)
-
-hits_combined_df_grouped <- read.csv("hits_combined_df_grouped.csv")
-
-bar_plot <- hits_combined_df_grouped[order(hits_combined_df_grouped$tot_count, decreasing = TRUE), ] %>%
-  head(20) %>% 
-  ggplot(aes(x = tot_count, y = DMA)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  labs(
-    title = "Top 20 Number of\nBans by DMA",
-    x = "Count",
-    y = "DMA"
-  ) +
-  theme_minimal() + # Adjust the theme as needed
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) # Rotate x-axis labels if needed
-
-# Show the plot
-print(bar_plot)
-```
-
-```{r echo=FALSE}
-hits_combined_df <- read.csv("hits_combined_df.csv")
-
-hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month, main = "Distribution of Difference of Library Searches", xlab = "Difference in Average Hits (Next Month - Previous Month)", ylab = "Frequency")
-
-top_10_table <- read.csv("top_10_table.csv") %>%
-  select(-X)
-
-knitr::kable(top_10_table, format = "html")
-```
-
 ```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
 library(sf)
 library(ggplot2)
@@ -90,8 +57,60 @@ ggplot() +
   ggtitle("Book Bans and Challenges by DMA from 2021-2023") +
   scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey") +
   labs(fill = "Number of Bans\nor Challenges")
+```
 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
 
+hits_combined_df_grouped <- read.csv("hits_combined_df_grouped.csv")
+
+bar_plot <- hits_combined_df_grouped[order(hits_combined_df_grouped$tot_count, decreasing = TRUE), ] %>%
+  head(20) %>% 
+  ggplot(aes(x = tot_count, y = DMA)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(
+    title = "Top 20 Number of\nBans by DMA",
+    x = "Count",
+    y = "DMA"
+  ) +
+  theme_minimal() + # Adjust the theme as needed
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) # Rotate x-axis labels if needed
+
+# Show the plot
+print(bar_plot)
+```
+
+```{r echo=FALSE}
+hits_combined_df <- read.csv("hits_combined_df.csv")
+
+hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month, main = "Distribution of Difference of Library Searches", xlab = "Difference in Average Hits (Next Month - Previous Month)", ylab = "Frequency")
+
+top_10_table <- read.csv("top_10_table.csv") %>%
+  select(-X)
+
+knitr::kable(top_10_table, format = "html")
+```
+
+```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
+# Read the Google Trends analysis data
+library_index <- read.csv("outputs/library_index.csv")
+
+# Merge the attribute data with the shapefile based on the extracted common column
+merged_data <- left_join(dma_boundary, library_index, by = c("dma0" = "code"))
+
+# Plot the merged data
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = std_avg_index), color = "white") +  
+  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
+  theme_void() +  # Removes background axes and grid lines
+  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
+  ggtitle("Library Usage Index by DMA in 2021") +
+  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey") +
+  labs(fill = "Average Library\nUsage Index")
+```
+
+```{}
 ```
 
 ## Analysis and Results
@@ -99,6 +118,36 @@ ggplot() +
 Hypothesis 1:
 
 Figure 1:
+
+```{r echo=FALSE}
+hits_combined_df_grouped$diff <- hits_combined_df_grouped$avg_revenue_2021 - hits_combined_df_grouped$avg_revenue_2019
+
+model <- lm(diff ~ tot_count, data = hits_combined_df_grouped)
+
+# Plot scatter plot
+plot(hits_combined_df_grouped$tot_count, hits_combined_df_grouped$diff, 
+     main = "Revenue Difference vs Total Count",
+     xlab = "Total Book Bans Count",
+     ylab = "Average Revenue Difference (2021 - 2019)",
+     pch = 19, col = "blue")
+
+# Add regression line
+abline(model, col = "red")
+```
+
+Table 1:
+
+```{r echo=FALSE, warning=FALSE}
+test3 <- read.csv("test.csv")
+dma_pop <- read.csv("outputs/dma_pop.csv")
+hits_combined_df_grouped <- hits_combined_df_grouped %>%
+  left_join(dma_pop, by = "code")
+
+ols_model <- lm(avg_revenue_2021 - avg_revenue_2019 ~ tot_count + tot_pop, data = hits_combined_df_grouped)
+
+# Summarize the model
+summary(ols_model)
+```
 
 ```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
 # Read the Google Trends analysis data
@@ -118,29 +167,35 @@ ggplot() +
   labs(fill = "Average Revenue in 2021\n(Dollars)")
 ```
 
-Table 1:
-
-```{r echo=FALSE, warning=FALSE}
-test3 <- read.csv("test.csv")
-dma_pop <- read.csv("outputs/dma_pop.csv")
-hits_combined_df_grouped <- hits_combined_df_grouped %>%
-  left_join(dma_pop, by = "code")
-
-ols_model <- lm(avg_revenue_2021 - avg_revenue_2019 ~ tot_count + tot_pop, data = hits_combined_df_grouped)
-
-# Summarize the model
-summary(ols_model)
-```
-
 Table 2:
 
 ```{r echo=FALSE}
-glm_model <- glm(tot_searches_after ~ tot_count + tot_pop, data = hits_combined_df_grouped, family = Gamma)
+hits_combined_df_grouped$log_avg_revenue_2021 <- log(hits_combined_df_grouped$avg_revenue_2021)
 
-summary(glm_model)
+# Fit linear model
+lm_model <- lm(log_avg_revenue_2021 ~ tot_count + tot_pop, data = hits_combined_df_grouped)
+
+# Summary of the model
+summary(lm_model)
 ```
 
 Hypothesis 2:
+
+```{r echo=FALSE}
+hits_combined_df$diff <- hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month
+
+model <- lm(diff ~ count, data = hits_combined_df)
+
+# Plot scatter plot
+plot(hits_combined_df$count, hits_combined_df$diff, 
+     main = "Book Bans Count vs Search Hit Difference",
+     xlab = "Bans Count",
+     ylab = "Average Search Hit Difference\n(Next Month - Previous Month)",
+     pch = 19, col = "blue")
+
+# Add regression line
+abline(model, col = "red")
+```
 
 Table 3:
 
@@ -152,25 +207,7 @@ ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ count + num_lib_2021
 summary(ols_model)
 ```
 
-Figure x:
-
-```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
-# Read the Google Trends analysis data
-library_index <- read.csv("outputs/library_index.csv")
-
-# Merge the attribute data with the shapefile based on the extracted common column
-merged_data <- left_join(dma_boundary, library_index, by = c("dma0" = "code"))
-
-# Plot the merged data
-ggplot() +
-  geom_sf(data = merged_data, aes(fill = std_avg_index), color = "white") +  
-  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
-  theme_void() +  # Removes background axes and grid lines
-  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
-  ggtitle("Library Usage Index by DMA in 2021") +
-  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey") +
-  labs(fill = "Average Library\nUsage Index")
-```
+\`\`\`
 
 Table 4:
 

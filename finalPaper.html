@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -92,6 +126,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <p><img src="finalPaper_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="finalPaper_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
 <div class="cell-output-display">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
@@ -160,17 +199,31 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="finalPaper_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="finalPaper_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<pre><code></code></pre>
 </section>
 <section id="analysis-and-results" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-and-results">Analysis and Results</h2>
 <p>Hypothesis 1:</p>
 <p>Figure 1:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hits_combined_df_grouped<span class="sc">$</span>diff <span class="ot">&lt;-</span> hits_combined_df_grouped<span class="sc">$</span>avg_revenue_2021 <span class="sc">-</span> hits_combined_df_grouped<span class="sc">$</span>avg_revenue_2019</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(tot_count <span class="sc">~</span> diff, <span class="at">data =</span> hits_combined_df_grouped)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot scatter plot</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hits_combined_df_grouped<span class="sc">$</span>diff, hits_combined_df_grouped<span class="sc">$</span>tot_count, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Revenue Difference vs Total Count"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Average Revenue Difference (2021 - 2019)"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Total Count"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Add regression line</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(model, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="finalPaper_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<p><img src="finalPaper_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Table 1:</p>
@@ -199,30 +252,34 @@ Multiple R-squared:  0.01001,   Adjusted R-squared:  -0.01199
 F-statistic: 0.4552 on 2 and 90 DF,  p-value: 0.6358</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="finalPaper_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <p>Table 2:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-glm(formula = tot_searches_after ~ tot_count + tot_pop, family = Gamma, 
-    data = hits_combined_df_grouped)
+lm(formula = log_avg_revenue_2021 ~ tot_count + tot_pop, data = hits_combined_df_grouped)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.6745 -0.9104 -0.1023  0.8923  2.6233 
 
 Coefficients:
               Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  1.809e-02  7.424e-04  24.360  &lt; 2e-16 ***
-tot_count   -6.676e-07  1.144e-06  -0.584    0.561    
-tot_pop     -6.603e-10  1.233e-10  -5.357 5.61e-07 ***
+(Intercept)  1.491e+01  1.697e-01  87.829   &lt;2e-16 ***
+tot_count   -1.556e-04  3.162e-04  -0.492   0.6238    
+tot_pop      1.131e-07  5.325e-08   2.124   0.0364 *  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-(Dispersion parameter for Gamma family taken to be 0.1383012)
-
-    Null deviance: 15.018  on 100  degrees of freedom
-Residual deviance: 12.570  on  98  degrees of freedom
-  (10 observations deleted due to missingness)
-AIC: 901.15
-
-Number of Fisher Scoring iterations: 5</code></pre>
+Residual standard error: 1.286 on 90 degrees of freedom
+  (18 observations deleted due to missingness)
+Multiple R-squared:  0.04772,   Adjusted R-squared:  0.02656 
+F-statistic: 2.255 on 2 and 90 DF,  p-value: 0.1108</code></pre>
 </div>
 </div>
 <p>Hypothesis 2:</p>
@@ -249,12 +306,6 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Residual standard error: 22.33 on 418 degrees of freedom
 Multiple R-squared:  0.01068,   Adjusted R-squared:  0.005942 
 F-statistic: 2.255 on 2 and 418 DF,  p-value: 0.1061</code></pre>
-</div>
-</div>
-<p>Figure x:</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="finalPaper_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Table 4:</p>
