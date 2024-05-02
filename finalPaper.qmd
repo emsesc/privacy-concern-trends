@@ -81,6 +81,8 @@ Because there is no national real-time data for interest or visits to public lib
 
 ### Models & Variables
 
+Regression models are used in this study to test the four hypotheses. Variables utilized in the models are defined as follows:
+
 -   `avg_hits_next_month`: Average search interest in local libraries in a DMA the month before bans.
 -   `avg_hits_prev_month`: Average search interest in local libraries in a DMA the month after bans.
 -   `avg_revenue_2019:` Average total revenue of libraries in a DMA in 2019.
@@ -92,6 +94,8 @@ Because there is no national real-time data for interest or visits to public lib
 -   `std_avg_index_2021`: Standardized “library usage index” in 2021.
 -   `num_lib_2021`: Number of libraries in a DMA in 2021.
 
+The following are regression models which were fit using the ordinary least squares distribution based on the variables' normal distribution.
+
 ***Model 1a:*** `avg_revenue_2021 - avg_revenue_2019 = tot_count + tot_pop`
 
 ***Model 1b:*** `avg_revenue_2021 = tot_count + tot_pop`
@@ -101,6 +105,10 @@ Because there is no national real-time data for interest or visits to public lib
 ***Model 2b:*** `std_avg_index_2021 - std_avg_index_2019 = tot_count + tot_pop`
 
 ***Model 2c:*** `std_avg_index_2021 = tot_count + tot_pop`
+
+### Overview of Data
+
+421 unique combinations of DMA, month, and year for recorded book bans were collected, with 93 out of 210 DMAs containing book bans. NAs in the data are due to the fact that not all DMAs have documented or reported book bans, as shown by the greyed areas on the map below.
 
 ***Figure 1.*** Map of Count of Book Bans by DMA
 
@@ -142,6 +150,8 @@ ggplot() +
   labs(fill = "Number of Bans\nor Challenges")
 ```
 
+The data was overrepresented by records of book bans from two DMAs: Jacksonville, Florida (2884 bans and challenges) and Dallas - Ft. Worth, Texas (2618 bans and challenges).
+
 ***Figure 2.*** Top 20 DMAs by Book Bans Count
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -166,65 +176,57 @@ bar_plot <- hits_combined_df_grouped[order(hits_combined_df_grouped$tot_count, d
 print(bar_plot)
 ```
 
+Search trends for interest in libraries had a generally normal distribution that was skewed a little to the right, most have little to no change in search interest.
+
 ***Figure 3.*** Histogram of Distribution of Difference in Search hits
 
 ```{r echo=FALSE}
 hits_combined_df <- read.csv("hits_combined_df.csv")
 
 hist(hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month, main = "Distribution of Difference of Library Searches", xlab = "Difference in Average Hits (Next Month - Previous Month)", ylab = "Frequency")
+```
 
+***Table 1.*** Top 10 unique DMA, month, and year combinations with the highest difference in search interest before and after an instance of book bans.
+
+```{r echo=FALSE}
 top_10_table <- read.csv("top_10_table.csv") %>%
   select(-X)
 
 knitr::kable(top_10_table, format = "html")
 ```
 
-***Figure 4.*** Map of Average Library Usage Index by DMA
-
-```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
-# Read the Google Trends analysis data
-library_index <- read.csv("outputs/library_index.csv")
-
-# Merge the attribute data with the shapefile based on the extracted common column
-merged_data <- left_join(dma_boundary, library_index, by = c("dma0" = "code"))
-
-# Plot the merged data
-ggplot() +
-  geom_sf(data = merged_data, aes(fill = std_avg_index), color = "white") +  
-  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
-  theme_void() +  # Removes background axes and grid lines
-  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
-  ggtitle("Library Usage Index by DMA in 2021") +
-  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey") +
-  labs(fill = "Average Library\nUsage Index")
-```
-
-```         
-```
-
 ## Analysis and Results
 
-### Hypothesis 1:
+### Hypothesis 1a:
 
-***Figure 5.*** Average Revenue Difference (2021-2019) vs. Total Book Bans Count
+Figure 4 plots the correlation between difference in total revenue of libraries in a DMA from 2019 to 2021 and total count of book bans and challenges in that DMA as the predictor variable. A negative correlation would indicate a lesser amount of funding allocated or a decrease in funding if the data goes below the 0 line. Visually, the graph appears to have a small negative trend, though the two outliers are likely influencing the negative correlation.
+
+***Figure 4.*** Average Revenue Difference (2021-2019) vs. Total Book Bans Count
 
 ```{r echo=FALSE}
 hits_combined_df_grouped$diff <- hits_combined_df_grouped$avg_revenue_2021 - hits_combined_df_grouped$avg_revenue_2019
 
 model <- lm(diff ~ tot_count, data = hits_combined_df_grouped)
+dot_colors <- ifelse(hits_combined_df_grouped$diff < 0, "red", "green")
 
 # Plot scatter plot
 plot(hits_combined_df_grouped$tot_count, hits_combined_df_grouped$diff, 
      main = "Revenue Difference vs Total Count",
      xlab = "Total Book Bans Count",
      ylab = "Average Revenue Difference (2021 - 2019)",
-     pch = 19, col = "blue")
+     pch = 19, col = dot_colors)
 
 # Add regression line
-abline(model, col = "red")
+abline(model, col = "blue")
+
+legend("topright", legend = c("Decrease", "Increase"),
+       col = c("red", "green"), pch = 19,
+       title = "Change from 2019 to 2021", cex = 0.8)
 ```
 
-***Table 1:*** Regression Results of Model 1a
+Model 1a accounts for the potential effect of total population in the DMA on the amount of funding a library receives. Based on the model, there is no significant relationship between the total count of book bans and challenges and the change in library revenue between 2019 and 2021, thereby not providing support for Hypothesis 1b.
+
+***Table 2.*** Regression Results of Model 1a
 
 ```{r echo=FALSE, warning=FALSE}
 test3 <- read.csv("test.csv")
@@ -238,7 +240,11 @@ ols_model <- lm(avg_revenue_2021 - avg_revenue_2019 ~ tot_count + tot_pop, data 
 summary(ols_model)
 ```
 
-***Figure 6.*** Map of Average Library Revenue in 2021 by DMA
+### Hypothesis 1b:
+
+Figure 5 shows a geographical distribution of the average library revenue in 2021 by DMA, which when visually compared with the map containing the number of book bans in DMAs, does not reveal any immediate trends.
+
+***Figure 5.*** Map of Average Library Revenue in 2021 by DMA
 
 ```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
 # Read the Google Trends analysis data
@@ -258,7 +264,9 @@ ggplot() +
   labs(fill = "Average Revenue in 2021\n(Dollars)")
 ```
 
-***Table 2:*** Regression Results of Model 1b
+Similar to Model 1a, the total count of book bans in each DMA had no significant relationship to the average library revenue of DMAs in 2021. As a result, Hypothesis 1b is also not supported since there is no negative correlation between revenue in 2021 and number of book bans.
+
+***Table 3.*** Regression Results of Model 1b
 
 ```{r echo=FALSE}
 hits_combined_df_grouped$log_avg_revenue_2021 <- log(hits_combined_df_grouped$avg_revenue_2021)
@@ -270,27 +278,36 @@ lm_model <- lm(log_avg_revenue_2021 ~ tot_count + tot_pop, data = hits_combined_
 summary(lm_model)
 ```
 
-### Hypothesis 2:
+### Hypothesis 2a:
 
-***Figure 7.*** Average Search Hit Difference (Next Month - Previous Month) vs. Book Bans Count
+Figure 6 visualizes the relationship with average search hit difference between the month after a book banning instance and the month prior to it and the number of book bans in that event. There appears to be a negative correlation between the two variables, which would imply that as bans increase, the amount of search interest decreases.
+
+***Figure 6.*** Average Search Hit Difference (Next Month - Previous Month) vs. Book Bans Count
 
 ```{r echo=FALSE}
 hits_combined_df$diff <- hits_combined_df$avg_hits_next_month - hits_combined_df$avg_hits_prev_month
 
 model <- lm(diff ~ count, data = hits_combined_df)
+dot_colors <- ifelse(hits_combined_df$diff < 0, "red", "green")
 
 # Plot scatter plot
 plot(hits_combined_df$count, hits_combined_df$diff, 
      main = "Book Bans Count vs Search Hit Difference",
      xlab = "Bans Count",
-     ylab = "Average Search Hit Difference\n(Next Month - Previous Month)",
-     pch = 19, col = "blue")
+     ylab = "Average Search Hit Difference (Next Month - Previous Month)",
+     pch = 19, col = dot_colors)
 
 # Add regression line
-abline(model, col = "red")
+abline(model, col = "blue")
+
+legend("topright", legend = c("Decrease", "Increase"),
+       col = c("red", "green"), pch = 19,
+       title = "Change from Previous Month to Month After", cex = 0.8)
 ```
 
-***Table 3:*** Regression Results of Model 2a
+Based on the results from Model 2a that accounts for the number of libraries in DMAs when predicting search volume, there is a small p-value (p \< 0.1) but not enough to declare a significant correlation between the two variables. Thus, we fail to support Hypothesis 2a as well.
+
+***Table 4.*** Regression Results of Model 2a
 
 ```{r echo=FALSE}
 # Fit OLS model
@@ -300,7 +317,11 @@ ols_model <- lm(avg_hits_next_month - avg_hits_prev_month ~ count + num_lib_2021
 summary(ols_model)
 ```
 
-***Figure 8.*** Average Usage Index Difference (2021 - 2019) vs. Total Book Bans Count
+### Hypothesis 2b:
+
+Figure 7 shows the relationship between the change in library usage index between 2021 and 2019 and the total number of book bans in the area. There appears to be no correlation at all as the model's trendline is nearly horizontal.
+
+***Figure 7.*** Average Usage Index Difference (2021 - 2019) vs. Total Book Bans Count
 
 ```{r echo=FALSE}
 hits_combined_df_grouped$diff_index <- hits_combined_df_grouped$std_avg_index_2021 - hits_combined_df_grouped$std_avg_index_2019
@@ -318,7 +339,9 @@ plot(hits_combined_df_grouped$tot_count, hits_combined_df_grouped$diff_index,
 abline(model, col = "red")
 ```
 
-***Table 4:*** Regression Results of Model 2b
+The results of Model 2b, which accounts for the DMA's total population, confirm the visualization as there is no significant correlation between the difference in library usage index between 2021 and 2019 and the total number of book bans in that DMA between 2019 and 2021. Therefore, there is no support for Hypothesis 2b.
+
+***Table 5.*** Regression Results of Model 2b
 
 ```{r echo=FALSE}
 # Fit OLS model
@@ -328,7 +351,31 @@ ols_model <- lm(std_avg_index_2021 - std_avg_index_2019 ~ tot_count + tot_pop, d
 summary(ols_model)
 ```
 
-***Table 5:*** Regression Results of Model 2c
+Figure 8 is a representation of the geographical distribution of the average library usage index by DMAs, which has no apparent visual correlation with the map of counts of book bans and challenges by DMA.
+
+***Figure 8.*** Map of Average Library Usage Index by DMA
+
+```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
+# Read the Google Trends analysis data
+library_index <- read.csv("outputs/library_index.csv")
+
+# Merge the attribute data with the shapefile based on the extracted common column
+merged_data <- left_join(dma_boundary, library_index, by = c("dma0" = "code"))
+
+# Plot the merged data
+ggplot() +
+  geom_sf(data = merged_data, aes(fill = std_avg_index), color = "white") +  
+  # geom_sf(data = state_boundary, color = "grey", fill = NA) +  # Add state boundaries
+  theme_void() +  # Removes background axes and grid lines
+  theme(plot.title = element_text(hjust = 0.5)) +  # Center the title
+  ggtitle("Library Usage Index by DMA in 2021") +
+  scale_fill_gradientn(colors = c("blue", "yellow", "red"), na.value = "grey") +
+  labs(fill = "Average Library\nUsage Index")
+```
+
+The results of Model 2c, which account fot the total population in each DMA, confirm what is shown in Figure 8 as there is no significant correlation between the two variables. Because there is no positive correlation between total count of book bans and challenges and the average library usage index, Hypothesis 2b is not supported.
+
+***Table 6.*** Regression Results of Model 2c
 
 ```{r echo=FALSE}
 # Fit OLS model
